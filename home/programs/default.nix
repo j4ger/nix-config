@@ -1,28 +1,27 @@
 {
   imports = [
-    ./atuin
-    ./direnv
-    ./emailclient
+    ./atuin.nix
+    ./direnv.nix
+    ./email.nix
     ./fcitx5
     ./firefox
-    ./git
-    ./gpg
-    ./im
-    ./kooha
-    ./lazygit
-    ./mpv
+    ./git.nix
+    ./gpg.nix
+    ./im.nix
+    ./kooha.nix
+    ./mpv.nix
     ./music
     ./neofetch
-    ./neovide
-    ./nix-index
-    ./obs-studio
+    ./neovide.nix
+    ./nix-index.nix
+    ./obs.nix
     ./resource_monitor
-    ./search
-    ./ssh
-    ./wemeet
-    ./yesplaymusic
-    ./yt-dlp
-    ./zathura
-    ./zoxide
+    ./utils.nix
+    ./ssh.nix
+    ./wemeet.nix
+    ./yesplaymusic.nix
+    ./yt-dlp.nix
+    ./zathura.nix
+    ./zoxide.nix
   ];
 }

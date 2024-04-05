@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs = {
     git = {
@@ -16,5 +17,10 @@
         };
       };
     };
+  };
+  home = {
+    packages = with pkgs; [
+      lazygit
+    ];
   };
 }
