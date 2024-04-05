@@ -1,6 +1,7 @@
 {
   imports = [
     ./atuin.nix
+    ./devenv.nix
     ./direnv.nix
     ./email.nix
     ./fcitx5
