@@ -2,7 +2,7 @@
 {
   home = {
     packages = with pkgs; [
-      bili_tui
+      yesplaymusic
     ];
   };
 }

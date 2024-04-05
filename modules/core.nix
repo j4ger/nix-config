@@ -47,11 +47,6 @@
   };
 
   security.rtkit.enable = true;
-  services = {
-    openssh = {
-      enable = true;
-    };
-  };
 
   environment = {
     binsh = "${pkgs.dash}/bin/dash";
@@ -59,7 +54,6 @@
     systemPackages = with pkgs; [
       gcc
       clang
-      zig
       git
       gdb
       glib
@@ -81,18 +75,13 @@
       sops
     ];
   };
-  services.dbus.enable = true;
 
-  users.mutableUsers = false;
-  users.users.root = {
-    initialHashedPassword = "$6$b7YjMXfdES4soCMc$UTQMG0Zft.fXs4q1aXp69z8/sfKkKWu8dt/ZN5oj5ifyJ/vIdMpiX09jQ1T8kRli3Pb2zMpPKvpxFfgHXzo9V0";
-  };
+  users.mutableUsers = true;
   programs.fish.enable = true;
   users.users.${user} = {
-    initialHashedPassword = "$6$b7YjMXfdES4soCMc$UTQMG0Zft.fXs4q1aXp69z8/sfKkKWu8dt/ZN5oj5ifyJ/vIdMpiX09jQ1T8kRli3Pb2zMpPKvpxFfgHXzo9V0";
     shell = pkgs.fish;
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" ];
+    extraGroups = [ "wheel" "video" "audio" "NetworkManager" ];
   };
 
   security.polkit.enable = true;

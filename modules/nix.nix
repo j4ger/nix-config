@@ -13,14 +13,11 @@
       keep-derivations = true;
       keep-outputs = true;
       substituters = [
+        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
         "https://nix-community.cachix.org"
-        "https://hyprland.cachix.org"
-        "https://ruixi-rebirth.cachix.org"
       ];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-        "ruixi-rebirth.cachix.org-1:sWs3V+BlPi67MpNmP8K4zlA3jhPCAvsnLKi4uXsiLI4="
       ];
       trusted-users = [ "root" "@wheel" ];
     };
@@ -40,7 +37,7 @@
   nixpkgs = {
     config = {
       allowBroken = true;
-      allowUnsupportedSystem = true;
+      # allowUnsupportedSystem = true;
       allowUnfree = true;
     };
     overlays = [

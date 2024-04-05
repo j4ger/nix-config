@@ -2,7 +2,7 @@
 {
   home = {
     packages = (with pkgs; [
-      qq
+      wemeet
     ]) ++ (with config.nur.repos;[
     ]);
   };

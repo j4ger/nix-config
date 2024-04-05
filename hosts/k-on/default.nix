@@ -11,7 +11,7 @@ in
 {
   imports = [ ./hardware-configuration.nix ];
 
-  networking.hostName = "k-on";
+  networking.hostName = "v04-x13";
 
   sops = {
     secrets.SSH_PVKEY = {
@@ -26,20 +26,21 @@ in
     };
   };
 
-  boot = {
-    kernelPackages = pkgs.linuxPackages_xanmod_latest;
-    kernelParams = [
-      "quiet"
-      "splash"
-      "nvidia-drm.modeset=1"
-      "modprobe.blacklist=nouveau"
-    ];
-  };
+  # boot = {
+    # kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    # kernelParams = [
+    #   "quiet"
+    #   "splash"
+    #   "nvidia-drm.modeset=1"
+    #   "modprobe.blacklist=nouveau"
+    # ];
+  # };
 
   services = {
     tlp.enable = true;
     auto-cpufreq.enable = true;
-    xserver.videoDrivers = [ "nvidia" ];
+    power-profiles-daemon.enable = false;
+    xserver.videoDrivers = [ "nvidia" "amdgpu" ];
   };
   hardware = {
     nvidia = {
@@ -48,8 +49,8 @@ in
       modesetting.enable = true;
       prime = {
         offload.enable = true;
-        intelBusId = "PCI:00:02:0";
-        nvidiaBusId = "PCI:01:00:0";
+        amdgpuBusId = "PCI:105:0:0";
+        nvidiaBusId = "PCI:1:0:0";
       };
 
     };
@@ -58,8 +59,6 @@ in
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
-        intel-media-driver
-        vaapiIntel
         nvidia-vaapi-driver
         vaapiVdpau
         libvdpau-va-gl
@@ -73,14 +72,10 @@ in
       libva
       libva-utils
       glxinfo
+      nil
     ];
   };
 
   environment.variables = {
-    # WLR_RENDERER = "vulkan";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    GBM_BACKEND = "nvidia-drm";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    WLR_RENDERER_ALLOW_SOFTWARE = "1";
   };
 }

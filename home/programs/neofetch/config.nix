@@ -72,7 +72,6 @@ in
     memory_display="off"
     battery_display="off"
     disk_display="off"
-    image_backend="kitty"
     image_source="${nixgirl}"
     ascii_distro="auto"
     ascii_colors=(distro)

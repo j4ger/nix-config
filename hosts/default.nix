@@ -9,13 +9,13 @@
       inherit (inputs.nixpkgs.lib) nixosSystem;
     in
     {
-      k-on = nixosSystem {
+      v04-x13 = nixosSystem {
         specialArgs = { inherit user; };
         modules =
           [
             ./k-on
             ../modules/lanzaboote.nix
-            ../modules/impermanence.nix
+            # ../modules/impermanence.nix
             ../modules/desktop.nix
             ../modules/fonts.nix
             ../modules/virtualisation
@@ -23,7 +23,7 @@
             {
               home-manager = {
                 extraSpecialArgs = { inherit user; };
-                users.${user}.imports = homeImports."${user}@k-on";
+                users.${user}.imports = homeImports."${user}@v04-x13";
               };
             }
           ] ++ sharedModules;

@@ -25,7 +25,7 @@ in
           inputs.lanzaboote.nixosModules.lanzaboote
           inputs.impermanence.nixosModules.impermanence
           inputs.sops-nix.nixosModules.sops
-          inputs.disko.nixosModules.disko
+          # inputs.disko.nixosModules.disko
           module_args
           ./core.nix
           ./nix.nix

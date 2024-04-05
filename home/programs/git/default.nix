@@ -2,16 +2,16 @@
   programs = {
     git = {
       enable = true;
-      userName = "Ruixi-rebirth";
-      userEmail = "ruixirebirth@gmail.com";
+      userName = "j4ger";
+      userEmail = "xiayuxuan@live.com";
       signing = {
-        key = "D6FA49B594337867";
+        key = "A645FE4CA59374C8";
         signByDefault = true;
       };
       extraConfig = {
         url = {
-          "ssh://git@github.com:Ruixi-rebirth" = {
-            insteadOf = "https://github.com/Ruixi-rebirth/";
+          "ssh://git@github.com:j4ger" = {
+            insteadOf = "https://github.com/j4ger/";
           };
         };
       };

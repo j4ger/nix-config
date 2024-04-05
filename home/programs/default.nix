@@ -1,10 +1,27 @@
-let
-  directoryContents = builtins.readDir ./.;
-  directories = builtins.filter
-    (name: directoryContents."${name}" == "directory" && name != "waybar")
-    (builtins.attrNames directoryContents);
-  imports = map (name: ./. + "/${name}") directories;
-in
 {
-  imports = imports;
+  imports = [
+    ./autin
+    ./emailclient
+    ./fcitx5
+    ./firefox
+    ./git
+    ./gpg
+    ./im
+    ./kooha
+    ./lazygit
+    ./mpv
+    ./music
+    ./neofetch
+    ./neovide
+    ./nix-index
+    ./obs-studio
+    ./resource_monitor
+    ./search
+    ./ssh
+    ./wemeet
+    ./yesplaymusic
+    ./yt-dlp
+    ./zathura
+    ./zoxide
+  ];
 }

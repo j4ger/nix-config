@@ -17,7 +17,7 @@
       timeout = 3;
     };
     lanzaboote = {
-      enable = true;
+      enable = false; # TODO: maybe later
       pkiBundle = "/etc/secureboot";
     };
     consoleLogLevel = 0;

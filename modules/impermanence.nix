@@ -35,7 +35,7 @@
           { directory = ".ssh"; mode = "0700"; }
           ".local"
           ".mozilla"
-          ".emacs.d"
+          # ".emacs.d"
           ".steam"
         ];
         files = [

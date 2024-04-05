@@ -49,10 +49,14 @@ dns {
     }
 }
 
+subscription {
+
+}
+
 # Node group (outbound).
 group {
     proxy {
-        # No filter. Use all nodes.
+        filter: name(keyword: '1x')
 
         # Randomly select a node from the group for every connection.
         #policy: random

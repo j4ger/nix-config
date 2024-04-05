@@ -1,5 +1,6 @@
 {
-  description = "Ruixi-rebirth's NixOS Configuration";
+  # source: https://github.com/Ruixi-rebirth/flakes
+  # description = "Ruixi-rebirth's NixOS Configuration";
 
   outputs = inputs @ { self, ... }:
     let
@@ -78,7 +79,7 @@
   inputs = {
     # update single input: `nix flake lock --update-input <name>`
     # update all inputs: `nix flake update`
-    disko.url = "github:nix-community/disko";
+    # disko.url = "github:nix-community/disko";
     emanote.url = "github:srid/emanote";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-root.url = "github:srid/flake-root";
@@ -122,13 +123,9 @@
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
-      "https://hyprland.cachix.org"
-      "https://ruixi-rebirth.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      "ruixi-rebirth.cachix.org-1:sWs3V+BlPi67MpNmP8K4zlA3jhPCAvsnLKi4uXsiLI4="
     ];
     trusted-users = [ "root" "@wheel" ];
   };
