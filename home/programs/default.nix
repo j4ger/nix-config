@@ -1,6 +1,7 @@
 {
   imports = [
-    ./autin
+    ./atuin
+    ./direnv
     ./emailclient
     ./fcitx5
     ./firefox

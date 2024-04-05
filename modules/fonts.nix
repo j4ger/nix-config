@@ -5,19 +5,24 @@
   ];
   fonts = {
     packages = with pkgs; [
+      roboto
+      recursive
       wqy_zenhei
       noto-fonts
       noto-fonts-cjk
       noto-fonts-cjk-serif
-      noto-fonts-emoji
+      noto-fonts-color-emoji
+      source-han-sans
+      source-han-serif
+      source-han-mono
       (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
       twemoji-color-font
     ];
     fontconfig = {
       defaultFonts = {
-        serif = [ "Noto Serif CJK SC" ];
-        sansSerif = [ "Noto Sans CJK SC" ];
-        monospace = [ "FiraCode Nerd Fonts" "Noto Sans Mono CJK SC" "DejaVu Sans Mono" ];
+        serif = [ "Roboto" "Noto Serif CJK SC" "emoji" ];
+        sansSerif = [ "Roboto" "Noto Sans CJK SC" "emoji" ];
+        monospace = [ "Recursive Mn Lnr St" "Noto Sans Mono CJK SC" "emoji" ];
       };
     };
   };

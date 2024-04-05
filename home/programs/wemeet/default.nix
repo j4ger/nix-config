@@ -2,8 +2,8 @@
 {
   home = {
     packages = (with pkgs; [
-      wemeet
     ]) ++ (with config.nur.repos;[
+      linyinfeng.wemeet
     ]);
   };
 }
