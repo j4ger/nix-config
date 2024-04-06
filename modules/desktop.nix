@@ -8,6 +8,11 @@
   # Plasma desktop
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.displayManager.sddm.wayland.enable = true;
+  services.xserver.displayManager.defaultSession = "plasma";
+  services.xserver.displayManager.autoLogin = {
+    enable = true;
+    user = "${user}";
+  };
 #  services.xserver.desktopManager.plasma5.enable = true;
   services.desktopManager.plasma6.enable = true;
 
@@ -23,7 +28,15 @@
       wl-clipboard
       linux-firmware
     ];
-    variables.NIXOS_OZONE_WL = "1";
+    variables = {
+      NIXOS_OZONE_WL = "1";
+      #GTK_IM_MODULE = "fcitx";
+      #GTK_IM_MODULE = "wayland";
+      QT_IM_MODULE = "fcitx";
+      XMODIFIERS = "@im=fcitx";
+      SDL_IM_MODULE = "fcitx";
+      GLFW_IM_MODULE = "ibus";
+    };
   };
 
   services = {

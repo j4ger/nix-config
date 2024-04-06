@@ -1,7 +1,6 @@
 { inputs, withSystem, module_args, ... }:
 let
   user = "j4ger";
-  # domain = "ruixi2fp.top";
 
   sharedModules = [
     (import ../. { inherit user; })
