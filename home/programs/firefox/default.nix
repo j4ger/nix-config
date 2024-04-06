@@ -22,7 +22,6 @@ in
       };
     };
     profiles.default = {
-      search.default = "bing";
       userChrome = ( builtins.readFile chromeFile );
     };
   };

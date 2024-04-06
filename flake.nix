@@ -108,7 +108,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nvim-flake.url = "github:Ruixi-rebirth/nvim-flake";
+    nvimdots.url = "github:ayamir/nvimdots";
     nur.url = "github:nix-community/NUR";
     nix-index-database = {
       url = "github:Mic92/nix-index-database";

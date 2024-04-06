@@ -76,6 +76,7 @@
     ];
   };
 
+  programs.nix-ld.enable = true;
   users.mutableUsers = true;
   programs.fish.enable = true;
   users.users.${user} = {

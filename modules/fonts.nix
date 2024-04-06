@@ -15,7 +15,7 @@
       source-han-sans
       source-han-serif
       source-han-mono
-      (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+      (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "JetBrainsMono" ]; })
       twemoji-color-font
     ];
     fontconfig = {

@@ -8,6 +8,7 @@ let
     # inputs.hyprland.homeManagerModules.default
     inputs.nix-index-database.hmModules.nix-index
     inputs.nur.hmModules.nur
+    inputs.nvimdots.nixosModules.nvimdots
   ];
 
   homeImports = {

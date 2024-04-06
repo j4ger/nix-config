@@ -2,7 +2,7 @@
 {
   imports = [
     ../../shell
-    ../../editors/neovim
+    ../../editors
     ../../terminals
     ../../programs
   ] ++ [
