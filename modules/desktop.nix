@@ -15,7 +15,9 @@
   };
 #  services.xserver.desktopManager.plasma5.enable = true;
   services.desktopManager.plasma6.enable = true;
-
+  programs.kdeconnect = {
+    enable = true;
+  };
 
   i18n.inputMethod = {
     enabled = "fcitx5";
@@ -27,6 +29,7 @@
     systemPackages = with pkgs; [
       wl-clipboard
       linux-firmware
+      kdePackages.kwallet-pam
     ];
     variables = {
       NIXOS_OZONE_WL = "1";

@@ -19,6 +19,7 @@
     ./resource_monitor
     ./utils.nix
     ./ssh.nix
+    ./superslicer.nix
     ./wemeet.nix
     ./yesplaymusic.nix
     ./yt-dlp.nix
