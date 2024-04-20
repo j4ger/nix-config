@@ -73,6 +73,7 @@
       socat
       frp
       sops
+      appimage-run
     ];
   };
 
