@@ -10,7 +10,7 @@
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "usbhid" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [
     v4l2loopback
   ];
@@ -27,17 +27,17 @@
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/76294807-7734-4f6d-84d5-5c92b44fcf6a";
+    { device = "/dev/disk/by-uuid/2b74be21-6b35-4dfe-8503-8849b90a9787";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8A5B-EDDF";
+    { device = "/dev/disk/by-uuid/74E9-AE78";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/9724c6a2-ab60-4314-b0fd-40183eb0174a"; }
+    [ { device = "/dev/disk/by-uuid/365e8fc1-1742-4edd-808a-38668ab9b748"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -48,5 +48,5 @@
   # networking.interfaces.wlp6s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

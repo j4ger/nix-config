@@ -9,6 +9,7 @@
       ll = "exa -l --icons";
       ls = "exa";
       top = "btop";
+      lg = "lazygit";
     };
   };
   programs.starship = {
