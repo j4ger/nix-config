@@ -6,16 +6,18 @@
   services.xserver.enable = true;
 
   # Plasma desktop
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.sddm.wayland.enable = true;
-  services.xserver.displayManager.defaultSession = "plasma";
-  services.xserver.displayManager.autoLogin = {
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.defaultSession = "plasma";
+  services.displayManager.autoLogin = {
     enable = true;
     user = "${user}";
   };
 #  services.xserver.desktopManager.plasma5.enable = true;
   services.desktopManager.plasma6.enable = true;
-
+  programs.kdeconnect = {
+    enable = true;
+  };
 
   i18n.inputMethod = {
     enabled = "fcitx5";
@@ -27,6 +29,7 @@
     systemPackages = with pkgs; [
       wl-clipboard
       linux-firmware
+      kdePackages.kwallet-pam
     ];
     variables = {
       NIXOS_OZONE_WL = "1";
