@@ -6,5 +6,8 @@
   };
   home.file = {
     ".config/fcitx5/conf/classicui.conf".source = ./classicui.conf;
+    ".config/fcitx5/config".source = ./config;
+    ".config/fcitx5/profile".source = ./profile;
+    ".config/fcitx5/conf/pinyin.conf".source = ./pinyin.conf;
   };
 }

@@ -10,9 +10,4 @@
     disableTxChecksumIpGeneric = false;
     assets = with pkgs; [ v2ray-geoip v2ray-domain-list-community ];
   };
-  programs.clash-verge = {
-    enable = true;
-    autoStart = true;
-    tunMode = true;
-  };
 }
