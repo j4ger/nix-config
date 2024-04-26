@@ -75,6 +75,9 @@
       sops
       appimage-run
       nekoray
+      nh
+      nvfetcher
+      comma
     ];
   };
 

@@ -72,7 +72,6 @@ in
       libva
       libva-utils
       glxinfo
-      nil
     ];
   };
 

@@ -20,24 +20,24 @@
 
   boot.initrd.luks.devices = {
     crypted = {
-      device = "/dev/disk/by-uuid/2b9f77b0-d26f-4dc0-ba36-95a33aacf49c ";
+      device = "/dev/disk/by-uuid/2b9f77b0-d26f-4dc0-ba36-95a33aacf49c";
       preLVM = true;
       allowDiscards = true;
     };
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/2b74be21-6b35-4dfe-8503-8849b90a9787";
+    { device = "/dev/disk/by-uuid/76294807-7734-4f6d-84d5-5c92b44fcf6a";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/74E9-AE78";
+    { device = "/dev/disk/by-uuid/8A5B-EDDF";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/365e8fc1-1742-4edd-808a-38668ab9b748"; }
+    [ { device = "/dev/disk/by-uuid/9724c6a2-ab60-4314-b0fd-40183eb0174a"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
