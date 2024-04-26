@@ -4,7 +4,7 @@
     mode = "0600";
   };
   services.dae = {
-    enable = false;
+    enable = true;
     package = pkgs.dae;
     configFile = config.sops.secrets."config.dae".path;
     disableTxChecksumIpGeneric = false;

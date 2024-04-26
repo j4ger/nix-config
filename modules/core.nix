@@ -74,6 +74,7 @@
       frp
       sops
       appimage-run
+      nekoray
     ];
   };
 
