@@ -9,6 +9,7 @@
     ./git.nix
     ./gpg.nix
     ./im.nix
+    ./kdenlive.nix
     ./kooha.nix
     ./mpv.nix
     ./music
