@@ -2,7 +2,7 @@
 {
   home = {
     packages = with pkgs; [
-      # super-slicer.beta
+      super-slicer.beta
     ];
   };
 }
