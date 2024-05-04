@@ -9,6 +9,7 @@
     ./git.nix
     ./gpg.nix
     ./im.nix
+    ./inkscape.nix
     ./kdenlive.nix
     ./kooha.nix
     ./mpv.nix
