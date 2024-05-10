@@ -8,6 +8,9 @@
       roboto
       recursive
       wqy_zenhei
+      wqy_microhei
+      lxgw-wenkai
+      lxgw-neoxihei
       noto-fonts
       noto-fonts-cjk
       noto-fonts-cjk-serif
@@ -19,13 +22,22 @@
       twemoji-color-font
       corefonts
       vistafonts
+      vistafonts-chs
     ];
     fontconfig = {
       defaultFonts = {
-        serif = [ "Roboto" "Noto Serif CJK SC" "emoji" ];
-        sansSerif = [ "Roboto" "Noto Sans CJK SC" "emoji" ];
-        monospace = [ "Recursive Mn Lnr St" "Noto Sans Mono CJK SC" "emoji" ];
+        serif = [ "Noto Serif CJK SC" "Noto Serif" "Twitter Color Emoji" ];
+        sansSerif = [ "Noto Sans CJK SC" "Noto Sans" "Twitter Color Emoji" ];
+        monospace = [ "Recursive Mn Lnr St" "Noto Sans Mono CJK SC" "Twitter Color Emoji" ];
       };
+      localConf = ''
+      <match target="pattern">
+        <test qual="any" name="family">
+          <string>Helvetica</string>
+        </test>
+        <edit name="family" mode="assign"><string>WenQuanYi Zen Hei</string></edit>
+      </match>
+      '';
     };
   };
 }

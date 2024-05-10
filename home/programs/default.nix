@@ -18,6 +18,7 @@
     ./neovide.nix
     ./nix-index.nix
     ./obs.nix
+    ./office.nix
     ./resource_monitor
     ./utils.nix
     ./ssh.nix
