@@ -1,6 +1,7 @@
 {
   imports = [
     ./atuin.nix
+    ./bilibili.nix
     ./devenv.nix
     ./direnv.nix
     ./email.nix
@@ -21,6 +22,7 @@
     ./office.nix
     ./resource_monitor
     ./utils.nix
+    ./siyuan.nix
     ./ssh.nix
     ./superslicer.nix
     ./wemeet.nix

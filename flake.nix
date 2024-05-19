@@ -79,28 +79,16 @@
   inputs = {
     # update single input: `nix flake lock --update-input <name>`
     # update all inputs: `nix flake update`
-    # disko.url = "github:nix-community/disko";
-    emanote.url = "github:srid/emanote";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-root.url = "github:srid/flake-root";
     flake-compat = {
       url = "github:inclyc/flake-compat";
       flake = false;
     };
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hycov = {
-      url = "github:DreamMaoMao/hycov";
-      inputs.hyprland.follows = "hyprland";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprpicker.url = "github:hyprwm/hyprpicker";
-    hypr-contrib.url = "github:hyprwm/contrib";
     impermanence.url = "github:nix-community/impermanence";
     lanzaboote = {
       #please read this doc -> https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md 
@@ -108,7 +96,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nvimdots.url = "github:ayamir/nvimdots";
     nur.url = "github:nix-community/NUR";
     nix-index-database = {
       url = "github:Mic92/nix-index-database";

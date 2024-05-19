@@ -76,7 +76,6 @@
       appimage-run
       nekoray
       nh
-      nvfetcher
       comma
     ];
   };

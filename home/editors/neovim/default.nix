@@ -1,9 +1,7 @@
 { pkgs, ... }:
 {
-  programs.neovim.nvimdots = {
+  programs.neovim = {
     enable = true;
-    setBuildEnv = true;
-    withBuildTools = true;
   };
   home = {
     packages = (with pkgs; [

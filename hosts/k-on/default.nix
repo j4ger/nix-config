@@ -44,7 +44,7 @@ in
   };
   hardware = {
     nvidia = {
-      open = false;
+      open = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;
       modesetting.enable = true;
       prime = {
