@@ -12,7 +12,7 @@
     ./im.nix
     ./inkscape.nix
     ./kdenlive.nix
-    ./kooha.nix
+    ./lceda.nix
     ./mpv.nix
     ./music
     ./neofetch
