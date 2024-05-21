@@ -1,7 +1,0 @@
-keys:
-  - &v04-x13 age1f7l40cpfcd3rf5mr6c6uzd5a9a5ygr8r2lzvvl885hl3ww0gwpcsdz8zmh
-creation_rules:
-  - path_regex: secrets/[^/]+\.yaml$
-    key_groups:
-      - age:
-          - *v04-x13

@@ -1,119 +1,73 @@
 {
-  # source: https://github.com/Ruixi-rebirth/flakes
-  # description = "Ruixi-rebirth's NixOS Configuration";
-
-  outputs = inputs @ { self, ... }:
-    let
-      selfPkgs = import ./pkgs;
-    in
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" ];
-      imports = [
-        ./home/profiles
-        ./hosts
-        ./modules
-      ] ++ [
-        inputs.flake-root.flakeModule
-        inputs.treefmt-nix.flakeModule
-      ];
-      flake = {
-        overlays.default = selfPkgs.overlay;
-      };
-      perSystem = { config, pkgs, system, ... }:
-        {
-          # NOTE: These overlays apply to the Nix shell only. See `modules/nix.nix` for system overlays.
-          _module.args.pkgs = import inputs.nixpkgs {
-            inherit system;
-            overlays = [
-              #inputs.foo.overlays.default
-            ];
-          };
-
-          treefmt.config = {
-            inherit (config.flake-root) projectRootFile;
-            package = pkgs.treefmt;
-            programs.nixpkgs-fmt.enable = true;
-            programs.prettier.enable = true;
-            programs.taplo.enable = true;
-            programs.shfmt.enable = true;
-          };
-
-          devShells = {
-            # run by `nix devlop` or `nix-shell`(legacy)
-            # Temporarily enable experimental features, run by`nix develop --extra-experimental-features nix-command --extra-experimental-features flakes`
-            default = pkgs.mkShell {
-              nativeBuildInputs = with pkgs; [ git neovim sbctl just ];
-              inputsFrom = [
-                config.flake-root.devShell
-              ];
-            };
-            # run by `nix develop .#<name>`
-            # NOTE: Here are some of the steps I documented, see `https://github.com/Mic92/sops-nix` for more details
-            # ```
-            # mkdir -p ~/.config/sops/age
-            # age-keygen -o ~/.config/sops/age/keys.txt
-            # age-keygen -y ~/.config/sops/age/keys.txt
-            # sudo mkdir -p /var/lib/sops-nix
-            # sudo cp ~/.config/sops/age/keys.txt /var/lib/sops-nix/key.txt
-            # nvim $FLAKE_ROOT/.sops.yaml
-            # mkdir $FLAKE_ROOT/secrets
-            # sops $FLAKE_ROOT/secrets/secrets.yaml
-            # ```
-            secret = with pkgs; mkShell {
-              name = "secret";
-              nativeBuildInputs = [ sops age neovim ssh-to-age ];
-              shellHook = ''
-                export $EDITOR=nvim
-                export PS1="\[\e[0;31m\](Secret)\$ \[\e[m\]"
-              '';
-              inputsFrom = [
-                config.flake-root.devShell
-              ];
-            };
-          };
-          # used by the `nix fmt` command
-          formatter = config.treefmt.build.wrapper;
-        };
-    };
+  description = "My nixOS config for local work environment.";
 
   inputs = {
-    # update single input: `nix flake lock --update-input <name>`
-    # update all inputs: `nix flake update`
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-root.url = "github:srid/flake-root";
-    flake-compat = {
-      url = "github:inclyc/flake-compat";
-      flake = false;
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    impermanence.url = "github:nix-community/impermanence";
-    lanzaboote = {
-      #please read this doc -> https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md 
-      url = "github:nix-community/lanzaboote";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # Nixpkgs
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nur.url = "github:nix-community/NUR";
-    nix-index-database = {
-      url = "github:Mic92/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
-    rust-overlay.url = "github:oxalica/rust-overlay";
-    sops-nix.url = "github:Mic92/sops-nix";
-    treefmt-nix.url = "github:numtide/treefmt-nix";
+    # You can access packages and modules from different nixpkgs revs
+    # at the same time. Here's an working example:
+    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
+
+    # Home manager
+    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # agenix
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # dae
+    daeuniverse.url = "github:daeuniverse/flake.nix";
+    daeuniverse.inputs.nixpkgs.follows = "nixpkgs-stable";
   };
 
-  nixConfig = {
-    extra-substituters = [
-      "https://nix-community.cachix.org"
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: let
+    inherit (self) outputs;
+    # Supported systems for your flake packages, shell, etc.
+    systems = [
+      "x86_64-linux"
     ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
-    trusted-users = [ "root" "@wheel" ];
+    # This is a function that generates an attribute by calling a function you
+    # pass to it, with each system as an argument
+    forAllSystems = nixpkgs.lib.genAttrs systems;
+  in {
+    # Your custom packages
+    # Accessible through 'nix build', 'nix shell', etc
+    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+    # Formatter for your nix files, available through 'nix fmt'
+    # Other options beside 'alejandra' include 'nixpkgs-fmt'
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+
+    # Your custom packages and modifications, exported as overlays
+    overlays = import ./overlays {inherit inputs;};
+    # Reusable nixos modules you might want to export
+    # These are usually stuff you would upstream into nixpkgs
+    nixosModules = import ./modules/nixos;
+    # Reusable home-manager modules you might want to export
+    # These are usually stuff you would upstream into home-manager
+    homeManagerModules = import ./modules/home-manager;
+
+    # NixOS configuration entrypoint
+    # Available through 'nixos-rebuild --flake .#your-hostname'
+    nixosConfigurations = {
+      # FIXME replace with your hostname
+      v04-x13 = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./nixos/configuration.nix
+          inputs.agenix.nixosModules.default
+          inputs.daeuniverse.nixosModules.dae
+          inputs.daeuniverse.nixosModules.daed
+        ];
+      };
+    };
   };
 }

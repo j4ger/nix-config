@@ -1,0 +1,44 @@
+{pkgs, ...}:
+{
+  environment.systemPackages = with pkgs; [
+    gcc
+    clang
+    glib
+    wget
+    p7zip
+    unzip
+    zip
+    xdg-utils
+    killall
+    appimage-run
+    nh
+    comma
+    protontricks
+  ];
+
+  programs = {
+    nix-ld.enable = true;
+    fish.enable = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      gamescopeSession.enable = true;
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+      ];
+    };
+  };
+
+  virtualisation = {
+    podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+}
