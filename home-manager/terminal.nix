@@ -98,7 +98,10 @@
       enable = true;
       userName = "j4ger";
       userEmail = "xiayuxuan@live.com";
-      # TODO: signing key
+      signing = {
+        key = "A645FE4CA59374C8";
+        signByDefault = true;
+      };
       extraConfig = {
         url = {
           "ssh://git@github.com:j4ger" = {

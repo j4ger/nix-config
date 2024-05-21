@@ -11,7 +11,7 @@
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # agenix
@@ -21,6 +21,10 @@
     # dae
     daeuniverse.url = "github:daeuniverse/flake.nix";
     daeuniverse.inputs.nixpkgs.follows = "nixpkgs-stable";
+
+    # nur
+    nur.url = "github:nix-community/NUR";
+    nur.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {

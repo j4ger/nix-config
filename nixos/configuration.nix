@@ -136,6 +136,7 @@
       # Import your home-manager configuration
       j4ger = import ../home-manager/home.nix;
     };
+    useUserPackages = true;
   };
 
   security.polkit.enable = true;
