@@ -10,7 +10,9 @@
       glaxnimate
       gimp
       libreoffice
+      wpsoffice
       siyuan
+      onlyoffice-bin_latest
       super-slicer.beta
       yesplaymusic
       nur.repos.linyinfeng.wemeet
