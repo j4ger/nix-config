@@ -52,10 +52,18 @@
       #     patches = [ ./change-hello-to-hi.patch ];
       #   });
       # })
+
+      (final: prev: {
+        nur = import inputs.nur {
+          nurpkgs = prev;
+          pkgs = prev;
+          repoOverrides = { j4ger = import inputs.j4ger-pkgs { pkgs = prev; }; };
+        };
+      })
     ];
     # Configure your nixpkgs instance
     config = {
-      # Disable if you don't want unfree packages
+      # FIXME: somehow this is ignored by home-manager
       allowUnfree = true;
     };
   };
@@ -137,6 +145,7 @@
       j4ger = import ../home-manager/home.nix;
     };
     useUserPackages = true;
+    useGlobalPkgs = true;
   };
 
   security.polkit.enable = true;

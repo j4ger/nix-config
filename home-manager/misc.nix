@@ -13,6 +13,8 @@
       siyuan
       super-slicer.beta
       yesplaymusic
+      nur.repos.linyinfeng.wemeet
+      nur.repos.j4ger.lceda-pro
     ];
   };
   programs = {
