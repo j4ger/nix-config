@@ -15,6 +15,9 @@
     enable = true;
   };
 
+  # FIXME: is this required?
+  services.xserver.videoDrivers = [ "intel" "nvidia" ];
+
   networking = {
     networkmanager.enable = true;
     hosts = {

@@ -14,6 +14,7 @@
     nh
     comma
     protontricks
+    mangohud
   ];
 
   programs = {
