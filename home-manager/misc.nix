@@ -17,6 +17,7 @@
       yesplaymusic
       nur.repos.linyinfeng.wemeet
       nur.repos.j4ger.lceda-pro
+      kicad
     ];
   };
   programs = {

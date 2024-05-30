@@ -5,4 +5,5 @@ in
 {
   "gpg.age".publicKeys = [ userKey machineKey ];
   "dae.age".publicKeys = [ userKey machineKey ];
+  "mihomo.age".publicKeys = [ userKey machineKey ];
 }
