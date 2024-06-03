@@ -79,7 +79,7 @@
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
       substituters = [
-        "https://mirror.sjtu.edu.cn/nix-channels/store"
+        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
         "https://nix-community.cachix.org"
         "https://daeuniverse.cachix.org"
       ];

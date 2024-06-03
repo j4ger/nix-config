@@ -10,7 +10,7 @@
       glaxnimate
       gimp
       libreoffice
-      wpsoffice
+      nur.repos.rewine.wps
       siyuan
       onlyoffice-bin_latest
       super-slicer.beta
