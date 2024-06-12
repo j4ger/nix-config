@@ -8,7 +8,7 @@
   };
 
   services.mihomo = {
-    enable = true;
+    enable = false;
     tunMode = true;
     configFile = config.age.secrets.mihomo.path;
     webui = pkgs.nur.repos.guanran928.metacubexd;
