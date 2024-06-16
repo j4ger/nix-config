@@ -14,10 +14,11 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
 
-    ./terminal.nix
     ./browser
     ./ime
+    ./neovim
     ./misc.nix
+    ./terminal.nix
   ];
 
   # TODO: Set your username

@@ -6,6 +6,8 @@
   lib,
   config,
   pkgs,
+  myPackages,
+  system,
   ...
 }: {
   # You can import other NixOS modules here
@@ -139,7 +141,7 @@
 
   # home-manager
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = { inherit inputs outputs myPackages system; };
     users = {
       # Import your home-manager configuration
       j4ger = import ../home-manager/home.nix;

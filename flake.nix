@@ -1,35 +1,50 @@
 {
-  description = "My nixOS config for local work environment.";
+  description = "nixOS config for my laptop";
 
   inputs = {
-    # Nixpkgs
+    # nixpkgs (default to unstable)
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # You can access packages and modules from different nixpkgs revs
-    # at the same time. Here's an working example:
-    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
-    # Home manager
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # home manager for dotfiles & programs
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    # agenix
-    agenix.url = "github:ryantm/agenix";
-    agenix.inputs.nixpkgs.follows = "nixpkgs";
+    # agenix for secrets encryption
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    # dae
-    daeuniverse.url = "github:daeuniverse/flake.nix";
-    daeuniverse.inputs.nixpkgs.follows = "nixpkgs-stable";
+    # dae for networking
+    daeuniverse = {
+      url = "github:daeuniverse/flake.nix";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
 
-    # nur
-    nur.url = "github:nix-community/NUR";
-    nur.inputs.nixpkgs.follows = "nixpkgs";
+    # nur for few newer packages
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # my packages
-    j4ger-pkgs.url = "github:j4ger/nix-packages";
-    j4ger-pkgs.inputs.nixpkgs.follows = "nixpkgs";
+    j4ger-pkgs = {
+      url = "github:j4ger/nix-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # nixvim
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      # temp fixes
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
+
+  # TODO: revert back to flake-parts style to support `nix fmt`
 
   outputs = {
     self,
@@ -43,10 +58,14 @@
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
     # forAllSystems = nixpkgs.lib.genAttrs systems;
+    myPackages = import ./pkgs {
+      pkgs = nixpkgs.legacyPackages.${system};
+      inherit inputs system;
+    };
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
-    packages = import ./pkgs nixpkgs.legacyPackages.${system};
+    packages = myPackages;
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = nixpkgs.legacyPackages.${system}.alejandra;
@@ -65,7 +84,7 @@
     nixosConfigurations = {
       # FIXME replace with your hostname
       v04-x13 = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs myPackages system;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
