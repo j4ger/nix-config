@@ -7,8 +7,11 @@
       qq
       inkscape
       kdePackages.kdenlive
+      kdePackages.konqueror
+      haruna
       glaxnimate
       gimp
+      darktable
       libreoffice
       nur.repos.rewine.wps
       siyuan

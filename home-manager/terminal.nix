@@ -7,6 +7,7 @@
     fd
     bat
     ripgrep
+    chafa
   ];
   programs = {
     alacritty = {
