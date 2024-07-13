@@ -7,8 +7,9 @@
     ./common.nix
     ./extra.nix
     ./filepicker.nix
+    ./git.nix
     ./startup.nix
     ./statusline.nix
-    ./treesitter.nix
+    ./terminal.nix
   ];
 }
