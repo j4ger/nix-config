@@ -28,7 +28,7 @@
     }
     {
       mode = "n";
-      key = "<leader>Gp";
+      key = "<leader>GP";
       action = "<cmd>Neogit push<CR>";
       options = {
         silent = true;
@@ -37,7 +37,7 @@
     }
     {
       mode = "n";
-      key = "<leader>GP";
+      key = "<leader>Gp";
       action = "<cmd>Neogit pull<CR>";
       options = {
         silent = true;

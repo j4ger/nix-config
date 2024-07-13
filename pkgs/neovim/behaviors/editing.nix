@@ -43,7 +43,16 @@
         desc = "Show UndoTree";
       };
     }
-  ];
+    {
+      mode = "n";
+      key = "<C-s>";
+      action = "<cmd>w<CR>";
+      options = {
+        silent = true;
+        desc = "save file";
+      };
+    }
+ ];
 
   plugins.flash = {
     enable = true;
