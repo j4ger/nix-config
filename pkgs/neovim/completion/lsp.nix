@@ -24,11 +24,6 @@
       pylyzer.enable = true;
       ruff.enable = true;
       ruff-lsp.enable = true;
-      rust-analyzer = {
-        enable = true;
-        installCargo = false;
-        installRustc = false;
-      };
       taplo.enable = true;
       typst-lsp.enable = true;
       yamlls.enable = true;
