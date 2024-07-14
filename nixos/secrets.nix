@@ -18,6 +18,10 @@
         mode = "0600";
         name = "mihomo.yaml";
       };
+      nix-extra-options = {
+        file = ../secrets/nix-extra-options.age;
+        mode = "6444";
+      };
     };
   };
 }

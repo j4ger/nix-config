@@ -37,10 +37,10 @@
       NIXOS_OZONE_WL = "1";
       #GTK_IM_MODULE = "fcitx";
       #GTK_IM_MODULE = "wayland";
-      QT_IM_MODULE = "fcitx";
+      #QT_IM_MODULE = "fcitx";
       XMODIFIERS = "@im=fcitx";
-      SDL_IM_MODULE = "fcitx";
-      GLFW_IM_MODULE = "ibus";
+      #SDL_IM_MODULE = "fcitx";
+      #GLFW_IM_MODULE = "ibus";
     };
   };
 }

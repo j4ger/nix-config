@@ -6,4 +6,5 @@ in
   "gpg.age".publicKeys = [ userKey machineKey ];
   "dae.age".publicKeys = [ userKey machineKey ];
   "mihomo.age".publicKeys = [ userKey machineKey ];
+  "nix-extra-options.age".publicKeys = [ userKey machineKey ];
 }

@@ -10,7 +10,7 @@
   keymaps = [
     {
       mode = "n";
-      key = "<C-t>";
+      key = "<C-i>";
       action = ":ToggleTerm<CR>";
       options = {
         desc = "Toggle floating terminal";

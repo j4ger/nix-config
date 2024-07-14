@@ -84,10 +84,12 @@
         "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
         "https://nix-community.cachix.org"
         "https://daeuniverse.cachix.org"
+        "https://devenv.cachix.org"
       ];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "daeuniverse.cachix.org-1:8hRIzkQmAKxeuYY3c/W1I7QbZimYphiPX/E7epYNTeM="
+        "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       ];
     };
     # Opinionated: disable channels
@@ -102,6 +104,9 @@
       dates = "weekly";
       options = "--delete-older-than 2d";
     };
+    extraOptions = ''
+      !include ${config.age.secrets.nix-extra-options.path};
+    '';
   };
 
   # FIXME: Add the rest of your current configuration
