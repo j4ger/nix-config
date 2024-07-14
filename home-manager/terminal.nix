@@ -79,6 +79,7 @@
         ls = "eza";
         top = "btop";
         lg = "lazygit";
+        v = "neovide";
       };
     };
     starship = {

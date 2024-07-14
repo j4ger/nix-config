@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   home = {
     sessionVariables = {
@@ -13,10 +13,13 @@
       Preferences = {
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "media.ffmpeg.vaapi.enabled" = true;
+        "svg.context-properties.content.enabled" = true;
       };
     };
     profiles.default = {
-      userChrome = ( builtins.readFile ./userChrome.css );
+      userChrome = ''
+        @import "${inputs.arcwtf}/userChrome.css";
+      '';
     };
   };
 

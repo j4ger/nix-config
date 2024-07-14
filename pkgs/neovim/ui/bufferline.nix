@@ -6,8 +6,8 @@
         auto_hide = 1;
       };
       keymaps = {
-        next.key = "<Tab>";
-        previous.key = "<S-Tab>";
+        next.key = "<C-Tab>";
+        previous.key = "<C-S-Tab>";
         scrollLeft.key = "<leader>bl";
         scrollRight.key = "<leader>br";
         pick.key = "<leader>bp";

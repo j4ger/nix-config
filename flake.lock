@@ -23,6 +23,22 @@
         "type": "github"
       }
     },
+    "arcwtf": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1720943281,
+        "narHash": "sha256-JzZs0qFaFYaY24o5incgl8u4DGkKASan+b55N+9Jwag=",
+        "owner": "KiKaraage",
+        "repo": "ArcWTF",
+        "rev": "73ccc7bd3c8dd130d67746c413ca5cf6a57a9f72",
+        "type": "github"
+      },
+      "original": {
+        "owner": "KiKaraage",
+        "repo": "ArcWTF",
+        "type": "github"
+      }
+    },
     "daeuniverse": {
       "inputs": {
         "devshell": "devshell",
@@ -697,6 +713,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
+        "arcwtf": "arcwtf",
         "daeuniverse": "daeuniverse",
         "home-manager": "home-manager_2",
         "j4ger-pkgs": "j4ger-pkgs",

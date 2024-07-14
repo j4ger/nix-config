@@ -42,6 +42,12 @@
       # temp fixes
       # inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # arc-wtf
+    arcwtf = {
+      url = "github:KiKaraage/ArcWTF";
+      flake = false;
+    };
   };
 
   # TODO: revert back to flake-parts style to support `nix fmt`
