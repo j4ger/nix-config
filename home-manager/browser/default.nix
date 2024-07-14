@@ -14,6 +14,8 @@
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "media.ffmpeg.vaapi.enabled" = true;
         "svg.context-properties.content.enabled" = true;
+        "uc.tweak.popup-search" = true;
+        "uc.tweak.longer-sidebar" = true;
       };
     };
     profiles.default = {
