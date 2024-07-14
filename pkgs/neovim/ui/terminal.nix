@@ -17,6 +17,15 @@
         silent = true;
       };
     }
+    {
+      mode = "t";
+      key = "<C-o>";
+      action = "<C-\\><C-n>";
+      options = {
+        desc = "Exit terminal mode";
+        silent = true;
+      };
+    }
   ];
 
 }
