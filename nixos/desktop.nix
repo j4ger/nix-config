@@ -43,4 +43,18 @@
       #GLFW_IM_MODULE = "ibus";
     };
   };
+
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5 = {
+      addons = with pkgs; [
+        fcitx5-gtk
+        fcitx5-rime
+        fcitx5-chinese-addons
+        fcitx5-table-extra
+      ];
+      waylandFrontend = true;
+      plasma6Support = true;
+    };
+  };
 }

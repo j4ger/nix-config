@@ -22,6 +22,7 @@
       nur.repos.j4ger.lceda-pro
       kicad
       lutris-unwrapped
+      handbrake
     ];
   };
   programs = {
