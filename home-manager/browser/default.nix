@@ -25,4 +25,5 @@
     };
   };
 
+  programs.chromium.enable = true;
 }
