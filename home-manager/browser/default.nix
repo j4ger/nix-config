@@ -25,5 +25,8 @@
     };
   };
 
-  programs.chromium.enable = true;
+  programs.chromium = {
+    enable = true;
+    commandLineArgs = [ "--enable-wayland-ime" ];
+  };
 }

@@ -16,6 +16,7 @@
 
     servers = {
       clangd.enable = true;
+      cmake.enable = true;
       dartls.enable = true;
       jsonls.enable = true;
       lua-ls.enable = true;
