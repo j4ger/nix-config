@@ -91,6 +91,7 @@
         "daeuniverse.cachix.org-1:8hRIzkQmAKxeuYY3c/W1I7QbZimYphiPX/E7epYNTeM="
         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       ];
+      trusted-users = [ "root" "j4ger" ];
     };
     # Opinionated: disable channels
     channel.enable = false;
