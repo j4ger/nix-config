@@ -20,8 +20,8 @@
 
     # dae for networking
     daeuniverse = {
-      url = "github:daeuniverse/flake.nix";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      url = "github:daeuniverse/flake.nix/unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # nur for few newer packages

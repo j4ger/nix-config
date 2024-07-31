@@ -2,7 +2,6 @@
 {
   home = {
     packages = with pkgs; [
-      bilibili
       thunderbird
       qq
       inkscape
@@ -10,7 +9,7 @@
       kdePackages.konqueror
       haruna
       glaxnimate
-      gimp
+      gimp-with-plugins
       darktable
       libreoffice
       nur.repos.rewine.wps

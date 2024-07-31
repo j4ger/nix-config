@@ -81,7 +81,7 @@
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
       substituters = [
-        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+        "https://mirrors.cernet.edu.cn/nix-channels/store"
         "https://nix-community.cachix.org"
         "https://daeuniverse.cachix.org"
         "https://devenv.cachix.org"
@@ -140,7 +140,7 @@
       initialPassword = "iamthestorm";
       isNormalUser = true;
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = [ "wheel" "video" "audio" "NetworkManager" "libvirtd" ];
+      extraGroups = [ "wheel" "video" "audio" "NetworkManager" "libvirtd" "plugdev" ];
       shell = pkgs.fish;
     };
   };

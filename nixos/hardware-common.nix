@@ -41,6 +41,19 @@
     tlp.enable = true;
     auto-cpufreq.enable = true;
     power-profiles-daemon.enable = false;
+
+    supergfxd.enable = true;
+    asusd = {
+      enable = true;
+      enableUserService = true;
+    };
+
+    udev = {
+      extraRules = ''
+        SUBSYSTEMS=="usb", ATTRS{idVendor}=="303a", ATTRS{idProduct}=="00??", GROUP="plugdev", MODE="0666"
+        SUBSYSTEMS=="usb", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d3", GROUP="plugdev", MODE="0666"
+      '';
+    };
   };
 
   boot = {

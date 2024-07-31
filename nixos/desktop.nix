@@ -1,7 +1,5 @@
 { pkgs, ... }:
 {
-  services.xserver.enable = true;
-
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.defaultSession = "plasma";
@@ -32,6 +30,7 @@
     systemPackages = with pkgs; [
       wl-clipboard
       kdePackages.kwallet-pam
+      supergfxctl-plasmoid
     ];
     variables = {
       NIXOS_OZONE_WL = "1";
