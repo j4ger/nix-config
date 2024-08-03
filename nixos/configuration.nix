@@ -62,6 +62,19 @@
           repoOverrides = { j4ger = import inputs.j4ger-pkgs { pkgs = prev; }; };
         };
       })
+
+      # krohnkite fork
+      (final: prev: {
+        krohnkite = prev.libsForQt5.krohnkite.overrideAttrs (previousAttrs: rec {
+          version = "0.9.7";
+          src = prev.fetchFromGitHub {
+            owner = "anametologin";
+            repo = "krohnkite";
+            rev = version;
+            hash = "sha256-8A3zW5tK8jK9fSxYx28b8uXGsvxEoUYybU0GaMD2LNw=";
+           };
+        });
+      })
     ];
     # Configure your nixpkgs instance
     config = {
@@ -106,7 +119,7 @@
       options = "--delete-older-than 2d";
     };
     extraOptions = ''
-      !include ${config.age.secrets.nix-extra-options.path};
+      !include ${config.age.secrets.nix-extra-options.path}
     '';
   };
 
