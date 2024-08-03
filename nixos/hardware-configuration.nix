@@ -8,9 +8,9 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "usbhid" "uas" "sd_mod" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "usbhid" "uas" "sd_mod" "rtsx_pci_sdmmc" "thunderbolt"];
+  boot.initrd.kernelModules = [ "dm-snapshot" "amdgpu" ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [
     v4l2loopback
   ];
@@ -19,26 +19,52 @@
   '';
 
   boot.initrd.luks.devices = {
-    crypted = {
-      device = "/dev/disk/by-uuid/2b9f77b0-d26f-4dc0-ba36-95a33aacf49c";
+    root = {
+      device = "/dev/disk/by-uuid/bf08bb52-f591-4151-b4e8-69424c32f274";
       preLVM = true;
       allowDiscards = true;
     };
   };
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/76294807-7734-4f6d-84d5-5c92b44fcf6a";
-      fsType = "ext4";
+    { device = "/dev/disk/by-uuid/d275ede6-a94e-43a8-a84b-0c86c508fa06";
+      fsType = "btrfs";
+      options = [ "subvol=root" "compress=zstd" "noatime" ];
+    };
+
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/d275ede6-a94e-43a8-a84b-0c86c508fa06";
+      fsType = "btrfs";
+      options = [ "subvol=home" "compress=zstd" "noatime" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/d275ede6-a94e-43a8-a84b-0c86c508fa06";
+      fsType = "btrfs";
+      options = [ "subvol=nix" "compress=zstd" "noatime" ];
+    };
+
+  fileSystems."/persist" =
+    { device = "/dev/disk/by-uuid/d275ede6-a94e-43a8-a84b-0c86c508fa06";
+      fsType = "btrfs";
+      options = [ "subvol=persist" "compress=zstd" "noatime" ];
+      neededForBoot = true;
+    };
+
+  fileSystems."/var/log" =
+    { device = "/dev/disk/by-uuid/d275ede6-a94e-43a8-a84b-0c86c508fa06";
+      fsType = "btrfs";
+      options = [ "subvol=log" "compress=zstd" "noatime" ];
+      neededForBoot = true;
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/8A5B-EDDF";
+    { device = "/dev/disk/by-uuid/845C-FB1D";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/9724c6a2-ab60-4314-b0fd-40183eb0174a"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/d24e730d-6dbe-4dc1-90dc-87ac56ca3be9"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -52,7 +78,7 @@
 
   hardware.nvidia.prime = {
     offload.enable = true;
-    amdgpuBusId = "PCI:105:0:0";
-    nvidiaBusId = "PCI:1:0:0";
+    amdgpuBusId = "PCI:101:0:0";
+    nvidiaBusId = "PCI:100:0:0";
   };
 }

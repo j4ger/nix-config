@@ -126,7 +126,7 @@
   # FIXME: Add the rest of your current configuration
 
   # TODO: Set your hostname
-  networking.hostName = "v04-x13";
+  networking.hostName = "v04-tx";
 
   time.timeZone = "Asia/Shanghai";
   i18n = {

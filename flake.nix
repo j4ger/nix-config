@@ -96,7 +96,7 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       # FIXME replace with your hostname
-      v04-x13 = nixpkgs.lib.nixosSystem {
+      v04-tx = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs myPackages system;};
         modules = [
           # > Our main nixos configuration file <

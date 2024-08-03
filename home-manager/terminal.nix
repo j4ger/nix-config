@@ -112,10 +112,6 @@
         };
       };
     };
-    gpg = {
-      enable = true;
-      package = pkgs.gnupg;
-    };
     ssh = {
       enable = true;
       extraConfig = ''

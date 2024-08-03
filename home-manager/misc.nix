@@ -9,11 +9,11 @@
       kdePackages.konqueror
       haruna
       glaxnimate
-      gimp-with-plugins
+      #gimp-with-plugins
       darktable
       libreoffice
-      nur.repos.rewine.wps
-      siyuan
+      #nur.repos.rewine.wps
+      #siyuan
       onlyoffice-bin_latest
       super-slicer.beta
       yesplaymusic

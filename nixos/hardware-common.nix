@@ -74,6 +74,7 @@
       verbose = false;
       systemd.enable = true;
     };
+    kernelPackages = pkgs.linuxPackages_latest;
     plymouth = {
       enable = true;
       theme = "spinner";
@@ -86,6 +87,7 @@
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
+      "acpi_backlight=vendor"
     ];
   };
 }

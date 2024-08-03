@@ -30,6 +30,10 @@
       ];
     };
     virt-manager.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
   };
 
   virtualisation = {
