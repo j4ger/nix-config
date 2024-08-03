@@ -38,9 +38,9 @@
       jack.enable = true;
     };
 
-    tlp.enable = true;
-    auto-cpufreq.enable = true;
-    power-profiles-daemon.enable = false;
+    tlp.enable = false; # is said to be incompatible with asus-ctl
+    auto-cpufreq.enable = false; # same as above
+    power-profiles-daemon.enable = true;
 
     supergfxd.enable = true;
     asusd = {
@@ -52,7 +52,7 @@
       extraRules = ''
         SUBSYSTEMS=="usb", ATTRS{idVendor}=="303a", ATTRS{idProduct}=="00??", GROUP="plugdev", MODE="0666"
         SUBSYSTEMS=="usb", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d3", GROUP="plugdev", MODE="0666"
-      '';
+      ''; # CH340
     };
   };
 

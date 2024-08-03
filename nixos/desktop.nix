@@ -33,6 +33,11 @@
       supergfxctl-plasmoid
       kde-rounded-corners
       krohnkite
+      catppuccin-kde
+      qogir-kde
+      layan-kde
+      colloid-kde
+      tela-icon-theme
     ];
     variables = {
       NIXOS_OZONE_WL = "1";
