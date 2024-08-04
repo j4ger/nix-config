@@ -7,6 +7,10 @@
       open = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;
       modesetting.enable = true;
+      powerManagement = {
+        enable = true;
+        finegrained = true;
+      };
     };
     opengl = {
       enable = true;
@@ -20,6 +24,12 @@
         glxinfo
       ];
     };
+    graphics.extraPackages = [
+      pkgs.amdvlk
+    ];
+    graphics.extraPackages32 = [
+      pkgs.driversi686Linux.amdvlk
+    ];
 
     pulseaudio.support32Bit = true;
   };
@@ -88,6 +98,7 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
       "acpi_backlight=vendor"
+      "nvidia.NVreg_EnableGpuFirmware=0"
     ];
   };
 }
