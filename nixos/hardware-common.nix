@@ -12,7 +12,7 @@
         finegrained = true;
       };
     };
-    opengl = {
+    graphics = {
       enable = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
@@ -22,15 +22,13 @@
         libva
         libva-utils
         glxinfo
+        amdvlk
+      ];
+      extraPackages32 = [
+        pkgs.driversi686Linux.amdvlk
       ];
     };
-    graphics.extraPackages = [
-      pkgs.amdvlk
-    ];
-    graphics.extraPackages32 = [
-      pkgs.driversi686Linux.amdvlk
-    ];
-
+    
     pulseaudio.support32Bit = true;
   };
   environment = {

@@ -20,6 +20,7 @@
     ./neovim
     ./misc.nix
     ./terminal.nix
+    ./gestures.nix
 
     inputs.plasma-manager.homeManagerModules.plasma-manager
   ];

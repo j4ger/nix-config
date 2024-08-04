@@ -5,7 +5,7 @@
 {
   plugins.better-escape = {
     enable = true;
-    timeout = 100;
+    settings.timeout = 500;
   };
 
   plugins.nvim-autopairs = {

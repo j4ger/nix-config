@@ -34,6 +34,9 @@
       enable = true;
       enableSSHSupport = true;
     };
+    ydotool = {
+      enable = true;
+    };
   };
 
   virtualisation = {
