@@ -16,9 +16,11 @@
       pinch = {
         "in" = {
           command = "${pkgs.ydotool}/bin/ydotool key 29:1 17:1 17:0 29:0";
+          threshold = 0.6;
         };
         "out" = {
           command = "${pkgs.ydotool}/bin/ydotool key 29:1 20:1 20:0 29:0";
+          threshold = 0.6;
         };
       };
     };
