@@ -31,8 +31,7 @@
       wl-clipboard
       kdePackages.kwallet-pam
       supergfxctl-plasmoid
-      kde-rounded-corners
-      krohnkite
+      libsForQt5.polonium
     ];
     variables = {
       NIXOS_OZONE_WL = "1";

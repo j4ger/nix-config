@@ -17,8 +17,9 @@
 
     ./browser
     ./ime
-    ./neovim
     ./misc.nix
+    ./neovim
+    ./plasma.nix
     ./terminal.nix
     ./gestures.nix
 

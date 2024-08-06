@@ -40,20 +40,6 @@
   nixpkgs = {
     # You can add overlays here
     overlays = [
-      # Add overlays your own flake exports (from overlays and pkgs dir):
-      outputs.overlays.additions
-      outputs.overlays.modifications
-
-      # You can also add overlays exported from other flakes:
-      # neovim-nightly-overlay.overlays.default
-
-      # Or define it inline, for example:
-      # (final: prev: {
-      #   hi = final.hello.overrideAttrs (oldAttrs: {
-      #     patches = [ ./change-hello-to-hi.patch ];
-      #   });
-      # })
-
       # nur
       (final: prev: {
         nur = import inputs.nur {
@@ -61,19 +47,6 @@
           pkgs = prev;
           repoOverrides = { j4ger = import inputs.j4ger-pkgs { pkgs = prev; }; };
         };
-      })
-
-      # krohnkite fork
-      (final: prev: {
-        krohnkite = prev.libsForQt5.krohnkite.overrideAttrs (previousAttrs: rec {
-          version = "0.9.7";
-          src = prev.fetchFromGitHub {
-            owner = "anametologin";
-            repo = "krohnkite";
-            rev = version;
-            hash = "sha256-8A3zW5tK8jK9fSxYx28b8uXGsvxEoUYybU0GaMD2LNw=";
-           };
-        });
       })
     ];
     # Configure your nixpkgs instance

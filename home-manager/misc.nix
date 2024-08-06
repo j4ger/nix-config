@@ -12,8 +12,8 @@
       #gimp-with-plugins
       darktable
       libreoffice
-      #nur.repos.rewine.wps
-      #siyuan
+      wpsoffice-cn
+      siyuan
       onlyoffice-bin_latest
       super-slicer.beta
       yesplaymusic
@@ -22,6 +22,8 @@
       kicad-small
       lutris-unwrapped
       handbrake
+      krita
+      wiliwili
     ];
   };
   programs = {
