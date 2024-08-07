@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, lib, ... }:
 {
   hardware = {
     bluetooth.enable = true;
@@ -32,6 +32,7 @@
   environment = {
     systemPackages = with pkgs; [
       linux-firmware
+      sbctl
     ];
   };
 
@@ -66,14 +67,18 @@
     bootspec.enable = true;
     loader = {
       systemd-boot = {
-          enable = true;
-          consoleMode = "auto";
-        };
-      efi = {
+        enable = lib.mkForce false; # for lanzaboote
+        #consoleMode = "auto";
+      };
+    efi = {
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";
       };
       timeout = 3;
+    };
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/etc/secureboot";
     };
     consoleLogLevel = 0;
     initrd = {

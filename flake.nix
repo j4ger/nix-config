@@ -55,6 +55,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    # lanzaboote
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # TODO: revert back to flake-parts style to support `nix fmt`
@@ -104,6 +110,8 @@
           inputs.agenix.nixosModules.default
           inputs.daeuniverse.nixosModules.dae
           inputs.daeuniverse.nixosModules.daed
+
+          inputs.lanzaboote.nixosModules.lanzaboote
         ];
       };
     };
