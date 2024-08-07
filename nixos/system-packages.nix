@@ -37,6 +37,12 @@
     ydotool = {
       enable = true;
     };
+    evolution = {
+      enable = true;
+      plugins = [
+        pkgs.evolution-ews
+      ];
+    };
   };
 
   virtualisation = {
