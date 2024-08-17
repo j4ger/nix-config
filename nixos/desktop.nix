@@ -31,7 +31,7 @@
       wl-clipboard
       kdePackages.kwallet-pam
       supergfxctl-plasmoid
-      libsForQt5.polonium
+      polonium
     ];
     variables = {
       NIXOS_OZONE_WL = "1";

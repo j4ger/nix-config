@@ -39,8 +39,7 @@
     # nixvim
     nixvim = {
       url = "github:nix-community/nixvim";
-      # temp fixes
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # arc-wtf

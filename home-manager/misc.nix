@@ -24,6 +24,8 @@
       handbrake
       krita
       wiliwili
+      bruno
+      appflowy
     ];
   };
   programs = {

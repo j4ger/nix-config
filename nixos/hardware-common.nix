@@ -100,6 +100,9 @@
       "udev.log_priority=3"
       "acpi_backlight=vendor"
       "nvidia.NVreg_EnableGpuFirmware=0"
+      "acpi_backlight=native"
+      "nvidia.NVreg_EnableBacklightHandler=0"
+      "nvidia.NVreg_RegistryDwords=EnableBrightnessControl=0"
     ];
   };
 }
