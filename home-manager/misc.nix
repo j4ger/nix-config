@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, system,... }:
 {
   home = {
     packages = with pkgs; [
@@ -13,7 +13,7 @@
       darktable
       libreoffice
       wpsoffice-cn
-      siyuan
+      inputs.j4ger-pkgs.packages."${system}".siyuan
       onlyoffice-bin_latest
       super-slicer.beta
       yesplaymusic
