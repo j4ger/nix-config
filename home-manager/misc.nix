@@ -26,6 +26,7 @@
       wiliwili
       bruno
       appflowy
+      feishu
     ];
   };
   programs = {

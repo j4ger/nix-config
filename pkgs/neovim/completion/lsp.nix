@@ -19,6 +19,7 @@
       cmake.enable = true;
       dartls.enable = true;
       jsonls.enable = true;
+      kotlin-language-server.enable = true;
       lua-ls.enable = true;
       nil-ls.enable = true;
       nixd.enable = true;
