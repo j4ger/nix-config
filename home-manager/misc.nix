@@ -27,6 +27,7 @@
       bruno
       appflowy
       feishu
+      wechat-uos
     ];
   };
   programs = {

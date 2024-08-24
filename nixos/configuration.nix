@@ -53,6 +53,11 @@
     config = {
       # FIXME: somehow this is ignored by home-manager
       allowUnfree = true;
+
+      # FIXME: wechat-uos still depends on this
+      permittedInsecurePackages = [
+        "openssl-1.1.1w"
+      ];
     };
   };
 
