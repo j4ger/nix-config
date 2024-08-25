@@ -18,6 +18,7 @@
   ];
 
   programs = {
+    adb.enable = true;
     nix-ld.enable = true;
     fish.enable = true;
     steam = {

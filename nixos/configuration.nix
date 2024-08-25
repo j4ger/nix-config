@@ -131,7 +131,7 @@
       initialPassword = "iamthestorm";
       isNormalUser = true;
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = [ "wheel" "video" "audio" "NetworkManager" "libvirtd" "plugdev" "ydotool" "input" ];
+      extraGroups = [ "wheel" "video" "audio" "NetworkManager" "libvirtd" "plugdev" "ydotool" "input" "kvm" "adbusers" ];
       shell = pkgs.fish;
     };
   };
