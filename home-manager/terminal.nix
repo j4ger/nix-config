@@ -1,9 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, inputs, system, ... }:
 {
   home.sessionVariables.TERMINAL = "alacritty";
   home.packages = with pkgs; [
     libnotify
     devenv
+    devbox
+    inputs.flox.packages.${system}.flox
     fd
     bat
     ripgrep

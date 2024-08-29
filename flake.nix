@@ -60,6 +60,11 @@
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # flox
+    flox = {
+      url = "github:flox/flox";
+    };
   };
 
   # TODO: revert back to flake-parts style to support `nix fmt`

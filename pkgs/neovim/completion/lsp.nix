@@ -29,6 +29,7 @@
       taplo.enable = true;
       # FIXME: temp fix
       typst-lsp.enable = false;
+      svelte.enable = true;
       yamlls.enable = true;
     };
   };

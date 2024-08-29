@@ -13,21 +13,22 @@
       darktable
       libreoffice
       wpsoffice-cn
-      inputs.j4ger-pkgs.packages."${system}".siyuan
+      inputs.j4ger-pkgs.packages.${system}.siyuan
       onlyoffice-bin_latest
       super-slicer.beta
       yesplaymusic
       nur.repos.linyinfeng.wemeet
-      nur.repos.j4ger.lceda-pro
+      #inputs.j4ger-pkgs.packages.${system}.lceda-pro
       kicad-small
       lutris-unwrapped
       handbrake
       krita
       wiliwili
       bruno
-      appflowy
       feishu
       wechat-uos
+      android-studio
+      zoom-us
     ];
   };
   programs = {
