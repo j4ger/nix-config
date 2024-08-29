@@ -17,6 +17,11 @@
         "<leader>fr" = "registers";
         "<leader>fk" = "keymaps";
       };
+      settings = {
+        files = {
+          cmd = "rg --files";
+        };
+      };
     };
 
     oil = {
