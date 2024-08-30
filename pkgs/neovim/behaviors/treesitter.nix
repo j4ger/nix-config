@@ -1,4 +1,5 @@
-{
+{ pkgs, ... }
+:{
   plugins.treesitter = {
     enable = true;
     nixvimInjections = true;
@@ -14,7 +15,12 @@
           scope_incremental = "<C-S-Right>";
         };
       };
+
+      auto_install = true;
+      highlight.enable = true;
     };
+
+    grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars;
   };
 
   plugins.treesitter-context = {
