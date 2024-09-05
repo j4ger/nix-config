@@ -6,6 +6,7 @@
       qq
       inkscape
       kdePackages.kdenlive
+      audacity
       kdePackages.konqueror
       haruna
       glaxnimate
