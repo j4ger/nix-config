@@ -15,6 +15,7 @@
     comma
     protontricks
     mangohud
+    virtiofsd
   ];
 
   programs = {
