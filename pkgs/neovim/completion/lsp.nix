@@ -27,9 +27,8 @@
       ruff.enable = true;
       ruff-lsp.enable = true;
       taplo.enable = true;
-      tsserver.enable = true;
-      # FIXME: temp fix
-      typst-lsp.enable = false;
+      ts-ls.enable = true;
+      typst-lsp.enable = true;
       svelte.enable = true;
       yamlls.enable = true;
     };
