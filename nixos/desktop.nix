@@ -32,6 +32,7 @@
       kdePackages.kwallet-pam
       supergfxctl-plasmoid
       polonium
+      kdePackages.krohnkite
     ];
     variables = {
       NIXOS_OZONE_WL = "1";
