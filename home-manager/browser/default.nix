@@ -4,6 +4,7 @@
     sessionVariables = {
       BROWSER = "firefox";
       #MOZ_ENABLE_WAYLAND = "1";
+      EDITOR = "nvim";
     };
   };
   programs.firefox = {

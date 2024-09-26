@@ -10,6 +10,7 @@
     bat
     ripgrep
     chafa
+    micro
   ];
   programs = {
     alacritty = {

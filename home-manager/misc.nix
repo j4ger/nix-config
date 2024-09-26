@@ -2,7 +2,6 @@
 {
   home = {
     packages = with pkgs; [
-      thunderbird
       qq
       inkscape
       kdePackages.kdenlive
@@ -10,7 +9,7 @@
       kdePackages.konqueror
       haruna
       glaxnimate
-      #gimp-with-plugins
+      gimp-with-plugins
       darktable
       libreoffice
       wpsoffice-cn
