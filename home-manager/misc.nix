@@ -30,6 +30,7 @@
       wechat-uos
       android-studio
       zoom-us
+      vmware-horizon-client
     ];
   };
   programs = {
