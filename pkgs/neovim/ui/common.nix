@@ -19,7 +19,7 @@
       vim.g.neovide_floating_z_height = 10
       vim.g.neovide_light_angle_degrees = 45
       vim.g.neovide_light_radius = 5
-      vim.g.neovide_transparency = 0.7
+      vim.g.neovide_transparency = 0.4
       vim.g.neovide_hide_mouse_when_typing = true
     end
   '';
