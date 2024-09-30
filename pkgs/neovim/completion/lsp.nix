@@ -37,4 +37,17 @@
   plugins.lsp-format = {
     enable = true;
   };
+
+  plugins.trouble = {
+    enable = true;
+  };
+
+  keymaps = [
+    {
+      mode = "n";
+      key = "gD";
+      action = "<cmd>Trouble diagnostics toggle<CR>";
+      options.desc = "Open Trouble Diagnostics";
+    }
+  ];
 }

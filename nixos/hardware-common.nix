@@ -86,7 +86,7 @@
       verbose = false;
       systemd.enable = true;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_xanmod_stable;
     plymouth = {
       enable = true;
       theme = "spinner";
