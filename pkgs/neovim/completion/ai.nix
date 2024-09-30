@@ -22,43 +22,43 @@
     {
         mode = "n";
         key = "ma";
-        action = "require('copilot.panel').accept()";
+        action = ":lua require('copilot.panel').accept()<CR>";
         options.desc = "Accept Copilot Edit";
     }
     {
         mode = "n";
         key = "mt";
-        action = "require('copilot.suggestion').toggle_auto_trigger()";
+        action = ":lua require('copilot.suggestion').toggle_auto_trigger()<CR>";
         options.desc = "Toggle Copilot AutoTrigger";
     }
     {
         mode = "n";
         key = "md";
-        action = "require('copilot.suggestion').dismiss()";
+        action = ":lua require('copilot.suggestion').dismiss()<CR>";
         options.desc = "Dismiss Copilot";
     }
     {
         mode = "n";
         key = "ml";
-        action = "require('copilot.suggestion').accept_line()";
+        action = ":lua require('copilot.suggestion').accept_line()<CR>";
         options.desc = "Accept Copilot Line Edit";
     }
     {
         mode = "n";
         key = "mw";
-        action = "require('copilot.suggestion').accept_word()";
+        action = ":lua require('copilot.suggestion').accept_word()<CR>";
         options.desc = "Accept Copilot Line Edit";
     }
     {
         mode = "n";
         key = "m]";
-        action = "require('copilot.suggestion').next()";
+        action = ":lua require('copilot.suggestion').next()<CR>";
         options.desc = "Accept Copilot Line Edit";
     }
     {
         mode = "n";
         key = "m[";
-        action = "require('copilot.suggestion').prev()";
+        action = ":lua require('copilot.suggestion').prev()<CR>";
         options.desc = "Accept Copilot Line Edit";
     }
   ]; 

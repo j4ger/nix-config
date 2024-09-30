@@ -157,7 +157,7 @@ in
           keymap = [
             "n"
             "s"
-            ":lua require('persistence').load()<cr>"
+            ":lua require('persistence').load()<CR>"
             {
               noremap = true;
               silent = true;
