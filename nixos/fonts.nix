@@ -19,6 +19,7 @@
       source-han-serif
       source-han-mono
       (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "JetBrainsMono" ]; })
+      fira-math
       twemoji-color-font
       corefonts
       vistafonts

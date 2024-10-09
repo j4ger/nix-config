@@ -20,10 +20,10 @@
         libva
         libva-utils
         glxinfo
-        amdvlk
+        # amdvlk
       ];
       extraPackages32 = [
-        pkgs.driversi686Linux.amdvlk
+        # pkgs.driversi686Linux.amdvlk
       ];
     };
     

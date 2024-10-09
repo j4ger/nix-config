@@ -30,6 +30,7 @@
       android-studio
       zoom-us
       vmware-horizon-client
+      rnote
     ];
   };
   programs = {
