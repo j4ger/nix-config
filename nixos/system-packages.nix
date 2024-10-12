@@ -16,6 +16,7 @@
     protontricks
     mangohud
     virtiofsd
+    podman-compose
   ];
 
   programs = {

@@ -11,7 +11,6 @@
     ripgrep
     chafa
     micro
-    ollama-cuda
     dust
   ];
   programs = {
