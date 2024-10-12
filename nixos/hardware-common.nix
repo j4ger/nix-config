@@ -3,6 +3,7 @@
   hardware = {
     bluetooth.enable = true;
 
+    nvidia-container-toolkit.enable = true;
     nvidia = {
       open = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;
