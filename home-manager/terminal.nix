@@ -12,6 +12,7 @@
     chafa
     micro
     dust
+    qrcp
   ];
   programs = {
     alacritty = {

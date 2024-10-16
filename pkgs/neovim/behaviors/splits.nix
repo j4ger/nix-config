@@ -12,7 +12,7 @@
     }
     {
         mode = "n";
-        key = "<C-h>";
+        key = "<C-j>";
         action = "<C-w>j";
         options.desc = "Move to below split";
     }

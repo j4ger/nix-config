@@ -21,7 +21,7 @@
     }
     {
         mode = "n";
-        key = "<A-a>";
+        key = "<C-a>";
         action = ":lua require('copilot.panel').accept()<CR>";
         options.desc = "Accept Copilot Edit";
     }
@@ -33,31 +33,31 @@
     }
     {
         mode = "n";
-        key = "<A-d>";
+        key = "<C-D>";
         action = ":lua require('copilot.suggestion').dismiss()<CR>";
         options.desc = "Dismiss Copilot";
     }
     {
         mode = "n";
-        key = "<A-l>";
+        key = "<C-e>";
         action = ":lua require('copilot.suggestion').accept_line()<CR>";
         options.desc = "Accept Copilot Line Edit";
     }
     {
         mode = "n";
-        key = "<A-w>";
+        key = "<C-i>";
         action = ":lua require('copilot.suggestion').accept_word()<CR>";
         options.desc = "Accept Copilot Word Edit";
     }
     {
         mode = "n";
-        key = "<A-]>";
+        key = "<C-]>";
         action = ":lua require('copilot.suggestion').next()<CR>";
         options.desc = "Copilot Next Suggestion";
     }
     {
         mode = "n";
-        key = "<A-[>";
+        key = "<C-[>";
         action = ":lua require('copilot.suggestion').prev()<CR>";
         options.desc = "Copilot Previous Suggestion";
     }
