@@ -31,6 +31,7 @@
       zoom-us
       vmware-horizon-client
       rnote
+      gpt4all-cuda
     ];
   };
   programs = {

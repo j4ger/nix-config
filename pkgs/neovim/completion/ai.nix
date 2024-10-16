@@ -15,49 +15,49 @@
   keymaps = [
     {
         mode = "n";
-        key = "mo";
+        key = "qo";
         action = ":Copilot panel<CR>";
         options.desc = "Open Copilot Panel";
     }
     {
         mode = "n";
-        key = "ma";
+        key = "qa";
         action = ":lua require('copilot.panel').accept()<CR>";
         options.desc = "Accept Copilot Edit";
     }
     {
         mode = "n";
-        key = "mt";
+        key = "qt";
         action = ":lua require('copilot.suggestion').toggle_auto_trigger()<CR>";
         options.desc = "Toggle Copilot AutoTrigger";
     }
     {
         mode = "n";
-        key = "md";
+        key = "qd";
         action = ":lua require('copilot.suggestion').dismiss()<CR>";
         options.desc = "Dismiss Copilot";
     }
     {
         mode = "n";
-        key = "ml";
+        key = "ql";
         action = ":lua require('copilot.suggestion').accept_line()<CR>";
         options.desc = "Accept Copilot Line Edit";
     }
     {
         mode = "n";
-        key = "mw";
+        key = "qw";
         action = ":lua require('copilot.suggestion').accept_word()<CR>";
         options.desc = "Accept Copilot Line Edit";
     }
     {
         mode = "n";
-        key = "m]";
+        key = "q]";
         action = ":lua require('copilot.suggestion').next()<CR>";
         options.desc = "Accept Copilot Line Edit";
     }
     {
         mode = "n";
-        key = "m[";
+        key = "q[";
         action = ":lua require('copilot.suggestion').prev()<CR>";
         options.desc = "Accept Copilot Line Edit";
     }

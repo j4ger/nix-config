@@ -1,7 +1,15 @@
 { pkgs, config, lib, ... }:
 {
   hardware = {
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+          Experimental = true;
+        };
+      };
+    };
 
     nvidia-container-toolkit.enable = true;
     nvidia = {
@@ -28,7 +36,10 @@
       ];
     };
     
-    pulseaudio.support32Bit = true;
+    pulseaudio = {
+      support32Bit = true;
+      package = pkgs.pulseaudioFull;
+    };
   };
   environment = {
     systemPackages = with pkgs; [
@@ -87,7 +98,7 @@
       verbose = false;
       systemd.enable = true;
     };
-    kernelPackages = pkgs.linuxPackages_xanmod_stable;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
     plymouth = {
       enable = true;
       theme = "spinner";

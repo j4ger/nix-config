@@ -12,7 +12,7 @@
     enable = true;
   };
 
-  plugins.surround = {
+  plugins.nvim-surround = {
     enable = true;
   };
 
