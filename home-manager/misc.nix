@@ -32,6 +32,7 @@
       vmware-horizon-client
       rnote
       gpt4all-cuda
+      livecaptions
     ];
   };
   programs = {

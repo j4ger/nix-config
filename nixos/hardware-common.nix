@@ -112,6 +112,7 @@
       "rd.udev.log_level=3"
       "udev.log_priority=3"
       "nvidia.NVreg_EnableGpuFirmware=0"
+      "amd_iommu=on"
       #      "acpi_backlight=native"
       #      "nvidia.NVreg_EnableBacklightHandler=0"
       #      "nvidia.NVreg_RegistryDwords=EnableBrightnessControl=0"
