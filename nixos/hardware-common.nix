@@ -35,11 +35,6 @@
         # pkgs.driversi686Linux.amdvlk
       ];
     };
-    
-    pulseaudio = {
-      support32Bit = true;
-      package = pkgs.pulseaudioFull;
-    };
   };
   environment = {
     systemPackages = with pkgs; [
@@ -55,6 +50,11 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       jack.enable = true;
+      wireplumber.extraConfig."11-bluetooth-policy" = {
+        "wireplumber.settings" = {
+          "bluetooth.autoswitch-to-headset-profile" = false;
+        };
+      };
     };
 
     tlp.enable = false; # is said to be incompatible with asus-ctl

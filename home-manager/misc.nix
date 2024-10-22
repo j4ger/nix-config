@@ -19,7 +19,8 @@
       yesplaymusic
       nur.repos.linyinfeng.wemeet
       #inputs.j4ger-pkgs.packages.${system}.lceda-pro
-      kicad-small
+      # FIXME: temp fix
+      # kicad-small
       lutris-unwrapped
       handbrake
       krita

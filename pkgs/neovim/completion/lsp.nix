@@ -17,7 +17,9 @@
     servers = {
       clangd.enable = true;
       cmake.enable = true;
+      cssls.enable = true;
       dartls.enable = true;
+      html.enable = true;
       jsonls.enable = true;
       kotlin-language-server.enable = true;
       lua-ls.enable = true;
