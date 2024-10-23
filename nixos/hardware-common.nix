@@ -98,7 +98,7 @@
       verbose = false;
       systemd.enable = true;
     };
-    kernelPackages = pkgs.linuxPackages_xanmod_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     plymouth = {
       enable = true;
       theme = "spinner";
@@ -113,6 +113,8 @@
       "udev.log_priority=3"
       "nvidia.NVreg_EnableGpuFirmware=0"
       "amd_iommu=on"
+      "amdgpu.dcdebugmask=0x10"
+      "amdgpu.sg_display=0"
       #      "acpi_backlight=native"
       #      "nvidia.NVreg_EnableBacklightHandler=0"
       #      "nvidia.NVreg_RegistryDwords=EnableBrightnessControl=0"
