@@ -33,6 +33,7 @@
       vmware-horizon-client
       rnote
       livecaptions
+      pods
     ];
   };
   programs = {
