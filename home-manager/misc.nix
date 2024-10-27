@@ -13,7 +13,7 @@
       darktable
       libreoffice
       wpsoffice-cn
-      inputs.j4ger-pkgs.packages.${system}.siyuan
+      siyuan
       onlyoffice-bin_latest
       super-slicer.beta
       yesplaymusic
@@ -32,7 +32,6 @@
       zoom-us
       vmware-horizon-client
       rnote
-      gpt4all-cuda
       livecaptions
     ];
   };

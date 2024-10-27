@@ -113,7 +113,9 @@
     nixosConfigurations = {
       # FIXME replace with your hostname
       v04-tx = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs myPackages system;};
+        specialArgs = {
+          inherit inputs outputs myPackages system;
+        };
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix

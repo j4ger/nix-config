@@ -19,7 +19,6 @@
     ./ime
     ./misc.nix
     ./neovim
-    ./plasma.nix
     ./terminal.nix
     ./gestures.nix
 
