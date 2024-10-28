@@ -1,0 +1,7 @@
+{
+  filetype = {
+    extension = {
+      "slint" = "slint";
+    };
+  };
+}
