@@ -34,6 +34,7 @@
       rnote
       livecaptions
       pods
+      qalculate-qt
     ];
   };
   programs = {

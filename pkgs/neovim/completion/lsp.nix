@@ -27,7 +27,6 @@
       nil_ls.enable = true;
       nixd.enable = true;
       pylyzer.enable = true;
-      qmlls.enable = true;
       ruff.enable = true;
       ruff_lsp.enable = true;
       slint_lsp.enable = true;
