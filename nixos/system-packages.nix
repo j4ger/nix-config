@@ -53,6 +53,12 @@
     };
   };
 
+  services.sunshine = {
+    enable = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
+
   virtualisation = {
     podman = {
       enable = true;
@@ -67,11 +73,11 @@
     spiceUSBRedirection.enable = true;
   };
   systemd.tmpfiles.rules = [
-    "f /dev/shm/looking-glass 0660 j4ger qemu-libvirtd -"
+    #    "f /dev/shm/looking-glass 0660 j4ger qemu-libvirtd -"
     "f /dev/shm/scream 0660 alex qemu-libvirtd -"
   ];
   systemd.user.services.scream-ivshmem = {
-    enable = true;
+    enable = false;
     description = "Scream IVSHMEM";
     serviceConfig = {
       ExecStart = "${pkgs.scream}/bin/scream-ivshmem-pulse /dev/shm/scream";
