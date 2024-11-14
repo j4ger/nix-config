@@ -35,6 +35,8 @@
       livecaptions
       pods
       qalculate-qt
+      drawio
+      marktext
     ];
   };
   programs = {
