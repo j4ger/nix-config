@@ -37,6 +37,7 @@
       qalculate-qt
       drawio
       marktext
+      vial
     ];
   };
   programs = {
