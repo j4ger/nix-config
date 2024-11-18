@@ -71,6 +71,11 @@
       url = "github:mrcjkb/rustaceanvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser = {
+      url = "github:MarceColl/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # TODO: revert back to flake-parts style to support `nix fmt`

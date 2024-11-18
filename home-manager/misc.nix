@@ -38,6 +38,7 @@
       drawio
       marktext
       vial
+      inputs.zen-browser.packages.${system}.specific
     ];
   };
   programs = {

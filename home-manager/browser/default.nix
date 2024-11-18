@@ -2,7 +2,7 @@
 {
   home = {
     sessionVariables = {
-      BROWSER = "firefox";
+      BROWSER = "zen";
       #MOZ_ENABLE_WAYLAND = "1";
       EDITOR = "nvim";
       GDK_BACKEND = "wayland,x11";
