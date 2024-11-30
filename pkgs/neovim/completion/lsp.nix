@@ -28,7 +28,6 @@
       nixd.enable = true;
       pylyzer.enable = true;
       ruff.enable = true;
-      ruff_lsp.enable = true;
       slint_lsp.enable = true;
       svelte.enable = true;
       taplo.enable = true;
