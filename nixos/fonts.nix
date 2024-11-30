@@ -18,7 +18,9 @@
       source-han-sans
       source-han-serif
       source-han-mono
-      (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "JetBrainsMono" ]; })
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.droid-sans-mono
       fira-math
       twemoji-color-font
       corefonts

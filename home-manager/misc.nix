@@ -15,7 +15,7 @@
       wpsoffice-cn
       siyuan
       onlyoffice-bin_latest
-      super-slicer.beta
+      # super-slicer.latest
       yesplaymusic
       nur.repos.linyinfeng.wemeet
       #inputs.j4ger-pkgs.packages.${system}.lceda-pro
@@ -25,7 +25,6 @@
       handbrake
       krita
       wiliwili
-      bruno
       feishu
       wechat-uos
       android-studio

@@ -20,7 +20,7 @@
 
     # dae for networking
     daeuniverse = {
-      url = "github:daeuniverse/flake.nix/unstable";
+      url = "github:daeuniverse/flake.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -83,7 +83,6 @@
   outputs = {
     self,
     nixpkgs,
-    home-manager,
     ...
   } @ inputs: let
     inherit (self) outputs;

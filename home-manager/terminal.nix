@@ -13,6 +13,7 @@
     micro
     dust
     qrcp
+    termscp
   ];
   programs = {
     alacritty = {
