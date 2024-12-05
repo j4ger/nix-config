@@ -23,11 +23,8 @@
       # kicad-small
       lutris-unwrapped
       handbrake
-      krita
       wiliwili
-      feishu
       wechat-uos
-      android-studio
       zoom-us
       vmware-horizon-client
       rnote
@@ -38,6 +35,7 @@
       marktext
       vial
       inputs.zen-browser.packages.${system}.specific
+      mihomo-party
     ];
   };
   programs = {

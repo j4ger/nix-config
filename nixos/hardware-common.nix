@@ -1,6 +1,7 @@
 { pkgs, config, lib, ... }:
 {
   hardware = {
+    opentabletdriver.enable = false;
     bluetooth = {
       enable = true;
       settings = {

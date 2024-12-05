@@ -19,15 +19,14 @@
     };
 
     # dae for networking
-    daeuniverse = {
-      url = "github:daeuniverse/flake.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+     daeuniverse = {
+       url = "github:daeuniverse/flake.nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+     };
 
     # nur for few newer packages
     nur = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # my packages
