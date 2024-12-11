@@ -35,7 +35,6 @@
       marktext
       vial
       inputs.zen-browser.packages.${system}.specific
-      mihomo-party
     ];
   };
   programs = {

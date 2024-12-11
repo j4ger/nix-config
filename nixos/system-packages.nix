@@ -15,11 +15,11 @@
     comma
     protontricks
     mangohud
-    virtiofsd
     podman-compose
     bottles
-    looking-glass-client
-    scream
+    virtiofsd
+    # looking-glass-client
+    # scream
   ];
 
   programs = {
@@ -72,18 +72,21 @@
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
   };
-  systemd.tmpfiles.rules = [
-    #    "f /dev/shm/looking-glass 0660 j4ger qemu-libvirtd -"
-    "f /dev/shm/scream 0660 alex qemu-libvirtd -"
-  ];
-  systemd.user.services.scream-ivshmem = {
-    enable = false;
-    description = "Scream IVSHMEM";
-    serviceConfig = {
-      ExecStart = "${pkgs.scream}/bin/scream-ivshmem-pulse /dev/shm/scream";
-      Restart = "always";
-    };
-    wantedBy = [ "multi-user.target" ];
-    requires = [ "pulseaudio.service" ];
-  };
+  # systemd.tmpfiles.rules = [
+  #   #    "f /dev/shm/looking-glass 0660 j4ger qemu-libvirtd -"
+  #   "f /dev/shm/scream 0660 j4ger qemu-libvirtd -"
+  # ];
+  # systemd.user.services.scream-ivshmem = {
+  #   enable = false;
+  #   description = "Scream IVSHMEM";
+  #   serviceConfig = {
+  #     ExecStart = "${pkgs.scream}/bin/scream-ivshmem-pulse /dev/shm/scream";
+  #     Restart = "always";
+  #   };
+  #   wantedBy = [ "multi-user.target" ];
+  #   requires = [ "pulseaudio.service" ];
+  # };
+
+  services.flatpak.enable = true;
+
 }

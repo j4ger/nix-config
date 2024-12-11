@@ -32,7 +32,7 @@
       svelte.enable = true;
       taplo.enable = true;
       ts_ls.enable = true;
-      typst_lsp.enable = true;
+      tinymist.enable = true;
       verible.enable = true;
       yamlls.enable = true;
     };

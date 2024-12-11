@@ -11,6 +11,17 @@
         dap = {
           autoloadConfigurations = true;
         };
+        server = {
+          default_settings = {
+            rust-analyzer = {
+              cargo = {
+                allFeatures = true;
+                loadOutDirsFromCheck = true;
+                runBuildScripts = true;
+              };
+            };
+          };
+        };
         tools = {
           executor = "toggleterm";
           onInitialized =
