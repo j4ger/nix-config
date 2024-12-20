@@ -100,7 +100,7 @@
       verbose = false;
       systemd.enable = true;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages;
     plymouth = {
       enable = true;
       theme = "spinner";

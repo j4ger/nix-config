@@ -19,7 +19,7 @@
       cmake.enable = true;
       cssls.enable = true;
       dartls.enable = true;
-      emmet_language_server.enable = true;
+      elixirls.enable = true;
       html.enable = true;
       jsonls.enable = true;
       kotlin_language_server.enable = true;

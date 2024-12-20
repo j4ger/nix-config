@@ -9,7 +9,6 @@
     unzip
     zip
     xdg-utils
-    killall
     appimage-run
     nh
     comma
@@ -17,7 +16,7 @@
     mangohud
     podman-compose
     bottles
-    virtiofsd
+    # virtiofsd
     # looking-glass-client
     # scream
   ];
@@ -87,6 +86,6 @@
   #   requires = [ "pulseaudio.service" ];
   # };
 
-  services.flatpak.enable = true;
+  services.flatpak.enable = false;
 
 }

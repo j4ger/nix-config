@@ -12,11 +12,12 @@
       gimp-with-plugins
       darktable
       libreoffice
-      wpsoffice-cn
+      # wpsoffice-cn
       siyuan
-      onlyoffice-bin_latest
+      # onlyoffice-bin_latest
       # super-slicer.latest
-      yesplaymusic
+      # yesplaymusic
+      go-musicfox
       nur.repos.linyinfeng.wemeet
       #inputs.j4ger-pkgs.packages.${system}.lceda-pro
       # FIXME: temp fix
@@ -35,6 +36,7 @@
       marktext
       vial
       inputs.zen-browser.packages.${system}.specific
+      sioyek
     ];
   };
   programs = {
@@ -50,7 +52,6 @@
       };
     };
     obs-studio.enable = true;
-    zathura.enable = true;
   };
 
   dconf.settings = {
