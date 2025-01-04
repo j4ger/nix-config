@@ -88,6 +88,7 @@
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
       substituters = [
+        "https://mirrors.ustc.edu.cn/nix-channels/store"
         #        "https://mirrors.cernet.edu.cn/nix-channels/store"
         "https://cache.garnix.io"
         "https://nix-community.cachix.org"

@@ -8,8 +8,8 @@
       audacity
       kdePackages.konqueror
       haruna
-      glaxnimate
-      gimp-with-plugins
+      # glaxnimate
+      # gimp
       darktable
       libreoffice
       # wpsoffice-cn
@@ -22,11 +22,11 @@
       #inputs.j4ger-pkgs.packages.${system}.lceda-pro
       # FIXME: temp fix
       # kicad-small
-      lutris-unwrapped
+      # lutris-unwrapped
       handbrake
       wiliwili
       wechat-uos
-      zoom-us
+      # zoom-us
       vmware-horizon-client
       rnote
       livecaptions
@@ -37,6 +37,7 @@
       vial
       inputs.zen-browser.packages.${system}.specific
       sioyek
+      zed-editor
     ];
   };
   programs = {

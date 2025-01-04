@@ -9,7 +9,6 @@
     fd
     bat
     ripgrep
-    chafa
     micro
     dust
     qrcp
