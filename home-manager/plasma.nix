@@ -3,8 +3,7 @@
   system,
   pkgs,
   ...
-}:
-{
+}: {
   home.packages = [
     inputs.j4ger-pkgs.packages."${system}".kwin_geometry_change
     pkgs.nur.repos.shadowrz.klassy-qt6

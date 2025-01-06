@@ -1,8 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-{
+{pkgs, ...}: {
   plugins.better-escape = {
     enable = true;
     settings.timeout = 500;
@@ -52,7 +48,7 @@
         desc = "save file";
       };
     }
- ];
+  ];
 
   plugins.flash = {
     enable = true;

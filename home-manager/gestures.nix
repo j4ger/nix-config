@@ -1,5 +1,4 @@
-{ pkgs, ...}:
-{
+{pkgs, ...}: {
   services.fusuma = {
     enable = true;
     settings = {

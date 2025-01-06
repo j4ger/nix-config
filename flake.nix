@@ -12,6 +12,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # lanzaboote
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # agenix for secrets encryption
     agenix = {
       url = "github:ryantm/agenix";
@@ -19,10 +25,10 @@
     };
 
     # dae for networking
-     daeuniverse = {
-       url = "github:daeuniverse/flake.nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-     };
+    daeuniverse = {
+      url = "github:daeuniverse/flake.nix";
+      #   inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # nur for few newer packages
     nur = {
@@ -47,24 +53,6 @@
       flake = false;
     };
 
-    # plasma home-manager
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
-
-    # lanzaboote
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # flox
-    flox = {
-      url = "github:flox/flox";
-    };
-
     # rustaceanvim
     rustaceanvim = {
       url = "github:mrcjkb/rustaceanvim";
@@ -76,8 +64,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  # TODO: revert back to flake-parts style to support `nix fmt`
 
   outputs = {
     self,
@@ -100,16 +86,7 @@
     packages = myPackages;
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
-    formatter = nixpkgs.legacyPackages.${system}.alejandra;
-
-    # Your custom packages and modifications, exported as overlays
-    overlays = import ./overlays {inherit inputs;};
-    # Reusable nixos modules you might want to export
-    # These are usually stuff you would upstream into nixpkgs
-    nixosModules = import ./modules/nixos;
-    # Reusable home-manager modules you might want to export
-    # These are usually stuff you would upstream into home-manager
-    homeManagerModules = import ./modules/home-manager;
+    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
 
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'

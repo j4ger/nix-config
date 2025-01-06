@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.defaultSession = "plasma";
@@ -14,15 +13,15 @@
   };
 
   # FIXME: is this required?
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 
   networking = {
     networkmanager.enable = true;
     hosts = {
-      "185.199.109.133" = [ "raw.githubusercontent.com" ];
-      "185.199.111.133" = [ "raw.githubusercontent.com" ];
-      "185.199.110.133" = [ "raw.githubusercontent.com" ];
-      "185.199.108.133" = [ "raw.githubusercontent.com" ];
+      "185.199.109.133" = ["raw.githubusercontent.com"];
+      "185.199.111.133" = ["raw.githubusercontent.com"];
+      "185.199.110.133" = ["raw.githubusercontent.com"];
+      "185.199.108.133" = ["raw.githubusercontent.com"];
     };
   };
 

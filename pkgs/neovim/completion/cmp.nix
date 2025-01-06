@@ -4,13 +4,13 @@
       enable = true;
       settings = {
         sources = [
-          { name = "async_path"; }
-          { name = "calc"; }
-          { name = "crates"; }
-          { name = "nvim_lsp"; }
-          { name = "nvim_lsp_document_symbol"; }
-          { name = "nvim_lsp_signature_help"; }
-          { name = "treesitter"; }
+          {name = "async_path";}
+          {name = "calc";}
+          {name = "crates";}
+          {name = "nvim_lsp";}
+          {name = "nvim_lsp_document_symbol";}
+          {name = "nvim_lsp_signature_help";}
+          {name = "treesitter";}
         ];
 
         mapping = {

@@ -1,9 +1,8 @@
 {
-  pkgs
-  , inputs
-  ,...
+  pkgs,
+  inputs,
+  ...
 }:
-
 inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
   inherit pkgs;
   extraSpecialArgs = {
@@ -11,6 +10,6 @@ inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
     system = pkgs.system;
   };
   module = {
-    imports = [ ./config.nix ];
+    imports = [./config.nix];
   };
 }

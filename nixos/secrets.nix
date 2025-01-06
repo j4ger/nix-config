@@ -1,6 +1,6 @@
 {
   age = {
-    identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+    identityPaths = ["/etc/ssh/ssh_host_ed25519_key"];
     secrets = {
       gpg = {
         file = ../secrets/gpg.age;

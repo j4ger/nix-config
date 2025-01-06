@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.file = {
     ".config/fcitx5/conf/classicui.conf" = {
       source = ./classicui.conf;

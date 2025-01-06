@@ -1,5 +1,4 @@
-{pkgs, ...}:
-{
+{pkgs, ...}: {
   extraPackages = with pkgs; [
     vscode-extensions.vadimcn.vscode-lldb.adapter
   ];
@@ -36,7 +35,7 @@
         };
       };
     };
-   };
+  };
   keymaps = [
     {
       action =

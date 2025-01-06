@@ -22,16 +22,16 @@
   };
   keymaps = [
     {
-        mode = "n";
-        key = "<leader>mo";
-        action = ":Copilot panel<CR>";
-        options.desc = "Open Copilot Panel";
+      mode = "n";
+      key = "<leader>mo";
+      action = ":Copilot panel<CR>";
+      options.desc = "Open Copilot Panel";
     }
     {
-        mode = "n";
-        key = "<leader>mt";
-        action = ":lua require('copilot.suggestion').toggle_auto_trigger()<CR>";
-        options.desc = "Toggle Copilot AutoTrigger";
+      mode = "n";
+      key = "<leader>mt";
+      action = ":lua require('copilot.suggestion').toggle_auto_trigger()<CR>";
+      options.desc = "Toggle Copilot AutoTrigger";
     }
-  ]; 
+  ];
 }

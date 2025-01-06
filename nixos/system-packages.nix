@@ -1,5 +1,4 @@
-{pkgs, ...}:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     gcc
     clang
@@ -87,5 +86,4 @@
   # };
 
   services.flatpak.enable = false;
-
 }

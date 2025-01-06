@@ -1,11 +1,7 @@
-{ pkgs, inputs, system, ... }:
-{
+{pkgs, ...}: {
   home.sessionVariables.TERMINAL = "alacritty";
   home.packages = with pkgs; [
     libnotify
-    devenv
-    devbox
-    inputs.flox.packages.${system}.flox
     fd
     bat
     ripgrep
@@ -21,7 +17,7 @@
         bell.duration = 500;
 
         bell.command = {
-          args = [ "Shell bell rang!" ];
+          args = ["Shell bell rang!"];
           program = "notify-send";
         };
 
@@ -40,25 +36,25 @@
         };
 
         colors.normal = {
-          black   = "#32344a";
-          red     = "#f7768e";
-          green   = "#9ece6a";
-          yellow  = "#e0af68";
-          blue    = "#7aa2f7";
+          black = "#32344a";
+          red = "#f7768e";
+          green = "#9ece6a";
+          yellow = "#e0af68";
+          blue = "#7aa2f7";
           magenta = "#ad8ee6";
-          cyan    = "#449dab";
-          white   = "#787c99";
+          cyan = "#449dab";
+          white = "#787c99";
         };
 
         colors.bright = {
-          black   = "#444b6a";
-          red     = "#ff7a93";
-          green   = "#b9f27c";
-          yellow  = "#ff9e64";
-          blue    = "#7da6ff";
+          black = "#444b6a";
+          red = "#ff7a93";
+          green = "#b9f27c";
+          yellow = "#ff9e64";
+          blue = "#7da6ff";
           magenta = "#bb9af7";
-          cyan    = "#0db9d7";
-          white   = "#acb0d0";
+          cyan = "#0db9d7";
+          white = "#acb0d0";
         };
 
         selection.save_to_clipboard = false;

@@ -1,7 +1,4 @@
-{
-  ...
-}:
-{
+{...}: {
   imports = [
     ./bufferline.nix
     ./common.nix

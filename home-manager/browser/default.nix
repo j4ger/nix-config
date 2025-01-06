@@ -1,5 +1,8 @@
-{ pkgs, inputs, ... }:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   home = {
     sessionVariables = {
       BROWSER = "zen";
@@ -16,7 +19,7 @@
     };
   };
   programs.firefox = {
-    enable = true;
+    enable = false;
     policies = {
       DisplayBookmarksToolbar = true;
       Preferences = {
@@ -36,6 +39,6 @@
 
   programs.chromium = {
     enable = true;
-    commandLineArgs = [ "--enable-wayland-ime" ];
+    commandLineArgs = ["--enable-wayland-ime"];
   };
 }

@@ -1,7 +1,4 @@
-{
-  ...
-}:
-{
+{...}: {
   imports = [
     ./ai.nix
     ./cmp.nix

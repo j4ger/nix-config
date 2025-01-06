@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     twemoji-color-font
   ];
@@ -29,17 +28,17 @@
     ];
     fontconfig = {
       defaultFonts = {
-        serif = [ "Noto Serif CJK SC" "Noto Serif" "Twitter Color Emoji" ];
-        sansSerif = [ "Noto Sans CJK SC" "Noto Sans" "Twitter Color Emoji" ];
-        monospace = [ "Maple Mono" "Noto Sans Mono CJK SC" "Twitter Color Emoji" ];
+        serif = ["Noto Serif CJK SC" "Noto Serif" "Twitter Color Emoji"];
+        sansSerif = ["Noto Sans CJK SC" "Noto Sans" "Twitter Color Emoji"];
+        monospace = ["Maple Mono" "Noto Sans Mono CJK SC" "Twitter Color Emoji"];
       };
       localConf = ''
-      <match target="pattern">
-        <test qual="any" name="family">
-          <string>Helvetica</string>
-        </test>
-        <edit name="family" mode="assign"><string>WenQuanYi Zen Hei</string></edit>
-      </match>
+        <match target="pattern">
+          <test qual="any" name="family">
+            <string>Helvetica</string>
+          </test>
+          <edit name="family" mode="assign"><string>WenQuanYi Zen Hei</string></edit>
+        </match>
       '';
     };
   };

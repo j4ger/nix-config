@@ -1,5 +1,9 @@
-{ pkgs, config, lib, ... }:
 {
+  pkgs,
+  config,
+  lib,
+  ...
+}: {
   hardware = {
     opentabletdriver.enable = false;
     bluetooth = {
@@ -85,7 +89,7 @@
         enable = lib.mkForce false; # for lanzaboote
         #consoleMode = "auto";
       };
-    efi = {
+      efi = {
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";
       };

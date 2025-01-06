@@ -45,7 +45,7 @@
         nur = import inputs.nur {
           nurpkgs = prev;
           pkgs = prev;
-          repoOverrides = { j4ger = import inputs.j4ger-pkgs { pkgs = prev; }; };
+          repoOverrides = {j4ger = import inputs.j4ger-pkgs {pkgs = prev;};};
         };
       })
     ];
@@ -60,18 +60,19 @@
       ];
       packageOverrides = pkgs: {
         steam = pkgs.steam.override {
-          extraPkgs = pkgs: with pkgs; [
-            xorg.libXcursor
-            xorg.libXi
-            xorg.libXinerama
-            xorg.libXScrnSaver
-            libpng
-            libpulseaudio
-            libvorbis
-            stdenv.cc.cc.lib
-            libkrb5
-            keyutils
-          ];
+          extraPkgs = pkgs:
+            with pkgs; [
+              xorg.libXcursor
+              xorg.libXi
+              xorg.libXinerama
+              xorg.libXScrnSaver
+              libpng
+              libpulseaudio
+              libvorbis
+              stdenv.cc.cc.lib
+              libkrb5
+              keyutils
+            ];
         };
       };
     };
@@ -101,7 +102,7 @@
         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
         "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="
       ];
-      trusted-users = [ "root" "j4ger" ];
+      trusted-users = ["root" "j4ger"];
     };
     # Opinionated: disable channels
     channel.enable = false;
@@ -150,14 +151,14 @@
       initialPassword = "iamthestorm";
       isNormalUser = true;
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = [ "wheel" "video" "audio" "NetworkManager" "libvirtd" "plugdev" "ydotool" "input" "kvm" "adbusers" ];
+      extraGroups = ["wheel" "video" "audio" "NetworkManager" "libvirtd" "plugdev" "ydotool" "input" "kvm" "adbusers"];
       shell = pkgs.fish;
     };
   };
 
   # home-manager
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs myPackages system; };
+    extraSpecialArgs = {inherit inputs outputs myPackages system;};
     users = {
       # Import your home-manager configuration
       j4ger = import ../home-manager/home.nix;

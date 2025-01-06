@@ -1,7 +1,4 @@
-{
-  ...
-}:
-{
+{...}: {
   imports = [
     ./basics.nix
     ./dap.nix

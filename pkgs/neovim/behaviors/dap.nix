@@ -1,6 +1,10 @@
-{ inputs, system, pkgs, ... }:
 {
-  extraPlugins = [ pkgs.vimPlugins.nvim-nio ];
+  inputs,
+  system,
+  pkgs,
+  ...
+}: {
+  extraPlugins = [pkgs.vimPlugins.nvim-nio];
   plugins.dap = {
     enable = true;
 
@@ -13,7 +17,7 @@
     adapters = {
       servers = {
         codelldb = let
-            port = 13841;
+          port = 13841;
         in {
           inherit port;
           executable = {
