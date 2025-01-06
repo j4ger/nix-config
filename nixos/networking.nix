@@ -13,7 +13,7 @@
   };
 
   services.daed = {
-    enable = false;
+    enable = true;
   };
 
   services.mihomo = {
@@ -57,16 +57,16 @@
 
   # services.v2raya.enable = true;
 
-  security.wrappers.mihomo = {
-    owner = "root";
-    group = "root";
-    capabilities = "cap_net_bind_service,cap_net_admin=+ep";
-    source = "${lib.getExe pkgs.mihomo}";
-  };
-  security.wrappers.mihomo-party = {
-    owner = "root";
-    group = "root";
-    capabilities = "cap_net_bind_service,cap_net_admin=+ep";
-    source = "${lib.getExe myPackages.${system}.mihomo-party}";
-  };
+  # security.wrappers.mihomo = {
+  #   owner = "root";
+  #   group = "root";
+  #   capabilities = "cap_net_bind_service,cap_net_admin=+ep";
+  #   source = "${lib.getExe pkgs.mihomo}";
+  # };
+  # security.wrappers.mihomo-party = {
+  #   owner = "root";
+  #   group = "root";
+  #   capabilities = "cap_net_bind_service,cap_net_admin=+ep";
+  #   source = "${lib.getExe myPackages.${system}.mihomo-party}";
+  # };
 }
