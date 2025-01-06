@@ -7,5 +7,6 @@
 } @ inputs: {
   "${system}" = {
     mynvim = pkgs.callPackage ./neovim inputs;
+    mihomo-party = pkgs.callPackage ./mihomo-party.nix inputs;
   };
 }

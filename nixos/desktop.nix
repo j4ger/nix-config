@@ -1,12 +1,13 @@
 {pkgs, ...}: {
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.defaultSession = "plasma";
-  services.displayManager.autoLogin = {
-    enable = true;
-    # FIXME: change username
-    user = "j4ger";
-  };
+  # services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
+  # services.displayManager.defaultSession = "plasma";
+  # services.displayManager.autoLogin = {
+  #   enable = true;
+  #   # FIXME: change username
+  #   user = "j4ger";
+  # };
+  services.displayManager.ly.enable = true;
   services.desktopManager.plasma6.enable = true;
   programs.kdeconnect = {
     enable = true;
