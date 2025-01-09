@@ -8,6 +8,12 @@
   #   user = "j4ger";
   # };
   services.displayManager.ly.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+    withUWSM = false;
+  };
+
   services.desktopManager.plasma6.enable = true;
   programs.kdeconnect = {
     enable = true;
