@@ -78,7 +78,7 @@
         SUBSYSTEMS=="usb", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="55d3", GROUP="plugdev", MODE="0666"
         SUBSYSTEMS=="usb", ATTRS{idVendor}=="303a", ATTRS{idProduct}=="1001", GROUP="plugdev", MODE="0666"
         KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
-      ''; # CH340
+      '';
     };
   };
 
@@ -121,9 +121,10 @@
       "amd_iommu=on"
       "amdgpu.dcdebugmask=0x10"
       "amdgpu.sg_display=0"
-      #      "acpi_backlight=native"
-      #      "nvidia.NVreg_EnableBacklightHandler=0"
-      #      "nvidia.NVreg_RegistryDwords=EnableBrightnessControl=0"
+
+      # "acpi_backlight=vendor"
+      # "nvidia.NVreg_EnableBacklightHandler=0"
+      # "nvidia.NVreg_RegistryDwords=EnableBrightnessControl=0"
     ];
   };
 }

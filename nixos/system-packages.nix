@@ -49,6 +49,7 @@
         pkgs.evolution-ews
       ];
     };
+    light.enable = true;
   };
 
   services.sunshine = {

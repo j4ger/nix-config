@@ -29,14 +29,17 @@ in
     package = inputs.hyprland.packages.${system}.hyprland;
 
     settings = {
-      monitor = [",preferred,auto,auto"];
+      monitor = [
+        "eDP-1, preferred, auto, 1.6"
+        ", preferred, auto, 1"
+      ];
 
       general = {
-
+        gaps_out = 10;
       };
 
       decoration = {
-
+        rounding = 5;
       };
 
       master = {
@@ -47,8 +50,48 @@ in
 
       };
 
+      animations = {
+        enabled = true;
+
+        bezier = [
+          "linear, 0, 0, 1, 1"
+          "md3_standard, 0.2, 0, 0, 1"
+          "md3_decel, 0.05, 0.7, 0.1, 1"
+          "md3_accel, 0.3, 0, 0.8, 0.15"
+          "overshot, 0.05, 0.9, 0.1, 1.1"
+          "crazyshot, 0.1, 1.5, 0.76, 0.92"
+          "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
+          "menu_decel, 0.1, 1, 0, 1"
+          "menu_accel, 0.38, 0.04, 1, 0.07"
+          "easeInOutCirc, 0.85, 0, 0.15, 1"
+          "easeOutCirc, 0, 0.55, 0.45, 1"
+          "easeOutExpo, 0.16, 1, 0.3, 1"
+          "softAcDecel, 0.26, 0.26, 0.15, 1"
+          "md2, 0.4, 0, 0.2, 1"
+        ];
+
+        animation = [
+          "windows, 1, 3, md3_decel, popin 60%"
+          "windowsIn, 1, 3, md3_decel, popin 60%"
+          "windowsOut, 1, 3, md3_accel, popin 60%"
+          "border, 1, 10, default"
+          "fade, 1, 3, md3_decel"
+          "layers, 1, 2, md3_decel, slide"
+          "layersIn, 1, 3, menu_decel, slide"
+          "layersOut, 1, 1.6, menu_accel"
+          "fadeLayersIn, 1, 2, menu_decel"
+          "fadeLayersOut, 1, 4.5, menu_accel"
+          "workspaces, 1, 7, menu_decel, slide"
+          # animation = workspaces, 1, 2.5, softAcDecel, slide
+          # animation = workspaces, 1, 7, menu_decel, slidefade 15%
+          # animation = specialWorkspace, 1, 3, md3_decel, slidefadevert 15%
+          "specialWorkspace, 1, 3, md3_decel, slidevert"
+        ];
+      };
+
       gestures = {
-        
+        workspace_swipe = true;
+        workspace_swipe_fingers = 3;
       };
 
       misc = {
@@ -69,14 +112,17 @@ in
       input = {
         follow_mouse = 1;
         
-        touchpad = {};
+        touchpad = {
+          natural_scroll = true;
+          drag_lock = true;
+        };
       };
 
       "$mod" = "Super";
 
       bind = [
         "$mod, E, exec, dolphin"
-        "$mod+Shift, Enter, exec, alacritty"
+        "$mod+Shift, Return, exec, alacritty"
         "$mod, R, exec, zen"
 
         "$mod+Shift, E, exec, wlogout"
@@ -123,7 +169,7 @@ in
       );
 
       bindl = [
-        ", XF86AudioMute, exec, pw-volume mute"
+        ", XF86AudioMute, exec, pamixer -m"
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPause, exec, playerctl play-pause"
         ", XF86AudioNext, exec, playerctl next"
@@ -131,10 +177,10 @@ in
       ];
 
       bindel = [
-        ", XF86AudioLowerVolume, exec, pw-volume change -2%"
-        ", XF86AudioRaiseVolume, exec, pw-volume change +2%"
-        ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
-        ", XF86MonBrightnessDown, exec, brightnessctl s -5%"
+        ", XF86AudioLowerVolume, exec, pamixer -d 5"
+        ", XF86AudioRaiseVolume, exec, pamixer -i 5"
+        ", XF86MonBrightnessUp, exec, light -A 5"
+        ", XF86MonBrightnessDown, exec, light -N 0.1 && light -U 5"
       ];
 
       binde = [
@@ -145,8 +191,8 @@ in
       ];
 
       bindm = [
-        "$mod,mouse:272, movewindow"
-        "$mod,R, resizewindow"
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
       ];
 
       env = [
@@ -160,8 +206,9 @@ in
       };
 
       exec-once = [
+        "fcitx5"
         "clipse -listen"
-        "${swww_latest}/bin/swww-daemon"
+        "swww-daemon"
         "${swww_script}"
       ];
     };
@@ -182,13 +229,15 @@ in
     # mako
 
     nwg-look
+    swww_latest
 
     wlogout
 
     playerctl
-    brightnessctl
-    pw-volume
+    
+    pamixer
     clipse
+    grimblast
 
     bibata-cursors
   ];
