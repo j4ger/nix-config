@@ -11,6 +11,14 @@
     termscp
   ];
   programs = {
+    ghostty = {
+      enable = true;
+      enableFishIntegration = true;
+      settings = {
+        theme = "catppuccin-macchiato";
+        window-decoration = false;
+      };
+    };
     alacritty = {
       enable = true;
       settings = {

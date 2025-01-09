@@ -208,6 +208,7 @@ in
       exec-once = [
         "fcitx5"
         "clipse -listen"
+        "kdeconnectd"
         "swww-daemon"
         "${swww_script}"
       ];
