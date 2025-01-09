@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, system, ...}: {
   home.sessionVariables.TERMINAL = "alacritty";
   home.packages = with pkgs; [
     libnotify
@@ -17,7 +17,14 @@
       settings = {
         theme = "catppuccin-macchiato";
         window-decoration = false;
+        background-opacity = 0.8;
+        background-blur-radius = 20;
       };
+    };
+    yazi = {
+      enable = true;
+      # package = inputs.yazi.packages.${system}.default;
+      enableFishIntegration = true;
     };
     alacritty = {
       enable = true;

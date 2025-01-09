@@ -4,6 +4,7 @@
   lib,
   myPackages,
   system,
+  inputs,
   ...
 }: {
   services.dae = {
