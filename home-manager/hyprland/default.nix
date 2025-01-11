@@ -27,7 +27,7 @@ in
     enable = true;
     systemd.enable = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${system}.hyprland;
+    # package = inputs.hyprland.packages.${system}.hyprland;
 
     plugins = with pkgs; [
       hyprlandPlugins.hyprscroller
@@ -214,7 +214,7 @@ in
       };
 
       exec-once = [
-        "{pkgs.networkmanagerapplet}"
+        "nm-applet"
         "fcitx5"
         "clipse -listen"
         "kdeconnectd"
@@ -247,6 +247,7 @@ in
     pamixer
     clipse
     grimblast
+    networkmanagerapplet
 
     bibata-cursors
   ];

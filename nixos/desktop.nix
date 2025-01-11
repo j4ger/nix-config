@@ -7,7 +7,19 @@
   #   # FIXME: change username
   #   user = "j4ger";
   # };
-  services.displayManager.ly.enable = true;
+  services.greetd = {
+      enable = true;
+      settings = {
+        initial_session = {
+          command = "Hyprland";
+          user = "j4ger";
+        };
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --greeting 'Welcome' --asterisks --remember --remember-user-session --time -cmd Hyprland";
+          user = "j4ger";
+        };
+      };
+    };
 
   # programs.hyprland = {
   #   enable = true;
@@ -16,10 +28,6 @@
   #   package = inputs.hyprland.packages.${system}.hyprland;
   #   portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
   # };
-
-  services.displayManager.sessionPackages = [
-    inputs.hyprland.packages.${system}.hyprland
-  ];
 
   services.desktopManager.plasma6.enable = true;
   programs.kdeconnect = {
