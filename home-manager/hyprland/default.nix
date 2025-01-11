@@ -41,6 +41,8 @@ in
 
       general = {
         gaps_out = 10;
+
+        layout = "scroller";
       };
 
       decoration = {
@@ -95,8 +97,9 @@ in
       };
 
       gestures = {
-        workspace_swipe = true;
-        workspace_swipe_fingers = 3;
+        # disable those due to the use of hyperscroller
+        # workspace_swipe = true;
+        # workspace_swipe_fingers = 3;
       };
 
       misc = {
@@ -162,6 +165,13 @@ in
         "$mod, mouse_up, workspace, e-1"
 
         "$mod, A, scroller:toggleoverview"
+        "$mod, W, scroller:jump"
+        "$mod+Shift, H, scroller:movewindow, l"
+        "$mod+Shift, L, scroller:movewindow, r"
+        "$mod, M, scroller:alignwindow, c"
+        "$mod, P, scroller:admitwindow"
+        "$mod, O, scroller:expelwindow"
+        "$mod, C, scroller:fitsize, active"
         "$mod+Shift, K, scroller:cyclesize, +1"
         "$mod+Shift, J, scroller:cyclesize, -1"
       ]++(
