@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, system, ...}: {
   # services.displayManager.sddm.enable = true;
   # services.displayManager.sddm.wayland.enable = true;
   # services.displayManager.defaultSession = "plasma";
@@ -9,10 +9,17 @@
   # };
   services.displayManager.ly.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    withUWSM = false;
-  };
+  # programs.hyprland = {
+  #   enable = true;
+  #   withUWSM = false;
+  #
+  #   package = inputs.hyprland.packages.${system}.hyprland;
+  #   portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
+  # };
+
+  services.displayManager.sessionPackages = [
+    inputs.hyprland.packages.${system}.hyprland
+  ];
 
   services.desktopManager.plasma6.enable = true;
   programs.kdeconnect = {

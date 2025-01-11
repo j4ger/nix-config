@@ -20,6 +20,7 @@ in
 {
   imports = [
     ./hyprpanel.nix
+    ./hyprlock.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -27,6 +28,10 @@ in
     systemd.enable = true;
     xwayland.enable = true;
     package = inputs.hyprland.packages.${system}.hyprland;
+
+    plugins = with pkgs; [
+      hyprlandPlugins.hyprscroller
+    ];
 
     settings = {
       monitor = [
@@ -121,8 +126,8 @@ in
       "$mod" = "Super";
 
       bind = [
-        "$mod, E, exec, dolphin"
-        "$mod+Shift, Return, exec, alacritty"
+        "$mod, E, exec, ghostty -e yazi"
+        "$mod+Shift, Return, exec, ghostty"
         "$mod, R, exec, zen"
 
         "$mod+Shift, E, exec, wlogout"
@@ -156,6 +161,9 @@ in
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
 
+        "$mod, A, scroller:toggleoverview"
+        "$mod+Shift, K, scroller:cyclesize, +1"
+        "$mod+Shift, J, scroller:cyclesize, -1"
       ]++(
         builtins.concatLists (
           builtins.genList (i:
@@ -206,6 +214,7 @@ in
       };
 
       exec-once = [
+        "{pkgs.networkmanagerapplet}"
         "fcitx5"
         "clipse -listen"
         "kdeconnectd"
@@ -225,7 +234,6 @@ in
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
 
-    hyprcursor
     hyprutils
     # mako
 
@@ -261,10 +269,6 @@ in
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
     size = 24;
-  };
-
-  programs.hyprlock = {
-    enable = true;
   };
 
   services.hypridle = {
