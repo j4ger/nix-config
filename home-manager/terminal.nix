@@ -9,6 +9,7 @@
     dust
     qrcp
     termscp
+    proxychains-ng
   ];
   programs = {
     ghostty = {
