@@ -62,6 +62,8 @@
       };
     };
 
+    fstrim.enable = true;
+
     tlp.enable = false; # is said to be incompatible with asus-ctl
     auto-cpufreq.enable = false; # same as above
     power-profiles-daemon.enable = true;
@@ -112,13 +114,19 @@
     kernelParams = [
       "quiet"
       "splash"
+
       "boot.shell_on_fail"
       "loglevel=3"
       "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
+
+      "initcall_blacklist=acpi_cpufreq_init"
+
       "nvidia.NVreg_EnableGpuFirmware=0"
+      
       "amd_iommu=on"
+
       "amdgpu.dcdebugmask=0x10"
       "amdgpu.sg_display=0"
 

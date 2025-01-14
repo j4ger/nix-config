@@ -35,7 +35,7 @@
   };
 
   # FIXME: is this required?
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = ["nvidia" "amdgpu"];
 
   networking = {
     networkmanager.enable = true;
