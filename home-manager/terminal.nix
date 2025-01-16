@@ -1,5 +1,4 @@
 {pkgs, inputs, system, ...}: {
-  home.sessionVariables.TERMINAL = "alacritty";
   home.packages = with pkgs; [
     libnotify
     fd
