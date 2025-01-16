@@ -39,7 +39,7 @@
       drawio
       marktext
       vial
-      inputs.zen-browser.packages.${system}.specific
+      inputs.zen-browser.packages.${system}.default
       sioyek
       zed-editor
     ];
