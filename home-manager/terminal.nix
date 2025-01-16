@@ -10,6 +10,7 @@
     qrcp
     termscp
     proxychains-ng
+    distrobox
   ];
   programs = {
     ghostty = {
