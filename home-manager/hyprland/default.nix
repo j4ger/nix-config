@@ -134,7 +134,7 @@ in
         "$mod, R, exec, zen"
 
         "$mod+Shift, E, exec, wlogout"
-        "$mod+Shift, L, exec, hyprlock"
+        "$mod+Alt, L, exec, hyprlock"
 
         "$mod, D, exec, rofi -show run"
         "$mod, V, exec, alacritty --class clipse -e clipse"
