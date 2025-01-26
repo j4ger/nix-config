@@ -159,7 +159,7 @@ in
         "$mod, U, focusurgentorlast"
 
         "$mod+Shift, S, exec, grimblast --freeze copy area"
-        "$mod+Ctrl, S, exec, grimblast --freeze save screen"
+        "$mod+Ctrl, S, exec, grimblast --freeze save area"
 
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
