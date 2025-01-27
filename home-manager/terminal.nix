@@ -10,7 +10,7 @@
     termscp
     proxychains-ng
     distrobox
-    feh
+    qimgv
   ];
   programs = {
     ghostty = {
