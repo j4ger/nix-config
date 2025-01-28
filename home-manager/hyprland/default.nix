@@ -40,13 +40,13 @@ in
       ];
 
       general = {
-        gaps_out = 10;
+        gaps_out = 15;
 
         layout = "scroller";
       };
 
       decoration = {
-        rounding = 5;
+        rounding = 10;
       };
 
       master = {
@@ -224,12 +224,18 @@ in
       };
 
       exec-once = [
+        "hyprshade install"
+        "systemctl --user enable --now hyprshade.timer"
         "nm-applet"
         "fcitx5"
         "clipse -listen"
         "kdeconnectd"
         "swww-daemon"
         "${swww_script}"
+      ];
+
+       exec = [
+        "hyprshade auto"
       ];
     };
 
@@ -250,7 +256,7 @@ in
     xdg-desktop-portal-gtk
 
     hyprutils
-    # mako
+    hyprshade
 
     nwg-look
     swww_latest
@@ -263,6 +269,8 @@ in
     clipse
     grimblast
     networkmanagerapplet
+    # mako
+    eww
 
     bibata-cursors
   ];
@@ -275,6 +283,13 @@ in
     plugins = with pkgs; [
     ];
   };
+
+  xdg.configFile."hypr/hyprshade.toml".text = ''
+    [[shades]]
+    name = "blue-light-filter"
+    start_time = "19:00:00"
+    end_time = "06:00:00"
+  '';
 
   catppuccin.flavor = "macchiato";
   catppuccin.enable = true;
