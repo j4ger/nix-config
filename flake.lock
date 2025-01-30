@@ -2018,6 +2018,22 @@
         "type": "github"
       }
     },
+    "rime-ice": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1737729004,
+        "narHash": "sha256-vB1dXAiFNMAGywq42Waiyhf7ctAM3Vp+/e5y1ntm++c=",
+        "owner": "iDvel",
+        "repo": "rime-ice",
+        "rev": "2a2bb24367ba9948c840fec599710006dcb1e9ca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "iDvel",
+        "repo": "rime-ice",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -2033,6 +2049,7 @@
         "nixpkgs-stable": "nixpkgs-stable_3",
         "nixvim": "nixvim",
         "nur": "nur",
+        "rime-ice": "rime-ice",
         "rustaceanvim": "rustaceanvim",
         "swww": "swww",
         "yazi": "yazi",

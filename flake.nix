@@ -44,6 +44,11 @@
       flake = false;
     };
 
+    rime-ice = {
+      url = "github:iDvel/rime-ice";
+      flake = false;
+    };
+
     rustaceanvim = {
       url = "github:mrcjkb/rustaceanvim";
       inputs.nixpkgs.follows = "nixpkgs";

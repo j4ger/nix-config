@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   home.file = {
     ".config/fcitx5/conf/classicui.conf" = {
       source = ./classicui.conf;
@@ -16,5 +16,9 @@
       source = ./pinyin.conf;
       force = true;
     };
+    "/.local/share/fcitx5/rime" = {
+      source = inputs.rime-ice;
+      recursive = true;
+     };
   };
 }
