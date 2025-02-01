@@ -2018,19 +2018,19 @@
         "type": "github"
       }
     },
-    "rime-ice": {
+    "rime-moran": {
       "flake": false,
       "locked": {
-        "lastModified": 1737729004,
-        "narHash": "sha256-vB1dXAiFNMAGywq42Waiyhf7ctAM3Vp+/e5y1ntm++c=",
-        "owner": "iDvel",
-        "repo": "rime-ice",
-        "rev": "2a2bb24367ba9948c840fec599710006dcb1e9ca",
+        "lastModified": 1738005758,
+        "narHash": "sha256-WywrFqBu+IpnYuMMUsCrIOI4np3tnSBucFe3meqrCIg=",
+        "owner": "rimeinn",
+        "repo": "rime-moran",
+        "rev": "3f570ed7430ae3b6bd346c1de572ac071066c4b3",
         "type": "github"
       },
       "original": {
-        "owner": "iDvel",
-        "repo": "rime-ice",
+        "owner": "rimeinn",
+        "repo": "rime-moran",
         "type": "github"
       }
     },
@@ -2049,7 +2049,7 @@
         "nixpkgs-stable": "nixpkgs-stable_3",
         "nixvim": "nixvim",
         "nur": "nur",
-        "rime-ice": "rime-ice",
+        "rime-moran": "rime-moran",
         "rustaceanvim": "rustaceanvim",
         "swww": "swww",
         "yazi": "yazi",

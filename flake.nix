@@ -44,8 +44,8 @@
       flake = false;
     };
 
-    rime-ice = {
-      url = "github:iDvel/rime-ice";
+    rime-moran = {
+      url = "github:rimeinn/rime-moran";
       flake = false;
     };
 

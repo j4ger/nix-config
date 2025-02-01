@@ -17,7 +17,7 @@
       force = true;
     };
     "/.local/share/fcitx5/rime" = {
-      source = inputs.rime-ice;
+      source = inputs.rime-moran;
       recursive = true;
      };
   };
