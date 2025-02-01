@@ -45,7 +45,7 @@
     };
 
     rime-moran = {
-      url = "github:rimeinn/rime-moran";
+      url = "https://nightly.link/rimeinn/rime-moran/workflows/main/main/Simp-FullPack.zip";
       flake = false;
     };
 

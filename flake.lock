@@ -2021,17 +2021,14 @@
     "rime-moran": {
       "flake": false,
       "locked": {
-        "lastModified": 1738005758,
-        "narHash": "sha256-WywrFqBu+IpnYuMMUsCrIOI4np3tnSBucFe3meqrCIg=",
-        "owner": "rimeinn",
-        "repo": "rime-moran",
-        "rev": "3f570ed7430ae3b6bd346c1de572ac071066c4b3",
-        "type": "github"
+        "lastModified": 1737977048,
+        "narHash": "sha256-nRJvR1Lm4fkAPRuTvnGKL6cSBskAZqNYPnNvIiJcFtA=",
+        "type": "tarball",
+        "url": "https://nightly.link/rimeinn/rime-moran/workflows/main/main/Simp-FullPack.zip"
       },
       "original": {
-        "owner": "rimeinn",
-        "repo": "rime-moran",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://nightly.link/rimeinn/rime-moran/workflows/main/main/Simp-FullPack.zip"
       }
     },
     "root": {
