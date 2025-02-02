@@ -1,4 +1,9 @@
-{pkgs, inputs, system, ...}: {
+{
+  pkgs,
+  inputs,
+  system,
+  ...
+}: {
   # services.displayManager.sddm.enable = true;
   # services.displayManager.sddm.wayland.enable = true;
   # services.displayManager.defaultSession = "plasma";
@@ -8,18 +13,18 @@
   #   user = "j4ger";
   # };
   services.greetd = {
-      enable = true;
-      settings = {
-        initial_session = {
-          command = "Hyprland";
-          user = "j4ger";
-        };
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --greeting 'Welcome' --asterisks --remember --remember-user-session --time -cmd Hyprland";
-          user = "j4ger";
-        };
+    enable = true;
+    settings = {
+      initial_session = {
+        command = "Hyprland";
+        user = "j4ger";
+      };
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --greeting 'Welcome' --asterisks --remember --remember-user-session --time -cmd Hyprland";
+        user = "j4ger";
       };
     };
+  };
 
   # programs.hyprland = {
   #   enable = true;

@@ -1,5 +1,9 @@
-{ pkgs, inputs, system, ...}: 
-let 
+{
+  pkgs,
+  inputs,
+  system,
+  ...
+}: let
   swww_latest = inputs.swww.packages.${system}.swww;
   swww_script = pkgs.writeShellScript "swww_randomize" ''
     export SWWW_TRANSITION_FPS=60
@@ -16,8 +20,7 @@ let
         done
     done
   '';
-in
-{
+in {
   imports = [
     ./hyprpanel.nix
     ./hyprlock.nix
@@ -50,11 +53,9 @@ in
       };
 
       master = {
-        
       };
 
       dwindle = {
-
       };
 
       animations = {
@@ -114,12 +115,11 @@ in
       ];
 
       layerrule = [
-
       ];
 
       input = {
         follow_mouse = 1;
-        
+
         touchpad = {
           natural_scroll = true;
           drag_lock = true;
@@ -128,63 +128,67 @@ in
 
       "$mod" = "Super";
 
-      bind = [
-        "$mod, E, exec, ghostty -e yazi"
-        "$mod+Shift, Return, exec, ghostty"
-        "$mod, R, exec, zen"
+      bind =
+        [
+          "$mod, E, exec, ghostty -e yazi"
+          "$mod+Shift, Return, exec, ghostty"
+          "$mod, R, exec, zen"
 
-        "$mod+Shift, E, exec, wlogout"
-        "$mod+Alt, L, exec, hyprlock"
+          "$mod+Shift, E, exec, wlogout"
+          "$mod+Alt, L, exec, hyprlock"
 
-        "$mod, D, exec, rofi -show run"
-        "$mod, V, exec, alacritty --class clipse -e clipse"
+          "$mod, D, exec, rofi -show run"
+          "$mod, V, exec, alacritty --class clipse -e clipse"
 
-        "$mod, Q, killactive"
-        "$mod, F, fullscreen"
-        "$mod, T, togglefloating"
-        "$mod, P, pin"
+          "$mod, Q, killactive"
+          "$mod, F, fullscreen"
+          "$mod, T, togglefloating"
+          "$mod, P, pin"
 
-        "$mod, H, movefocus, l"
-        "$mod, J, movefocus, d"
-        "$mod, K, movefocus, u"
-        "$mod, L, movefocus, r"
+          "$mod, H, movefocus, l"
+          "$mod, J, movefocus, d"
+          "$mod, K, movefocus, u"
+          "$mod, L, movefocus, r"
 
-        "$mod, G, togglegroup"
-        "$mod, Tab, changegroupactive, f"
-        "$mod+Shift, Tab, changegroupactive, b"
-        
-        "Alt, Tab, cyclenext"
-        "Alt+Shift, Tab, cyclenext, prev"
+          "$mod, G, togglegroup"
+          "$mod, Tab, changegroupactive, f"
+          "$mod+Shift, Tab, changegroupactive, b"
 
-        "$mod, U, focusurgentorlast"
+          "Alt, Tab, cyclenext"
+          "Alt+Shift, Tab, cyclenext, prev"
 
-        "$mod+Shift, S, exec, grimblast --freeze copy area"
-        "$mod+Ctrl, S, exec, grimblast --freeze save area"
+          "$mod, U, focusurgentorlast"
 
-        "$mod, mouse_down, workspace, e+1"
-        "$mod, mouse_up, workspace, e-1"
+          "$mod+Shift, S, exec, grimblast --freeze copy area"
+          "$mod+Ctrl, S, exec, grimblast --freeze save area"
 
-        "$mod, A, scroller:toggleoverview"
-        "$mod, W, scroller:jump"
-        "$mod+Shift, H, scroller:movewindow, l"
-        "$mod+Shift, L, scroller:movewindow, r"
-        "$mod, M, scroller:alignwindow, c"
-        "$mod, P, scroller:admitwindow"
-        "$mod, O, scroller:expelwindow"
-        "$mod, C, scroller:fitsize, active"
-        "$mod+Shift, K, scroller:cyclesize, +1"
-        "$mod+Shift, J, scroller:cyclesize, -1"
-      ]++(
-        builtins.concatLists (
-          builtins.genList (i:
-            let index = i + 1;
-            in [
-              "$mod, code:1${toString i}, workspace, ${toString index}"
-              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString index}"
-            ]
-          ) 9
-        )
-      );
+          "$mod, mouse_down, workspace, e+1"
+          "$mod, mouse_up, workspace, e-1"
+
+          "$mod, A, scroller:toggleoverview"
+          "$mod, W, scroller:jump"
+          "$mod+Shift, H, scroller:movewindow, l"
+          "$mod+Shift, L, scroller:movewindow, r"
+          "$mod, M, scroller:alignwindow, c"
+          "$mod, P, scroller:admitwindow"
+          "$mod, O, scroller:expelwindow"
+          "$mod, C, scroller:fitsize, active"
+          "$mod+Shift, K, scroller:cyclesize, +1"
+          "$mod+Shift, J, scroller:cyclesize, -1"
+        ]
+        ++ (
+          builtins.concatLists (
+            builtins.genList (
+              i: let
+                index = i + 1;
+              in [
+                "$mod, code:1${toString i}, workspace, ${toString index}"
+                "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString index}"
+              ]
+            )
+            9
+          )
+        );
 
       bindl = [
         ", XF86AudioMute, exec, pamixer -m"
@@ -234,16 +238,15 @@ in
         "${swww_script}"
       ];
 
-       exec = [
+      exec = [
         "hyprshade auto"
       ];
     };
-
   };
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   home.packages = with pkgs; [
@@ -264,7 +267,7 @@ in
     wlogout
 
     playerctl
-    
+
     pamixer
     clipse
     grimblast

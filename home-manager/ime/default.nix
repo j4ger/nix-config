@@ -1,4 +1,8 @@
-{pkgs, inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   home.file = {
     ".config/fcitx5/conf/classicui.conf" = {
       source = ./classicui.conf;
@@ -19,6 +23,6 @@
     "/.local/share/fcitx5/rime" = {
       source = inputs.rime-moran;
       recursive = true;
-     };
+    };
   };
 }

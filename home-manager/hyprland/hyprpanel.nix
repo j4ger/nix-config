@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
+  imports = [inputs.hyprpanel.homeManagerModules.hyprpanel];
 
   programs.hyprpanel = {
     enable = true;
@@ -53,6 +53,5 @@
 
       theme.font.size = "1.0rem";
     };
-
   };
 }

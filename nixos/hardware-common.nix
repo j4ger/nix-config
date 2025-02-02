@@ -124,7 +124,7 @@
       "initcall_blacklist=acpi_cpufreq_init"
 
       "nvidia.NVreg_EnableGpuFirmware=0"
-      
+
       "amd_iommu=on"
 
       "amdgpu.dcdebugmask=0x10"
