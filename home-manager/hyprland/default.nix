@@ -24,6 +24,8 @@ in {
   imports = [
     ./hyprpanel.nix
     ./hyprlock.nix
+
+    inputs.gauntlet.homeManagerModules.default
   ];
 
   wayland.windowManager.hyprland = {
@@ -145,7 +147,7 @@ in {
           "$mod+Shift, E, exec, wlogout"
           "$mod+Alt, L, exec, hyprlock"
 
-          "$mod, D, exec, rofi -show run"
+          "$mod, D, exec, gauntlet open"
           "$mod, V, exec, alacritty --class clipse -e clipse"
 
           "$mod, Q, killactive"
@@ -167,8 +169,7 @@ in {
 
           "$mod, U, focusurgentorlast"
 
-          "$mod+Shift, S, exec, grimblast --freeze copy area"
-          "$mod+Ctrl, S, exec, grimblast --freeze save area"
+          "$mod+Shift, S, exec, grim -g \"''$(slurp -o -r -c '##ff0000ff')\" -t ppm - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/Screenshot_''$(date '+%Y%m%d_%H:%M:%S').png"
 
           "$mod, mouse_down, workspace, e+1"
           "$mod, mouse_up, workspace, e-1"
@@ -247,6 +248,7 @@ in {
         "kdeconnectd"
         "swww-daemon"
         "${swww_script}"
+        "gauntlet --minimized"
       ];
 
       exec = [
@@ -278,6 +280,9 @@ in {
     hyprutils
     hyprshade
 
+    grim
+    satty
+
     nwg-look
     swww_latest
 
@@ -287,7 +292,6 @@ in {
 
     pamixer
     clipse
-    grimblast
     networkmanagerapplet
     # mako
     eww
@@ -295,13 +299,9 @@ in {
     bibata-cursors
   ];
 
-  programs.rofi = {
+  programs.gauntlet = {
     enable = true;
-    package = pkgs.rofi-wayland;
-    cycle = true;
-    terminal = "alacritty";
-    plugins = with pkgs; [
-    ];
+    config = {};
   };
 
   xdg.configFile."hypr/hyprshade.toml".text = ''
