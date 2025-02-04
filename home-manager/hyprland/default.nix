@@ -33,7 +33,8 @@ in {
     # package = inputs.hyprland.packages.${system}.hyprland;
 
     plugins = with pkgs; [
-      hyprlandPlugins.hyprscroller
+      # hyprlandPlugins.hyprscroller
+        hyprlandPlugins.hyprexpo
     ];
 
     settings = {
@@ -43,9 +44,9 @@ in {
       ];
 
       general = {
-        gaps_out = 15;
+        gaps_out = 10;
 
-        layout = "scroller";
+        # layout = "scroller";
       };
 
       decoration = {
@@ -101,8 +102,8 @@ in {
 
       gestures = {
         # disable those due to the use of hyperscroller
-        # workspace_swipe = true;
-        # workspace_swipe_fingers = 3;
+        workspace_swipe = true;
+        workspace_swipe_fingers = 3;
       };
 
       misc = {
@@ -111,7 +112,7 @@ in {
       };
 
       cursor = {
-        no_warps = true;
+        no_warps = false;
       };
 
       windowrulev2 = [
@@ -125,7 +126,7 @@ in {
       ];
 
       input = {
-        follow_mouse = 2;
+        follow_mouse = 1;
 
         touchpad = {
           natural_scroll = true;
@@ -172,17 +173,19 @@ in {
           "$mod, mouse_down, workspace, e+1"
           "$mod, mouse_up, workspace, e-1"
 
-          "$mod, A, scroller:toggleoverview"
-          "$mod, W, scroller:jump"
-          "$mod+Shift, H, scroller:movewindow, l"
-          "$mod+Shift, L, scroller:movewindow, r"
-          "$mod, M, scroller:alignwindow, c"
-          "$mod+Shift, equal, scroller:admitwindow"
-          "$mod, less, scroller:expelwindow"
-          "$mod, C, scroller:fitsize, active"
-          "$mod, equal, scroller:pin"
-          "$mod+Shift, K, scroller:cyclesize, +1"
-          "$mod+Shift, J, scroller:cyclesize, -1"
+          "$mod, A, hyprexpo:expo, toggle"
+
+          # "$mod, A, scroller:toggleoverview"
+          # "$mod, W, scroller:jump"
+          # "$mod+Shift, H, scroller:movewindow, l"
+          # "$mod+Shift, L, scroller:movewindow, r"
+          # "$mod, M, scroller:alignwindow, c"
+          # "$mod+Shift, equal, scroller:admitwindow"
+          # "$mod, less, scroller:expelwindow"
+          # "$mod, C, scroller:fitsize, active"
+          # "$mod, equal, scroller:pin"
+          # "$mod+Shift, K, scroller:cyclesize, +1"
+          # "$mod+Shift, J, scroller:cyclesize, -1"
         ]
         ++ (
           builtins.concatLists (
@@ -249,6 +252,12 @@ in {
       exec = [
         "hyprshade auto"
       ];
+
+      plugin = {
+        hyprexpo = {
+          
+        };
+      };
     };
   };
 
