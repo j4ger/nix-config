@@ -50,6 +50,7 @@ in {
 
       decoration = {
         rounding = 10;
+        blur.enabled = false;
       };
 
       master = {
@@ -94,6 +95,7 @@ in {
           # animation = workspaces, 1, 7, menu_decel, slidefade 15%
           # animation = specialWorkspace, 1, 3, md3_decel, slidefadevert 15%
           "specialWorkspace, 1, 3, md3_decel, slidevert"
+          "borderangle, 0"
         ];
       };
 
@@ -105,6 +107,11 @@ in {
 
       misc = {
         # vfr = false; # TODO: test this out
+        vrr = 1;
+      };
+
+      cursor = {
+        no_warps = true;
       };
 
       windowrulev2 = [
@@ -118,7 +125,7 @@ in {
       ];
 
       input = {
-        follow_mouse = 1;
+        follow_mouse = 2;
 
         touchpad = {
           natural_scroll = true;
@@ -170,10 +177,10 @@ in {
           "$mod+Shift, H, scroller:movewindow, l"
           "$mod+Shift, L, scroller:movewindow, r"
           "$mod, M, scroller:alignwindow, c"
-          "$mod, +, scroller:admitwindow"
-          "$mod, -, scroller:expelwindow"
+          "$mod+Shift, equal, scroller:admitwindow"
+          "$mod, less, scroller:expelwindow"
           "$mod, C, scroller:fitsize, active"
-          "$mod, =, scroller:pin"
+          "$mod, equal, scroller:pin"
           "$mod+Shift, K, scroller:cyclesize, +1"
           "$mod+Shift, J, scroller:cyclesize, -1"
         ]
