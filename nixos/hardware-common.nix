@@ -26,6 +26,7 @@
         finegrained = true;
       };
     };
+    amdgpu.opencl.enable = true;
     graphics = {
       enable = true;
       enable32Bit = true;
@@ -34,10 +35,11 @@
         libva
         libva-utils
         glxinfo
-        # amdvlk
+        amdvlk
+        rocmPackages.clr.icd
       ];
       extraPackages32 = [
-        # pkgs.driversi686Linux.amdvlk
+        pkgs.driversi686Linux.amdvlk
       ];
     };
   };
@@ -45,6 +47,7 @@
     systemPackages = with pkgs; [
       linux-firmware
       sbctl
+      rocmPackages.clr.icd
     ];
   };
 

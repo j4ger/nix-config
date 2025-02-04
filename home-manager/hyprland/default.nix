@@ -170,9 +170,10 @@ in {
           "$mod+Shift, H, scroller:movewindow, l"
           "$mod+Shift, L, scroller:movewindow, r"
           "$mod, M, scroller:alignwindow, c"
-          "$mod, P, scroller:admitwindow"
-          "$mod, O, scroller:expelwindow"
+          "$mod, +, scroller:admitwindow"
+          "$mod, -, scroller:expelwindow"
           "$mod, C, scroller:fitsize, active"
+          "$mod, =, scroller:pin"
           "$mod+Shift, K, scroller:cyclesize, +1"
           "$mod+Shift, J, scroller:cyclesize, -1"
         ]

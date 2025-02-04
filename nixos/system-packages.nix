@@ -98,17 +98,9 @@
   services.ollama = {
     enable = true;
     acceleration = "rocm";
+    rocmOverrideGfx = "11.0.0";
   };
-  systemd.tmpfiles.rules = let
-    rocmEnv = pkgs.symlinkJoin {
-      name = "rocm-combined";
-      paths = with pkgs.rocmPackages; [
-        rocblas
-        hipblas
-        clr
-      ];
-    };
-  in [
-    "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
 }
