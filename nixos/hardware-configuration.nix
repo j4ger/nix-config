@@ -88,6 +88,6 @@
     nvidiaBusId = "PCI:100:0:0";
   };
   environment.variables = {
-    "KWIN_DRM_DEVICES" = "/dev/dri/card1:/dev/dri/card0";
+#    "KWIN_DRM_DEVICES" = "/dev/dri/card1:/dev/dri/card0";
   };
 }
