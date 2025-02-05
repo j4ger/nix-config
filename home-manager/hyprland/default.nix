@@ -42,6 +42,7 @@ in {
     settings = {
       monitor = [
         "eDP-1, preferred, auto, 1.6"
+        "DP-2, preferred, auto-right, 1.25"
         ", preferred, auto, 1"
       ];
 
@@ -122,6 +123,15 @@ in {
         "center, tag:modal"
         "float, class:(clipse)"
         "size 622 652, class:(clipse)"
+        # "noanim, class:^(flameshot)$"
+        # "float, class:^(flameshot)$"
+        # "noinitialfocus, class:^(flameshot)$"
+        # "move 0 0,class:^(flameshot)$"
+        # "suppressevent fullscreen,class:^(flameshot)$"
+        # "stayfocused,class:^(flameshot)$"
+        # "noborder,class:^(flameshot)$"
+        # "pin,class:^(flameshot)$"
+        # "monitor 0,class:^(flameshot)$"
       ];
 
       layerrule = [
@@ -169,7 +179,7 @@ in {
 
           "$mod, U, focusurgentorlast"
 
-          "$mod+Shift, S, exec, grim -g \"$(slurp -o -r -c '##ff0000ff')\" -t ppm - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/Screenshot_$(date '+%Y%m%d_%H:%M:%S').png"
+          "$mod+Shift, S, exec, grim -g \"$(slurp -c '##ff0000ff')\" -t ppm - | satty --filename - --output-filename ~/Pictures/Screenshots/Screenshot_$(date '+%Y%m%d_%H:%M:%S').png --early-exit"
 
           "$mod, mouse_down, workspace, e+1"
           "$mod, mouse_up, workspace, e-1"

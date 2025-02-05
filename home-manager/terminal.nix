@@ -16,6 +16,7 @@
     proxychains-ng
     distrobox
     qimgv
+    unzrip
   ];
   programs = {
     ghostty = {
