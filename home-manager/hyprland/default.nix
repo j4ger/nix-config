@@ -179,7 +179,7 @@ in {
 
           "$mod, U, focusurgentorlast"
 
-          "$mod+Shift, S, exec, grim -g \"$(slurp -c '##ff0000ff')\" -t ppm - | satty --filename - --output-filename ~/Pictures/Screenshots/Screenshot_$(date '+%Y%m%d_%H:%M:%S').png --early-exit"
+          "$mod+Shift, S, exec, grim -g \"$(slurp -c '##ff0000ff')\" -t ppm - | satty --filename - --output-filename ~/Pictures/Screenshots/Screenshot_$(date '+%Y%m%d_%H:%M:%S').png"
 
           "$mod, mouse_down, workspace, e+1"
           "$mod, mouse_up, workspace, e-1"
