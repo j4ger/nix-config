@@ -41,8 +41,8 @@ in {
 
     settings = {
       monitor = [
-        "eDP-1, preferred, auto, 1.6"
-        "DP-2, preferred, auto-right, 1.25"
+        "eDP-2, preferred, auto, 1.6"
+        "DP-3, preferred, auto-right, 1.25"
         ", preferred, auto, 1"
       ];
 
@@ -184,8 +184,6 @@ in {
           "$mod, mouse_down, workspace, e+1"
           "$mod, mouse_up, workspace, e-1"
 
-          "$mod, A, hyprexpo:expo, toggle"
-
           # "$mod, A, scroller:toggleoverview"
           # "$mod, W, scroller:jump"
           # "$mod+Shift, H, scroller:movewindow, l"
@@ -242,11 +240,12 @@ in {
       env = [
         "HYPRCURSOR_THEME,Bibata-Modern-Ice"
         "HYPRCURSOR_SIZE,24"
-        "AQ_DRM_DEVICES,/dev/dri/card1"
+        "AQ_DRM_DEVICES,/run/amd-igpu"
       ];
 
       debug = {
         disable_logs = false;
+        enable_stdout_logs = true;
       };
 
       exec-once = [
@@ -267,7 +266,7 @@ in {
 
       plugin = {
         hyprexpo = {
-          
+
         };
       };
     };

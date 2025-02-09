@@ -102,5 +102,7 @@
   };
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm   -    -    -     -    ${pkgs.rocmPackages.clr}"
+
+    "L+ /run/amd-igpu - - - - /dev/dri/by-path/pci-0000:65:00.0-card"
   ];
 }

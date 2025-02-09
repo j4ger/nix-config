@@ -7,7 +7,7 @@
   tomlFormat = pkgs.formats.toml {};
 in {
   home.packages = [
-    myPackages.${system}.mynvim
+    # myPackages.${system}.mynvim
     pkgs.neovide
   ];
 

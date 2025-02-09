@@ -17,6 +17,8 @@
     distrobox
     qimgv
     unzrip
+    nil
+    nixd
   ];
   programs = {
     ghostty = {
@@ -104,6 +106,9 @@
         top = "btop";
         lg = "lazygit";
         v = "neovide";
+        nhus = "nh os switch . --update -- --show-trace";
+        nhs = "nh os switch . -- --show-trace";
+        ze = "zeditor .";
       };
     };
     starship = {
