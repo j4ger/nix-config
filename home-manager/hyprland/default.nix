@@ -41,6 +41,7 @@ in {
 
     settings = {
       monitor = [
+        "eDP-1, preferred, auto, 1.6"
         "eDP-2, preferred, auto, 1.6"
         "DP-3, preferred, auto-right, 1.25"
         ", preferred, auto, 1"
@@ -123,6 +124,7 @@ in {
         "center, tag:modal"
         "float, class:(clipse)"
         "size 622 652, class:(clipse)"
+        "float, class:(smore)"
         # "noanim, class:^(flameshot)$"
         # "float, class:^(flameshot)$"
         # "noinitialfocus, class:^(flameshot)$"
