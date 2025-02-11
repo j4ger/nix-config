@@ -73,8 +73,8 @@
 
     supergfxd.enable = true;
     asusd = {
-      enable = true;
-      enableUserService = true;
+      enable = false;
+      enableUserService = false;
     };
 
     udev = {
