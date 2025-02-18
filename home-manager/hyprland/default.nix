@@ -154,6 +154,16 @@ in {
         };
       };
 
+      device = [
+        {
+          name = "logitech-ergo-m575";
+          scroll_method = "on_button_down";
+          scroll_button = 276;
+          scroll_button_lock = true;
+          scroll_factor = 0.8;
+        }
+      ];
+
       "$mod" = "Super";
 
       bind =
