@@ -24,8 +24,6 @@ in {
   imports = [
     ./hyprpanel.nix
     ./hyprlock.nix
-
-    inputs.gauntlet.homeManagerModules.default
   ];
 
   wayland.windowManager.hyprland = {
@@ -126,7 +124,10 @@ in {
         "center, tag:modal"
         "float, class:(clipse)"
         "size 622 652, class:(clipse)"
+
         "float, class:(smore)"
+
+        "float, title:(Albert)"
         # "noanim, class:^(flameshot)$"
         # "float, class:^(flameshot)$"
         # "noinitialfocus, class:^(flameshot)$"
@@ -161,7 +162,7 @@ in {
           "$mod+Shift, E, exec, wlogout"
           "$mod+Alt, L, exec, hyprlock"
 
-          "$mod, D, exec, gauntlet open"
+          "$mod, D, exec, albert toggle"
           "$mod, V, exec, alacritty --class clipse -e clipse"
 
           "$mod, Q, killactive"
@@ -261,7 +262,7 @@ in {
         "kdeconnectd"
         "swww-daemon"
         "${swww_script}"
-        "gauntlet --minimized"
+        "albert"
       ];
 
       exec = [
@@ -310,13 +311,10 @@ in {
     # mako
     eww
 
+    albert
+
     bibata-cursors
   ];
-
-  programs.gauntlet = {
-    enable = true;
-    config = {};
-  };
 
   xdg.configFile."hypr/hyprshade.toml".text = ''
     [[shades]]

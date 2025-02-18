@@ -59,11 +59,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    gauntlet = {
-      url = "github:project-gauntlet/gauntlet";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -122,8 +117,6 @@
           daeuniverse.nixosModules.daed
 
           lanzaboote.nixosModules.lanzaboote
-
-          gauntlet.nixosModules.default
         ];
       };
     };
