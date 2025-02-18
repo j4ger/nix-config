@@ -127,7 +127,10 @@ in {
 
         "float, class:(smore)"
 
-        "float, title:(Albert)"
+        "float, class:(ulauncher)"
+        "stayfocused, class:(ulauncher)"
+        "noborder, class:(ulauncher)"
+        "noshadow, class:(ulauncher)"
         # "noanim, class:^(flameshot)$"
         # "float, class:^(flameshot)$"
         # "noinitialfocus, class:^(flameshot)$"
@@ -162,7 +165,7 @@ in {
           "$mod+Shift, E, exec, wlogout"
           "$mod+Alt, L, exec, hyprlock"
 
-          "$mod, D, exec, albert toggle"
+          "$mod, D, exec, ulauncher-toggle"
           "$mod, V, exec, alacritty --class clipse -e clipse"
 
           "$mod, Q, killactive"
@@ -262,7 +265,7 @@ in {
         "kdeconnectd"
         "swww-daemon"
         "${swww_script}"
-        "albert"
+        "ulauncher --hide-window"
       ];
 
       exec = [
@@ -311,7 +314,7 @@ in {
     # mako
     eww
 
-    albert
+    ulauncher
 
     bibata-cursors
   ];
