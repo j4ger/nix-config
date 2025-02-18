@@ -11,8 +11,6 @@
     appimage-run
     nh
     comma
-    protontricks
-    mangohud
     podman-compose
     bottles
     # virtiofsd

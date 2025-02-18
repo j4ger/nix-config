@@ -29,6 +29,9 @@
       # lutris-unwrapped
       handbrake
       wiliwili
+      (bilibili.override {
+        commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime";
+      })
       wechat-uos
       # zoom-us
       vmware-horizon-client
@@ -42,6 +45,7 @@
       inputs.zen-browser.packages.${system}.default
       sioyek
       zed-editor
+      solaar
     ];
   };
   programs = {
