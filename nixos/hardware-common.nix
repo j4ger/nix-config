@@ -18,7 +18,7 @@
 
     nvidia-container-toolkit.enable = true;
     nvidia = {
-      open = false;
+      open = true;
       package = config.boot.kernelPackages.nvidiaPackages.production;
       modesetting.enable = true;
       powerManagement = {
