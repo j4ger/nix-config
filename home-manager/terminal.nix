@@ -19,6 +19,7 @@
     unzrip
     nil
     nixd
+    aichat
   ];
   programs = {
     ghostty = {

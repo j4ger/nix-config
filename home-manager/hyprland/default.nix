@@ -5,20 +5,12 @@
   ...
 }: let
   swww_latest = inputs.swww.packages.${system}.swww;
-  swww_script = pkgs.writeShellScript "swww_randomize" ''
-    export SWWW_TRANSITION_FPS=60
-    export SWWW_TRANSITION_STEP=2
-    while true; do
-      find ~/Pictures/Wallpapers -type f \
-        | while read -r img; do
-          echo "$((RANDOM % 1000)):$img"
-        done \
-        | sort -n | cut -d':' -f2- \
-        | while read -r img; do
-          ${swww_latest}/bin/swww img "$img"
-          sleep 300
-        done
-    done
+  wallpaper_script = pkgs.writeShellScript "rng_wall" ''
+      while true;
+      do
+        sleep 600;
+        waypaper --random;
+      done
   '';
 in {
   imports = [
@@ -273,7 +265,8 @@ in {
         "clipse -listen"
         "kdeconnectd"
         "swww-daemon"
-        "${swww_script}"
+        "${wallpaper_script}"
+        "waypaper --restore"
         "ulauncher --hide-window"
       ];
 
@@ -314,6 +307,8 @@ in {
     swww_latest
 
     playerctl
+
+    waypaper
 
     pamixer
     clipse
