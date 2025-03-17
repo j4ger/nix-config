@@ -23,10 +23,12 @@ in {
     systemd.enable = true;
     xwayland.enable = true;
     # package = inputs.hyprland.packages.${system}.hyprland;
+    # portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
 
-    plugins = with pkgs; [
+    plugins = [
       # hyprlandPlugins.hyprscroller
-        hyprlandPlugins.hyprexpo
+        #inputs.Hyprspace.packages.${system}.Hyprspace
+        pkgs.hyprlandPlugins.hyprspace
     ];
 
     settings = {
@@ -99,7 +101,7 @@ in {
       gestures = {
         # disable those due to the use of hyperscroller
         workspace_swipe = true;
-        workspace_swipe_fingers = 3;
+        workspace_swipe_fingers = 4;
       };
 
       misc = {
@@ -192,6 +194,8 @@ in {
 
           "$mod, mouse_down, workspace, e+1"
           "$mod, mouse_up, workspace, e-1"
+
+          "$mod, A, overview:toggle"
 
           # "$mod, A, scroller:toggleoverview"
           # "$mod, W, scroller:jump"

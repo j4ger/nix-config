@@ -2,6 +2,8 @@
   pkgs,
   config,
   lib,
+  inputs,
+  system,
   ...
 }: {
   hardware = {
@@ -19,7 +21,7 @@
     nvidia-container-toolkit.enable = true;
     nvidia = {
       open = true;
-      package = config.boot.kernelPackages.nvidiaPackages.production;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
       modesetting.enable = true;
       powerManagement = {
         enable = true;

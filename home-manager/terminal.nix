@@ -20,6 +20,7 @@
     nil
     nixd
     aichat
+    poppler-utils
   ];
   programs = {
     ghostty = {

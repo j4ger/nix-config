@@ -46,6 +46,7 @@
       sioyek
       zed-editor
       solaar
+      alpaca
     ];
   };
   programs = {
