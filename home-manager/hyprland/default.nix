@@ -125,15 +125,20 @@ in {
         "stayfocused, class:(ulauncher)"
         "noborder, class:(ulauncher)"
         "noshadow, class:(ulauncher)"
-        # "noanim, class:^(flameshot)$"
-        # "float, class:^(flameshot)$"
-        # "noinitialfocus, class:^(flameshot)$"
-        # "move 0 0,class:^(flameshot)$"
-        # "suppressevent fullscreen,class:^(flameshot)$"
-        # "stayfocused,class:^(flameshot)$"
-        # "noborder,class:^(flameshot)$"
-        # "pin,class:^(flameshot)$"
-        # "monitor 0,class:^(flameshot)$"
+
+        "stayfocused, class:(satty)"
+        "float, class:(satty)"
+        "noborder, class:(satty)"
+        "noshadow, class:(satty)"
+
+        "noanim, class:^(flameshot)$"
+        "float, class:^(flameshot)$"
+        "noinitialfocus, class:^(flameshot)$"
+        "move 0 0,class:^(flameshot)$"
+        "suppressevent fullscreen,class:^(flameshot)$"
+        "stayfocused,class:^(flameshot)$"
+        "noborder,class:^(flameshot)$"
+        "pin,class:^(flameshot)$"
       ];
 
       layerrule = [
@@ -190,7 +195,7 @@ in {
 
           "$mod, U, focusurgentorlast"
 
-          "$mod+Shift, S, exec, grim -g \"$(slurp)\" -t ppm - | satty --early-exit --filename - --output-filename ~/Pictures/Screenshots/Screenshot_$(date '+%Y%m%d_%H:%M:%S').png --copy-command 'wl-copy'"
+          "$mod+Shift, S, exec, grim -t ppm - | satty --early-exit --filename - --output-filename ~/Pictures/Screenshots/Screenshot_$(date '+%Y%m%d_%H:%M:%S').png --copy-command 'wl-copy' --action-on-enter save-to-clipboard --initial-tool crop --fullscreen"
 
           "$mod, mouse_down, workspace, e+1"
           "$mod, mouse_up, workspace, e-1"
@@ -306,6 +311,8 @@ in {
     grim
     slurp
     satty
+
+    (flameshot.override { enableWlrSupport = true; })
 
     nwg-look
     swww_latest

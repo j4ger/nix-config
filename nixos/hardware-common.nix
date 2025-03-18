@@ -20,7 +20,7 @@
 
     nvidia-container-toolkit.enable = true;
     nvidia = {
-      open = true;
+      open = false;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       modesetting.enable = true;
       powerManagement = {
@@ -129,8 +129,9 @@
     initrd = {
       verbose = false;
       systemd.enable = true;
+      kernelModules = [ "amdgpu" ];
     };
-    kernelPackages = pkgs.linuxPackages_6_11;
+    kernelPackages = pkgs.linuxPackages_lqx;
     plymouth = {
       enable = true;
       theme = "spinner";
