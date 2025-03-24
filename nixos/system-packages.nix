@@ -97,13 +97,10 @@
     ollama = {
       enable = true;
       acceleration = "cuda";
-      rocmOverrideGfx = "11.0.0";
       host = "0.0.0.0";
     };
   };
   systemd.tmpfiles.rules = [
-    "L+    /opt/rocm   -    -    -     -    ${pkgs.rocmPackages.clr}"
-
     "L+ /run/amd-igpu - - - - /dev/dri/by-path/pci-0000:65:00.0-card"
   ];
 }

@@ -160,6 +160,12 @@ in {
           scroll_button = 276;
           scroll_button_lock = true;
         }
+        {
+          name = "ergo-m575-mouse";
+          scroll_method = "on_button_down";
+          scroll_button = 276;
+          scroll_button_lock = true;
+        }
       ];
 
       "$mod" = "Super";

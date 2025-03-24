@@ -38,7 +38,6 @@
         libva-utils
         glxinfo
         amdvlk
-        rocmPackages.clr.icd
       ];
       extraPackages32 = [
         pkgs.driversi686Linux.amdvlk
@@ -49,7 +48,6 @@
     systemPackages = with pkgs; [
       linux-firmware
       sbctl
-      rocmPackages.clr.icd
     ];
   };
 

@@ -40,7 +40,6 @@
       pods
       qalculate-qt
       drawio
-      marktext
       vial
       inputs.zen-browser.packages.${system}.default
       sioyek
