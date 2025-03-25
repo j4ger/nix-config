@@ -8,14 +8,13 @@
     packages = with pkgs; [
       qq
       inkscape
-      kdePackages.kdenlive
       audacity
-      kdePackages.konqueror
       haruna
       # glaxnimate
       # gimp
       darktable
       libreoffice
+      blender-hip
       # wpsoffice-cn
       siyuan
       # onlyoffice-bin_latest
@@ -27,7 +26,7 @@
       # FIXME: temp fix
       # kicad-small
       # lutris-unwrapped
-      handbrake
+      #handbrake
       wiliwili
       (bilibili.override {
         commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime";
@@ -67,6 +66,14 @@
     "org/virt-manager/virt-manager/connections" = {
       autoconnect = ["qemu:///system"];
       uris = ["qemu:///system"];
+    };
+  };
+  services.udiskie = {
+    enable = true;
+    settings = {
+      program_options = {
+        file_manager = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.yazi}/bin/yazi";
+      };
     };
   };
 }

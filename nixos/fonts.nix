@@ -5,9 +5,7 @@
   fonts = {
     packages = with pkgs; [
       roboto
-      maple-mono
-      # uncomment this in the next version bump
-      # maple-mono.Normal-NF-CN-unhinted
+      maple-mono.Normal-NF-CN-unhinted
       wqy_zenhei
       wqy_microhei
       lxgw-wenkai

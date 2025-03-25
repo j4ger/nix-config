@@ -77,6 +77,12 @@
       enableUserService = false;
     };
 
+    fwupd.enable = true;
+
+    devmon.enable = true;
+    gvfs.enable = true;
+    udisks2.enable = true;
+
     udev = {
       extraRules = ''
         SUBSYSTEMS=="usb", ATTRS{idVendor}=="303a", ATTRS{idProduct}=="00??", GROUP="plugdev", MODE="0666"
