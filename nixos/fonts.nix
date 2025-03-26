@@ -30,7 +30,7 @@
       defaultFonts = {
         serif = ["Noto Serif CJK SC" "Noto Serif" "Twitter Color Emoji"];
         sansSerif = ["Noto Sans CJK SC" "Noto Sans" "Twitter Color Emoji"];
-        monospace = ["Maple Mono" "Noto Sans Mono CJK SC" "Twitter Color Emoji"];
+        monospace = ["Maple Mono Normal NF CN" "Noto Sans Mono CJK SC" "Twitter Color Emoji"];
       };
       localConf = ''
         <match target="pattern">

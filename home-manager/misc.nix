@@ -21,7 +21,7 @@
       # super-slicer.latest
       # yesplaymusic
       go-musicfox
-      #nur.repos.linyinfeng.wemeet
+      wemeet
       #inputs.j4ger-pkgs.packages.${system}.lceda-pro
       # FIXME: temp fix
       # kicad-small

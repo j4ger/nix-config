@@ -331,7 +331,8 @@ in {
     clipse
     networkmanagerapplet
     # mako
-    eww
+
+    inputs.eww.packages.${system}.eww
 
     ulauncher
 
