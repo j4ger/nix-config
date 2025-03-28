@@ -88,11 +88,6 @@
       url = "github:sxyazi/yazi";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    eww = {
-      url = "github:elkowar/eww";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {

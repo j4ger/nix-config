@@ -332,7 +332,7 @@ in {
     networkmanagerapplet
     # mako
 
-    inputs.eww.packages.${system}.eww
+    ags
 
     ulauncher
 
@@ -384,6 +384,7 @@ in {
 
   catppuccin.flavor = "macchiato";
   catppuccin.enable = true;
+  catppuccin.hyprlock.enable = false;
 
   home.pointerCursor = {
     gtk.enable = true;
