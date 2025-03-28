@@ -135,7 +135,16 @@
       systemd.enable = true;
       kernelModules = [ "amdgpu" ];
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_6_12.override {
+      argsOverride = rec {
+        src = pkgs.fetchurl {
+          url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
+          sha256 = "sha256-X4E2KmlPUVIL/5+uy3PxzJvHvs5v3RDVwn40jfOdfcQ=";
+        };
+        version = "6.12.16";
+        modDirVersion = "6.12.16";
+      };
+    });
     plymouth = {
       enable = true;
       theme = "spinner";
