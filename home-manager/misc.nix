@@ -45,6 +45,7 @@
       zed-editor
       solaar
       alpaca
+      aider-chat
     ];
   };
   programs = {
