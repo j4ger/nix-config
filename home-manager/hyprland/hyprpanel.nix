@@ -6,8 +6,6 @@
     hyprland.enable = true;
     overwrite.enable = true;
 
-    theme = "catppuccin_macchiato";
-
     settings = {
       bar = {
         clock.format = "%m-%d %H:%M:%S";
