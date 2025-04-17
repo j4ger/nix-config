@@ -24,6 +24,7 @@
 
     # home-manager
     inputs.home-manager.nixosModules.home-manager
+    inputs.nixos-cosmic.nixosModules.default
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -81,12 +82,14 @@
         "https://hyprland.cachix.org"
         "https://nix-community.cachix.org"
         "https://devenv.cachix.org"
+        "https://cosmic.cachix.org/"
       ];
       trusted-public-keys = [
         "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+        "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
       ];
       trusted-users = ["root" "j4ger"];
     };
