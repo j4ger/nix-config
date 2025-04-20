@@ -11,7 +11,7 @@
       audacity
       haruna
       # glaxnimate
-      # gimp
+      gimp
       darktable
       libreoffice
       blender-hip
@@ -23,10 +23,9 @@
       go-musicfox
       wemeet
       #inputs.j4ger-pkgs.packages.${system}.lceda-pro
-      # FIXME: temp fix
-      # kicad-small
+      kicad-small
       # lutris-unwrapped
-      #handbrake
+      handbrake
       wiliwili
       (bilibili.override {
         commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime";
