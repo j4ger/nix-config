@@ -23,14 +23,26 @@
     poppler-utils
   ];
   programs = {
-    ghostty = {
+    rio = {
       enable = true;
-      enableFishIntegration = true;
       settings = {
-        theme = "catppuccin-macchiato";
-        window-decoration = false;
-        background-opacity = 0.8;
-        background-blur-radius = 20;
+        editor = {
+          program = "zeditor";
+        };
+        cursor = {
+          shape = "beam";
+        };
+        fonts = {
+          size = 16;
+          family = "Maple Mono Normal NF CN";
+        };
+        renderer = {
+          performance = "Low";
+        };
+        window = {
+          opacity = 0.6;
+          blur = true;
+        };
       };
     };
     yazi = {

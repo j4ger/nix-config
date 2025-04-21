@@ -173,8 +173,8 @@ in {
 
       bind =
         [
-          "$mod, E, exec, ghostty -e yazi"
-          "$mod+Shift, Return, exec, ghostty"
+          "$mod, E, exec, rio -e yazi"
+          "$mod+Shift, Return, exec, rio"
           "$mod, R, exec, zen"
 
           "$mod+Shift, E, exec, wlogout"
@@ -280,7 +280,7 @@ in {
         "fcitx5"
         "clipse -listen"
         "kdeconnectd"
-        "swww-daemon"
+#        "swww-daemon"
         "${wallpaper_script}"
         "waypaper --restore"
         "ulauncher --hide-window"
@@ -314,6 +314,7 @@ in {
 
     hyprutils
     hyprshade
+    hyprpaper
 
     grim
     slurp
@@ -420,6 +421,13 @@ in {
           on-timeout = "systemctl suspend-then-hibernate";
         }
       ];
+    };
+  };
+
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = true;
     };
   };
 }
