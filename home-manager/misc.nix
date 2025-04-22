@@ -11,7 +11,7 @@
       audacity
       haruna
       # glaxnimate
-      gimp
+      gimp3
       darktable
       libreoffice
       blender-hip
