@@ -21,6 +21,7 @@
     nixd
     aichat
     poppler-utils
+    ueberzugpp
   ];
   programs = {
     rio = {
@@ -123,6 +124,7 @@
         nhus = "nh os switch . --update -- --show-trace";
         nhs = "nh os switch . -- --show-trace";
         ze = "zeditor .";
+        plz = "aichat -e";
       };
     };
     starship = {
