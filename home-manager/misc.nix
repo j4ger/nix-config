@@ -43,8 +43,8 @@
       sioyek
       zed-editor
       solaar
-      alpaca
       aider-chat
+      cherry-studio
     ];
   };
   programs = {
