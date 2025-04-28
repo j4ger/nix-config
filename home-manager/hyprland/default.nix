@@ -140,6 +140,8 @@ in {
         "stayfocused,class:^(flameshot)$"
         "noborder,class:^(flameshot)$"
         "pin,class:^(flameshot)$"
+
+        "float, class:Waydroid"
       ];
 
       layerrule = [

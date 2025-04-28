@@ -22,6 +22,7 @@
     aichat
     poppler-utils
     ueberzugpp
+    uv
   ];
   programs = {
     rio = {

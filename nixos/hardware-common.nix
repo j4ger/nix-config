@@ -6,8 +6,11 @@
   system,
   ...
 }: {
+  powerManagement.powertop.enable = true;
+
   hardware = {
-    opentabletdriver.enable = false;
+    enableAllFirmware = true;
+
     bluetooth = {
       enable = true;
       settings = {
