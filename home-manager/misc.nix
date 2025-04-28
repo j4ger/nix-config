@@ -45,6 +45,7 @@
       solaar
       aider-chat
       cherry-studio
+      scrcpy
     ];
   };
   programs = {
