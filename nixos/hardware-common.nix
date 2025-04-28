@@ -138,7 +138,7 @@
       systemd.enable = true;
       kernelModules = [ "amdgpu" ];
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_xanmod;
     plymouth = {
       enable = true;
       theme = "spinner";
