@@ -35,9 +35,9 @@
       vmware-horizon-client
       rnote
       livecaptions
-      pods
       qalculate-qt
       drawio
+      lazydocker
       vial
       inputs.zen-browser.packages.${system}.default
       sioyek

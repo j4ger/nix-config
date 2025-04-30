@@ -24,7 +24,6 @@
 
     # home-manager
     inputs.home-manager.nixosModules.home-manager
-    inputs.nixos-cosmic.nixosModules.default
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -140,7 +139,7 @@
       initialPassword = "iamthestorm";
       isNormalUser = true;
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel" "video" "audio" "NetworkManager" "libvirtd" "plugdev" "ydotool" "input" "kvm" "adbusers"];
+      extraGroups = ["wheel" "video" "audio" "NetworkManager" "libvirtd" "plugdev" "ydotool" "input" "kvm" "adbusers" "docker"];
       shell = pkgs.fish;
     };
   };

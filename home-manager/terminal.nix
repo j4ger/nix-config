@@ -23,6 +23,7 @@
     poppler-utils
     ueberzugpp
     uv
+    inputs.nix-alien.packages.${system}.default
   ];
   programs = {
     rio = {
