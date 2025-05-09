@@ -14,7 +14,7 @@
       gimp3
       darktable
       libreoffice
-      blender-hip
+      (blender.override { cudaSupport = true; })
       # wpsoffice-cn
       siyuan
       # onlyoffice-bin_latest

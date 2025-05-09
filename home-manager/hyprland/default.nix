@@ -140,6 +140,8 @@ in {
         "stayfocused,class:^(flameshot)$"
         "noborder,class:^(flameshot)$"
         "pin,class:^(flameshot)$"
+
+        "float, class:^(Extension: \(Bitwarden Password Manager\))"
       ];
 
       layerrule = [
@@ -173,8 +175,8 @@ in {
 
       bind =
         [
-          "$mod, E, exec, rio -e yazi"
-          "$mod+Shift, Return, exec, rio"
+          "$mod, E, exec, wezterm -e yazi"
+          "$mod+Shift, Return, exec, wezterm"
           "$mod, R, exec, zen"
 
           "$mod+Shift, E, exec, wlogout"
@@ -387,6 +389,7 @@ in {
   catppuccin.flavor = "macchiato";
   catppuccin.enable = true;
   catppuccin.hyprlock.enable = false;
+  catppuccin.mako.enable = false;
 
   home.pointerCursor = {
     gtk.enable = true;
