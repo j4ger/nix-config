@@ -124,7 +124,7 @@
         config.enable_tab_bar = false;
         config.color_scheme = "tokyonight_night"
         config.text_background_opacity = 0.8;
-        config.window_decorations = "RESIZE";
+        config.window_decorations = "NONE";
 
         return config
       '';
