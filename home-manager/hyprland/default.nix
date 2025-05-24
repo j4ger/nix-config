@@ -204,7 +204,13 @@ in {
 
           "$mod, U, focusurgentorlast"
 
-          "$mod+Shift, S, exec, grim -t ppm - | satty --early-exit --filename - --output-filename ~/Pictures/Screenshots/Screenshot_$(date '+%Y%m%d_%H:%M:%S').png --copy-command 'wl-copy' --action-on-enter save-to-clipboard --initial-tool crop --fullscreen"
+          # "$mod+Shift, S, exec, grim -t ppm - | satty --early-exit --filename - --output-filename ~/Pictures/Screenshots/Screenshot_$(date '+%Y%m%d_%H:%M:%S').png --copy-command 'wl-copy' --action-on-enter save-to-clipboard --initial-tool crop --fullscreen"
+          "$mod, S, exec, hyprshot -m region --clipboard-only -t 500"
+          "$mod+Shift, S, exec, hyprshot -m region -o ~/Pictures/Screenshots/ -t 1500"
+          "$mod+Alt, S, exec, hyprshot -m window --clipboard-only -t 500"
+          "$mod+Alt+Shift, S, exec, hyprshot -m window -o ~/Pictures/Screenshots/ -t 1500"
+          "$mod+Ctrl, S, exec, hyprshot -m output --clipboard-only -t 500"
+          "$mod+Ctrl+Shift, S, exec, hyprshot -m output -o ~/Pictures/Screenshots/ -t 1500"
 
           "$mod, mouse_down, workspace, e+1"
           "$mod, mouse_up, workspace, e-1"
@@ -320,9 +326,10 @@ in {
 
     grim
     slurp
-    satty
+    #satty
+    hyprshot
 
-    (flameshot.override { enableWlrSupport = true; })
+    #(flameshot.override { enableWlrSupport = true; })
 
     nwg-look
     swww_latest

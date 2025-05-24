@@ -48,6 +48,7 @@
       ];
     };
     light.enable = true;
+    alvr.enable = true;
   };
 
   services.sunshine = {
