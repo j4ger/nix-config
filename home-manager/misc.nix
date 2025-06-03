@@ -46,6 +46,7 @@
       aider-chat
       cherry-studio
       scrcpy
+      davinci-resolve
     ];
   };
   programs = {

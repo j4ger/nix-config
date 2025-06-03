@@ -14,7 +14,7 @@
   };
 
   services.daed = {
-    enable = true;
+    enable = false;
   };
 
   services.mihomo = {
@@ -70,4 +70,9 @@
   #   capabilities = "cap_net_bind_service,cap_net_admin=+ep";
   #   source = "${lib.getExe myPackages.${system}.mihomo-party}";
   # };
+
+  programs.clash-verge = {
+    enable = true;
+    serviceMode = true;
+  };
 }

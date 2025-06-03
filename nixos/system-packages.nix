@@ -48,13 +48,19 @@
       ];
     };
     light.enable = true;
-    alvr.enable = true;
   };
 
   services.sunshine = {
     enable = false;
     capSysAdmin = true;
     openFirewall = true;
+  };
+
+  services.wivrn = {
+    enable = true;
+    openFirewall = true;
+
+    defaultRuntime = true;
   };
 
   virtualisation = {

@@ -292,6 +292,7 @@ in {
         "${wallpaper_script}"
         "waypaper --restore"
         "ulauncher --hide-window"
+        "clash-verge"
       ];
 
       exec = [
@@ -332,7 +333,6 @@ in {
     #(flameshot.override { enableWlrSupport = true; })
 
     nwg-look
-    swww_latest
 
     playerctl
 
