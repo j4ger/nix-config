@@ -108,6 +108,7 @@ in {
       misc = {
         # vfr = false; # TODO: test this out
         vrr = 1;
+        enable_anr_dialog = false;
       };
 
       cursor = {
