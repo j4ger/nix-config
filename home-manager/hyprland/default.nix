@@ -148,9 +148,13 @@ in {
         "pin,class:^(flameshot)$"
 
         "float, class:^(Extension: \(Bitwarden Password Manager\))"
-        
+
         "workspace 1 silent, class:^(zen)$"
         "workspace 4 silent, class:^(QQ)$"
+
+        "idleinhibit fullscreen, class:^(*)$"
+        "idleinhibit fullscreen, title:^(*)$"
+        "idleinhibit fullscreen, fullscreen:1"
       ];
 
       layerrule = [
