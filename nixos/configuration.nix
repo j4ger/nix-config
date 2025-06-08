@@ -76,7 +76,6 @@
       substituters = [
         "https://mirrors.ustc.edu.cn/nix-channels/store"
         "https://cache.nixos.org/"
-        #        "https://mirrors.cernet.edu.cn/nix-channels/store"
         "https://yazi.cachix.org"
         "https://hyprland.cachix.org"
         "https://nix-community.cachix.org"

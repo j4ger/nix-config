@@ -34,12 +34,17 @@ in {
     settings = {
       xwayland.force_zero_scaling = true;
       monitor = [
-        "eDP-1, preferred, auto, 1.6"
-        "eDP-2, preferred, auto, 1.6"
-        "DP-1, preferred, auto-left, 1.25"
-        "DP-2, preferred, auto-left, 1.25"
-        "DP-3, preferred, auto-left, 1.25"
+        "desc:BOE NE140QDM-NX7, preferred, auto, 1.6"
+        "desc:HKC OVERSEAS LIMITED G24H2 0000000000000, preferred, auto-left, 1.25"
         ", preferred, auto, 1"
+      ];
+
+      workspace = [
+        "1, monitor:desc:HKC OVERSEAS LIMITED G24H2 0000000000000, persistent:true"
+        "2, monitor:desc:HKC OVERSEAS LIMITED G24H2 0000000000000, persistent:true"
+        "3, monitor:desc:HKC OVERSEAS LIMITED G24H2 0000000000000, persistent:true"
+        "4, monitor:desc:BOE NE140QDM-NX7, persistent:true"
+        "5, monitor:desc:BOE NE140QDM-NX7, persistent:true"
       ];
 
       general = {
@@ -143,6 +148,9 @@ in {
         "pin,class:^(flameshot)$"
 
         "float, class:^(Extension: \(Bitwarden Password Manager\))"
+        
+        "workspace 1 silent, class:^(zen)$"
+        "workspace 4 silent, class:^(QQ)$"
       ];
 
       layerrule = [
