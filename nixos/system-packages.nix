@@ -71,7 +71,7 @@
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
 
-    waydroid.enable = true;
+    waydroid.enable = false;
   };
   # systemd.tmpfiles.rules = [
   #   #    "f /dev/shm/looking-glass 0660 j4ger qemu-libvirtd -"
