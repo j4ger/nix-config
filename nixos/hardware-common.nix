@@ -136,7 +136,13 @@
     initrd = {
       verbose = false;
       systemd.enable = true;
-      kernelModules = [ "amdgpu" ];
+      kernelModules = [
+        "vfio_pci"
+        "vfio"
+        "vfio_iommu_type1"
+
+        "amdgpu"
+      ];
     };
     kernelPackages = pkgs.linuxPackages_xanmod;
     plymouth = {
@@ -158,6 +164,7 @@
       "nvidia.NVreg_EnableGpuFirmware=0"
 
       "amd_iommu=on"
+      # "vfio-pci.ids=10de:28e0,10de:22be"
 
       "amdgpu.dcdebugmask=0x10"
       "amdgpu.sg_display=0"
@@ -166,5 +173,6 @@
       # "nvidia.NVreg_EnableBacklightHandler=0"
       # "nvidia.NVreg_RegistryDwords=EnableBrightnessControl=0"
     ];
+#    extraModprobeConfig = "options vfio-pci ids=10de:28e0,10de:22be";
   };
 }

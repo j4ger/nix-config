@@ -12,10 +12,13 @@
     nh
     comma
     podman-compose
-    bottles
-    # virtiofsd
-    # looking-glass-client
-    # scream
+    virtiofsd
+    virt-viewer
+    spice
+    spice-gtk
+    win-virtio
+    win-spice
+    looking-glass-client
   ];
 
   programs = {
@@ -29,6 +32,7 @@
     };
     steam = {
       enable = true;
+      gamescopeSession.enable = true;
       extraCompatPackages = with pkgs; [
         proton-ge-bin
       ];
@@ -68,15 +72,23 @@
       enable = true;
       storageDriver = "btrfs";
     };
-    libvirtd.enable = true;
+    libvirtd = {
+      enable = true;
+      qemu = {
+        swtpm.enable = true;
+        ovmf.enable = true;
+        vhostUserPackages = [ pkgs.virtiofsd ];
+      };
+    };
     spiceUSBRedirection.enable = true;
 
     waydroid.enable = false;
   };
-  # systemd.tmpfiles.rules = [
-  #   #    "f /dev/shm/looking-glass 0660 j4ger qemu-libvirtd -"
-  #   "f /dev/shm/scream 0660 j4ger qemu-libvirtd -"
-  # ];
+  services.spice-vdagentd.enable = true;
+  systemd.tmpfiles.rules = [
+    "L+ /run/amd-igpu - - - - /dev/dri/by-path/pci-0000:65:00.0-card"
+    "f /dev/shm/looking-glass 0660 j4ger qemu-libvirtd -"
+  ];
   # systemd.user.services.scream-ivshmem = {
   #   enable = false;
   #   description = "Scream IVSHMEM";
@@ -104,7 +116,4 @@
       host = "0.0.0.0";
     };
   };
-  systemd.tmpfiles.rules = [
-    "L+ /run/amd-igpu - - - - /dev/dri/by-path/pci-0000:65:00.0-card"
-  ];
 }
