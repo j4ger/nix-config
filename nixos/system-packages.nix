@@ -9,7 +9,6 @@
     zip
     xdg-utils
     appimage-run
-    nh
     comma
     podman-compose
     virtiofsd
@@ -52,6 +51,12 @@
       ];
     };
     light.enable = true;
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep 4 --keep-since 4d";
+      flake = "/home/j4ger/nix-config";
+    };
   };
 
   services.sunshine = {
