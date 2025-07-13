@@ -49,7 +49,7 @@
         };
       })
 
-      inputs.hyprpanel.overlay
+      #inputs.hyprpanel.overlay
     ];
     # Configure your nixpkgs instance
     config = {
@@ -99,7 +99,7 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
 
     gc = {
-      automatic = true;
+      automatic = false; # Disable due to nh
       dates = "weekly";
       options = "--delete-older-than 2d";
     };

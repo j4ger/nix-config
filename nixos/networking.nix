@@ -6,11 +6,15 @@
   system,
   inputs,
   ...
-}: {
+}:
+{
   services.dae = {
     enable = false;
     configFile = config.age.secrets.dae.path;
-    assets = with pkgs; [v2ray-geoip v2ray-domain-list-community];
+    assets = with pkgs; [
+      v2ray-geoip
+      v2ray-domain-list-community
+    ];
   };
 
   services.daed = {
@@ -74,5 +78,6 @@
   programs.clash-verge = {
     enable = true;
     serviceMode = true;
+    tunMode = true;
   };
 }

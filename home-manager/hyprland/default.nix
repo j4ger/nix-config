@@ -3,18 +3,20 @@
   inputs,
   system,
   ...
-}: let
+}:
+let
   swww_latest = inputs.swww.packages.${system}.swww;
   wallpaper_script = pkgs.writeShellScript "rng_wall" ''
-      while true;
-      do
-        sleep 600;
-        waypaper --random;
-      done
+    while true;
+    do
+      sleep 600;
+      waypaper --random;
+    done
   '';
-in {
+in
+{
   imports = [
-    ./hyprpanel.nix
+    #    ./hyprpanel.nix
     ./hyprlock.nix
   ];
 
@@ -27,8 +29,8 @@ in {
 
     plugins = [
       # hyprlandPlugins.hyprscroller
-        #inputs.Hyprspace.packages.${system}.Hyprspace
-        pkgs.hyprlandPlugins.hyprspace
+      #inputs.Hyprspace.packages.${system}.Hyprspace
+      pkgs.hyprlandPlugins.hyprspace
     ];
 
     settings = {
@@ -242,19 +244,18 @@ in {
           # "$mod+Shift, K, scroller:cyclesize, +1"
           # "$mod+Shift, J, scroller:cyclesize, -1"
         ]
-        ++ (
-          builtins.concatLists (
-            builtins.genList (
-              i: let
-                index = i + 1;
-              in [
-                "$mod, code:1${toString i}, workspace, ${toString index}"
-                "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString index}"
-              ]
-            )
-            9
-          )
-        );
+        ++ (builtins.concatLists (
+          builtins.genList (
+            i:
+            let
+              index = i + 1;
+            in
+            [
+              "$mod, code:1${toString i}, workspace, ${toString index}"
+              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString index}"
+            ]
+          ) 9
+        ));
 
       bindl = [
         ", XF86AudioMute, exec, pamixer -m"
@@ -301,11 +302,12 @@ in {
         "fcitx5"
         "clipse -listen"
         "kdeconnectd"
-#        "swww-daemon"
+        #        "swww-daemon"
         "${wallpaper_script}"
         "waypaper --restore"
         "ulauncher --hide-window"
         "clash-verge"
+        "ashell"
       ];
 
       exec = [
@@ -322,7 +324,7 @@ in {
 
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   home.packages = with pkgs; [
@@ -354,47 +356,53 @@ in {
     pamixer
     clipse
     networkmanagerapplet
-    # mako
+    blueberry
+    pavucontrol
 
-    ags
+    # mako
+    swaynotificationcenter
+
+    # ags
 
     ulauncher
 
     bibata-cursors
+
+    inputs.ashell.defaultPackage.${system}
   ];
 
   programs.wlogout = {
     enable = true;
     layout = [
       {
-          "label" = "shutdown";
-          "action" = "systemctl poweroff";
-          "text" = "Shutdown";
-          "keybind" = "s";
+        "label" = "shutdown";
+        "action" = "systemctl poweroff";
+        "text" = "Shutdown";
+        "keybind" = "s";
       }
       {
-          "label" = "reboot";
-          "action" = "systemctl reboot";
-          "text" = "Reboot";
-          "keybind" = "r";
+        "label" = "reboot";
+        "action" = "systemctl reboot";
+        "text" = "Reboot";
+        "keybind" = "r";
       }
       {
-          "label" = "logout";
-          "action" = "loginctl kill-session $XDG_SESSION_ID";
-          "text" = "Logout";
-          "keybind" = "e";
+        "label" = "logout";
+        "action" = "loginctl kill-session $XDG_SESSION_ID";
+        "text" = "Logout";
+        "keybind" = "e";
       }
       {
-          "label" = "hibernate";
-          "action" = "systemctl hibernate";
-          "text" = "Hibernate";
-          "keybind" = "h";
+        "label" = "hibernate";
+        "action" = "systemctl hibernate";
+        "text" = "Hibernate";
+        "keybind" = "h";
       }
       {
-          "label" = "lock";
-          "action" = "hyprlock";
-          "text" = "Lock";
-          "keybind" = "l";
+        "label" = "lock";
+        "action" = "hyprlock";
+        "text" = "Lock";
+        "keybind" = "l";
       }
     ];
   };
@@ -404,6 +412,63 @@ in {
     name = "blue-light-filter"
     start_time = "19:00:00"
     end_time = "06:00:00"
+  '';
+
+  xdg.configFile."ashell/config.toml".text = ''
+    log_level = "warn"
+    outputs = "All"
+    position = "Top"
+    app_launcher_cmd = "ulauncher-toggle"
+
+    [modules]
+    left = [ [ "Workspaces", "MediaPlayer" ] ]
+    center = [ "WindowTitle" ]
+    right = [ "SystemInfo", [  "Tray", "Clock", "Privacy", "Settings", "SwayNC" ] ]
+
+    [workspaces]
+    visibility_mode = "MonitorSpecific"
+    enable_workspace_filling = true
+
+    [window_title]
+    truncate_title_after_length = 100
+
+    [settings]
+    lock_cmd = "playerctl --all-players pause; hyprlock &"
+    audio_sinks_more_cmd = "pavucontrol -t 3"
+    audio_source_more_cmd = "pavucontrol -t 4"
+    wifi_more_cmd = "nm-connection-editor"
+    vpn_more_cmd = "nm-connection-editor"
+    bluetooth_more_cmd = "blueberry"
+    remove_airplane_btn = false
+
+    [[CustomModule]]
+    name = "SwayNC"
+    icon = ""
+    command = "swaync-client -t -sw"
+    listen_cmd = "swaync-client -swb"
+    icons.'dnd.*' = ""
+    alert = ".*notification"
+
+    [appearance]
+    style = "Islands"
+
+    primary_color = "#7aa2f7"
+    success_color = "#9ece6a"
+    text_color = "#a9b1d6"
+    workspace_colors = [ "#7aa2f7", "#9ece6a" ]
+    special_workspace_colors = [ "#7aa2f7", "#9ece6a" ]
+
+    [appearance.danger_color]
+    base = "#f7768e"
+    weak = "#e0af68"
+
+    [appearance.background_color]
+    base = "#1a1b26"
+    weak = "#24273a"
+    strong = "#414868"
+
+    [appearance.secondary_color]
+    base = "#0c0d14"
   '';
 
   catppuccin.flavor = "macchiato";
