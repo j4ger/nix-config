@@ -3,7 +3,8 @@
   inputs,
   system,
   ...
-}: {
+}:
+{
   home = {
     packages = with pkgs; [
       qq
@@ -47,6 +48,7 @@
       cherry-studio
       scrcpy
       davinci-resolve
+      prismlauncher
     ];
   };
   programs = {
@@ -66,8 +68,8 @@
 
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
     };
   };
   services.udiskie = {

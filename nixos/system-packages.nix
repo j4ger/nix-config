@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     gcc
     clang
@@ -93,6 +94,7 @@
   systemd.tmpfiles.rules = [
     "L+ /run/amd-igpu - - - - /dev/dri/by-path/pci-0000:65:00.0-card"
     "f /dev/shm/looking-glass 0660 j4ger qemu-libvirtd -"
+    "L+ /var/lib/qemu/firmware - - - - ${pkgs.qemu}/share/qemu/firmware"
   ];
   # systemd.user.services.scream-ivshmem = {
   #   enable = false;
