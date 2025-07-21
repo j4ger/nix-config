@@ -9,7 +9,8 @@
   myPackages,
   system,
   ...
-}: {
+}:
+{
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
@@ -45,7 +46,9 @@
         nur = import inputs.nur {
           nurpkgs = prev;
           pkgs = prev;
-          repoOverrides = {j4ger = import inputs.j4ger-pkgs {pkgs = prev;};};
+          repoOverrides = {
+            j4ger = import inputs.j4ger-pkgs { pkgs = prev; };
+          };
         };
       })
 
@@ -63,50 +66,55 @@
     };
   };
 
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
-    settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
-      # Opinionated: disable global registry
-      flake-registry = "";
-      # Workaround for https://github.com/NixOS/nix/issues/9574
-      nix-path = config.nix.nixPath;
-      substituters = [
-        "https://mirrors.ustc.edu.cn/nix-channels/store"
-        "https://cache.nixos.org/"
-        "https://yazi.cachix.org"
-        "https://hyprland.cachix.org"
-        "https://nix-community.cachix.org"
-        "https://devenv.cachix.org"
-        "https://cosmic.cachix.org/"
-      ];
-      trusted-public-keys = [
-        "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-        "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
-      ];
-      trusted-users = ["root" "j4ger"];
-    };
-    # Opinionated: disable channels
-    channel.enable = false;
+  nix =
+    let
+      flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+    in
+    {
+      settings = {
+        # Enable flakes and new 'nix' command
+        experimental-features = "nix-command flakes";
+        # Opinionated: disable global registry
+        flake-registry = "";
+        # Workaround for https://github.com/NixOS/nix/issues/9574
+        nix-path = config.nix.nixPath;
+        substituters = [
+          "https://mirrors.ustc.edu.cn/nix-channels/store"
+          "https://cache.nixos.org/"
+          "https://yazi.cachix.org"
+          "https://hyprland.cachix.org"
+          "https://nix-community.cachix.org"
+          "https://devenv.cachix.org"
+          "https://cosmic.cachix.org/"
+        ];
+        trusted-public-keys = [
+          "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
+          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+          "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+          "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+        ];
+        trusted-users = [
+          "root"
+          "j4ger"
+        ];
+      };
+      # Opinionated: disable channels
+      channel.enable = false;
 
-    # Opinionated: make flake registry and nix path match flake inputs
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+      # Opinionated: make flake registry and nix path match flake inputs
+      registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
+      nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
 
-    gc = {
-      automatic = false; # Disable due to nh
-      dates = "weekly";
-      options = "--delete-older-than 2d";
+      gc = {
+        automatic = false; # Disable due to nh
+        dates = "weekly";
+        options = "--delete-older-than 2d";
+      };
+      extraOptions = ''
+        !include ${config.age.secrets.nix-extra-options.path}
+      '';
     };
-    extraOptions = ''
-      !include ${config.age.secrets.nix-extra-options.path}
-    '';
-  };
 
   # FIXME: Add the rest of your current configuration
 
@@ -138,14 +146,34 @@
       initialPassword = "iamthestorm";
       isNormalUser = true;
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel" "video" "audio" "NetworkManager" "libvirtd" "plugdev" "ydotool" "input" "kvm" "adbusers" "docker"];
+      extraGroups = [
+        "wheel"
+        "video"
+        "audio"
+        "NetworkManager"
+        "libvirtd"
+        "plugdev"
+        "ydotool"
+        "input"
+        "kvm"
+        "adbusers"
+        "docker"
+        "dialout"
+      ];
       shell = pkgs.fish;
     };
   };
 
   # home-manager
   home-manager = {
-    extraSpecialArgs = {inherit inputs outputs myPackages system;};
+    extraSpecialArgs = {
+      inherit
+        inputs
+        outputs
+        myPackages
+        system
+        ;
+    };
     users = {
       # Import your home-manager configuration
       j4ger = import ../home-manager/home.nix;

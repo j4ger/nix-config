@@ -13,7 +13,7 @@
       haruna
       # glaxnimate
       gimp3
-      darktable
+      # darktable
       libreoffice
       blender
       # wpsoffice-cn
