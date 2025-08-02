@@ -33,7 +33,7 @@
       })
       wechat-uos
       # zoom-us
-      vmware-horizon-client
+      # vmware-horizon-client
       rnote
       livecaptions
       qalculate-qt
@@ -44,11 +44,11 @@
       sioyek
       zed-editor
       solaar
-      aider-chat
       cherry-studio
       scrcpy
       davinci-resolve
       prismlauncher
+      easytier
     ];
   };
   programs = {

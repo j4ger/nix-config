@@ -364,7 +364,7 @@ in
 
     # ags
 
-    ulauncher
+    inputs.ulauncher.packages.${system}.default
 
     bibata-cursors
 

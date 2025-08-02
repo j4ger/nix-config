@@ -61,7 +61,7 @@
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
-#      inputs.nixpkgs.follows = "nixpkgs";
+      #      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     Hyprspace = {
@@ -98,42 +98,55 @@
       url = "github:MalpenZibo/ashell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ulauncher = {
+      url = "github:Ulauncher/Ulauncher";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
-    system = "x86_64-linux";
-    myPackages = import ./pkgs {
-      pkgs = nixpkgs.legacyPackages.${system};
-      inherit inputs system;
-    };
-  in {
-    packages = myPackages;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      ...
+    }@inputs:
+    let
+      inherit (self) outputs;
+      system = "x86_64-linux";
+      myPackages = import ./pkgs {
+        pkgs = nixpkgs.legacyPackages.${system};
+        inherit inputs system;
+      };
+    in
+    {
+      packages = myPackages;
 
-    formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
+      formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
 
-    nixosConfigurations = {
-      v04-tx = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs outputs myPackages system;
+      nixosConfigurations = {
+        v04-tx = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit
+              inputs
+              outputs
+              myPackages
+              system
+              ;
+          };
+          modules = with inputs; [
+            ./nixos/configuration.nix
+
+            catppuccin.nixosModules.catppuccin
+
+            agenix.nixosModules.default
+
+            daeuniverse.nixosModules.dae
+            daeuniverse.nixosModules.daed
+
+            lanzaboote.nixosModules.lanzaboote
+          ];
         };
-        modules = with inputs; [
-          ./nixos/configuration.nix
-
-          catppuccin.nixosModules.catppuccin
-
-          agenix.nixosModules.default
-
-          daeuniverse.nixosModules.dae
-          daeuniverse.nixosModules.daed
-
-          lanzaboote.nixosModules.lanzaboote
-        ];
       };
     };
-  };
 }
