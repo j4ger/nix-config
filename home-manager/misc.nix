@@ -46,7 +46,7 @@
       solaar
       cherry-studio
       scrcpy
-      davinci-resolve
+      # davinci-resolve
       prismlauncher
       easytier
     ];

@@ -188,74 +188,73 @@ in
 
       "$mod" = "Super";
 
-      bind =
-        [
-          "$mod, E, exec, wezterm -e yazi"
-          "$mod+Shift, Return, exec, wezterm"
-          "$mod, R, exec, zen"
+      bind = [
+        "$mod, E, exec, wezterm -e yazi"
+        "$mod+Shift, Return, exec, wezterm"
+        "$mod, R, exec, zen"
 
-          "$mod+Shift, E, exec, wlogout"
-          "$mod+Alt, L, exec, hyprlock"
+        "$mod+Shift, E, exec, wlogout"
+        "$mod+Alt, L, exec, hyprlock"
 
-          "$mod, D, exec, ulauncher-toggle"
-          "$mod, V, exec, alacritty --class clipse -e clipse"
+        "$mod, D, exec, ulauncher-toggle"
+        "$mod, V, exec, alacritty --class clipse -e clipse"
 
-          "$mod, Q, killactive"
-          "$mod, F, fullscreen"
-          "$mod, T, togglefloating"
-          "$mod, P, pin"
+        "$mod, Q, killactive"
+        "$mod, F, fullscreen"
+        "$mod, T, togglefloating"
+        "$mod, P, pin"
 
-          "$mod, H, movefocus, l"
-          "$mod, J, movefocus, d"
-          "$mod, K, movefocus, u"
-          "$mod, L, movefocus, r"
+        "$mod, H, movefocus, l"
+        "$mod, J, movefocus, d"
+        "$mod, K, movefocus, u"
+        "$mod, L, movefocus, r"
 
-          "$mod, G, togglegroup"
-          "$mod, Tab, changegroupactive, f"
-          "$mod+Shift, Tab, changegroupactive, b"
+        "$mod, G, togglegroup"
+        "$mod, Tab, changegroupactive, f"
+        "$mod+Shift, Tab, changegroupactive, b"
 
-          "Alt, Tab, cyclenext"
-          "Alt+Shift, Tab, cyclenext, prev"
+        "Alt, Tab, cyclenext"
+        "Alt+Shift, Tab, cyclenext, prev"
 
-          "$mod, U, focusurgentorlast"
+        "$mod, U, focusurgentorlast"
 
-          # "$mod+Shift, S, exec, grim -t ppm - | satty --early-exit --filename - --output-filename ~/Pictures/Screenshots/Screenshot_$(date '+%Y%m%d_%H:%M:%S').png --copy-command 'wl-copy' --action-on-enter save-to-clipboard --initial-tool crop --fullscreen"
-          "$mod, S, exec, hyprshot -m region --clipboard-only -t 500"
-          "$mod+Shift, S, exec, hyprshot -m region -o ~/Pictures/Screenshots/ -t 1500"
-          "$mod+Alt, S, exec, hyprshot -m window --clipboard-only -t 500"
-          "$mod+Alt+Shift, S, exec, hyprshot -m window -o ~/Pictures/Screenshots/ -t 1500"
-          "$mod+Ctrl, S, exec, hyprshot -m output --clipboard-only -t 500"
-          "$mod+Ctrl+Shift, S, exec, hyprshot -m output -o ~/Pictures/Screenshots/ -t 1500"
+        # "$mod+Shift, S, exec, grim -t ppm - | satty --early-exit --filename - --output-filename ~/Pictures/Screenshots/Screenshot_$(date '+%Y%m%d_%H:%M:%S').png --copy-command 'wl-copy' --action-on-enter save-to-clipboard --initial-tool crop --fullscreen"
+        "$mod, S, exec, hyprshot -m region --clipboard-only -t 500"
+        "$mod+Shift, S, exec, hyprshot -m region -o ~/Pictures/Screenshots/ -t 1500"
+        "$mod+Alt, S, exec, hyprshot -m window --clipboard-only -t 500"
+        "$mod+Alt+Shift, S, exec, hyprshot -m window -o ~/Pictures/Screenshots/ -t 1500"
+        "$mod+Ctrl, S, exec, hyprshot -m output --clipboard-only -t 500"
+        "$mod+Ctrl+Shift, S, exec, hyprshot -m output -o ~/Pictures/Screenshots/ -t 1500"
 
-          "$mod, mouse_down, workspace, e+1"
-          "$mod, mouse_up, workspace, e-1"
+        "$mod, mouse_down, workspace, e+1"
+        "$mod, mouse_up, workspace, e-1"
 
-          "$mod, A, overview:toggle"
+        "$mod, A, overview:toggle"
 
-          # "$mod, A, scroller:toggleoverview"
-          # "$mod, W, scroller:jump"
-          # "$mod+Shift, H, scroller:movewindow, l"
-          # "$mod+Shift, L, scroller:movewindow, r"
-          # "$mod, M, scroller:alignwindow, c"
-          # "$mod+Shift, equal, scroller:admitwindow"
-          # "$mod, less, scroller:expelwindow"
-          # "$mod, C, scroller:fitsize, active"
-          # "$mod, equal, scroller:pin"
-          # "$mod+Shift, K, scroller:cyclesize, +1"
-          # "$mod+Shift, J, scroller:cyclesize, -1"
-        ]
-        ++ (builtins.concatLists (
-          builtins.genList (
-            i:
-            let
-              index = i + 1;
-            in
-            [
-              "$mod, code:1${toString i}, workspace, ${toString index}"
-              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString index}"
-            ]
-          ) 9
-        ));
+        # "$mod, A, scroller:toggleoverview"
+        # "$mod, W, scroller:jump"
+        # "$mod+Shift, H, scroller:movewindow, l"
+        # "$mod+Shift, L, scroller:movewindow, r"
+        # "$mod, M, scroller:alignwindow, c"
+        # "$mod+Shift, equal, scroller:admitwindow"
+        # "$mod, less, scroller:expelwindow"
+        # "$mod, C, scroller:fitsize, active"
+        # "$mod, equal, scroller:pin"
+        # "$mod+Shift, K, scroller:cyclesize, +1"
+        # "$mod+Shift, J, scroller:cyclesize, -1"
+      ]
+      ++ (builtins.concatLists (
+        builtins.genList (
+          i:
+          let
+            index = i + 1;
+          in
+          [
+            "$mod, code:1${toString i}, workspace, ${toString index}"
+            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString index}"
+          ]
+        ) 9
+      ));
 
       bindl = [
         ", XF86AudioMute, exec, pamixer -m"
@@ -306,7 +305,7 @@ in
         "${wallpaper_script}"
         "waypaper --restore"
         "ulauncher --hide-window"
-        "clash-verge"
+        # "clash-verge"
         "ashell"
       ];
 

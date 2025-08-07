@@ -3,7 +3,8 @@
   inputs,
   system,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     libnotify
     fd
@@ -24,6 +25,7 @@
     ueberzugpp
     uv
     inputs.nix-alien.packages.${system}.default
+    tio
   ];
   programs = {
     rio = {
@@ -59,7 +61,7 @@
         bell.duration = 500;
 
         bell.command = {
-          args = ["Shell bell rang!"];
+          args = [ "Shell bell rang!" ];
           program = "notify-send";
         };
 
