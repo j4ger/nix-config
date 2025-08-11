@@ -9,7 +9,9 @@
     unzip
     zip
     xdg-utils
-    appimage-run
+    (appimage-run.override {
+      extraPkgs = pkgs: [ pkgs.xorg.libxshmfence ];
+    })
     comma
     podman-compose
     virtiofsd
