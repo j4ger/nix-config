@@ -26,6 +26,7 @@
     uv
     inputs.nix-alien.packages.${system}.default
     tio
+    ouch
   ];
   programs = {
     rio = {

@@ -3,7 +3,8 @@
   inputs,
   system,
   ...
-}: {
+}:
+{
   # services.displayManager.sddm.enable = true;
   # services.displayManager.sddm.wayland.enable = true;
   # services.displayManager.defaultSession = "plasma";
@@ -22,7 +23,6 @@
     };
   };
 
-
   # programs.hyprland = {
   #   enable = true;
   #   withUWSM = false;
@@ -37,15 +37,18 @@
   };
 
   # FIXME: is this required?
-  services.xserver.videoDrivers = ["nvidia" "amdgpu"];
+  services.xserver.videoDrivers = [
+    "nvidia"
+    "amdgpu"
+  ];
 
   networking = {
     networkmanager.enable = true;
     hosts = {
-      "185.199.109.133" = ["raw.githubusercontent.com"];
-      "185.199.111.133" = ["raw.githubusercontent.com"];
-      "185.199.110.133" = ["raw.githubusercontent.com"];
-      "185.199.108.133" = ["raw.githubusercontent.com"];
+      "185.199.109.133" = [ "raw.githubusercontent.com" ];
+      "185.199.111.133" = [ "raw.githubusercontent.com" ];
+      "185.199.110.133" = [ "raw.githubusercontent.com" ];
+      "185.199.108.133" = [ "raw.githubusercontent.com" ];
     };
   };
 
@@ -79,7 +82,6 @@
         fcitx5-table-extra
       ];
       waylandFrontend = true;
-      plasma6Support = true;
     };
   };
 }
