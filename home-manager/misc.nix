@@ -31,7 +31,7 @@
       (bilibili.override {
         commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime";
       })
-      wechat-uos
+      wechat
       # zoom-us
       # vmware-horizon-client
       rnote
@@ -46,7 +46,7 @@
       solaar
       cherry-studio
       scrcpy
-      # davinci-resolve
+      shotcut
       prismlauncher
       easytier
     ];

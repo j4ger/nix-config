@@ -30,7 +30,7 @@ in
     plugins = [
       # hyprlandPlugins.hyprscroller
       #inputs.Hyprspace.packages.${system}.Hyprspace
-      pkgs.hyprlandPlugins.hyprspace
+      #pkgs.hyprlandPlugins.hyprspace
     ];
 
     settings = {
@@ -106,11 +106,11 @@ in
         ];
       };
 
-      gestures = {
-        # disable those due to the use of hyperscroller
-        workspace_swipe = true;
-        workspace_swipe_fingers = 4;
-      };
+      gesture = [
+        "4, horizontal, workspace"
+        "4, pinchin, close"
+        "4, pinchout, float"
+      ];
 
       misc = {
         # vfr = false; # TODO: test this out
@@ -190,7 +190,7 @@ in
 
       bind = [
         "$mod, E, exec, wezterm -e yazi"
-        "$mod+Shift, Return, exec, wezterm"
+        "$mod+Shift, Return, exec, alacritty"
         "$mod, R, exec, zen"
 
         "$mod+Shift, E, exec, wlogout"
@@ -229,7 +229,7 @@ in
         "$mod, mouse_down, workspace, e+1"
         "$mod, mouse_up, workspace, e-1"
 
-        "$mod, A, overview:toggle"
+        # "$mod, A, overview:toggle"
 
         # "$mod, A, scroller:toggleoverview"
         # "$mod, W, scroller:jump"

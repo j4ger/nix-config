@@ -27,6 +27,7 @@
     inputs.nix-alien.packages.${system}.default
     tio
     ouch
+    claude-code
   ];
   programs = {
     rio = {
