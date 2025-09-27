@@ -46,9 +46,9 @@
       solaar
       cherry-studio
       scrcpy
-      shotcut
       prismlauncher
       easytier
+      kdePackages.kdenlive
     ];
   };
   programs = {
