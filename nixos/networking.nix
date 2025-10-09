@@ -18,7 +18,7 @@
   };
 
   services.daed = {
-    enable = false;
+    enable = true;
   };
 
   services.mihomo = {
@@ -76,7 +76,7 @@
   # };
 
   programs.clash-verge = {
-    enable = true;
+    enable = false;
     serviceMode = true;
     tunMode = true;
   };
