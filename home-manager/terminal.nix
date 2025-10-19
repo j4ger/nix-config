@@ -123,7 +123,7 @@
         local config = wezterm.config_builder();
 
         config.font = wezterm.font("Maple Mono Normal NF CN");
-        config.font_size = 12.0;
+        config.font_size = 12;
         config.window_background_opacity = 0.7;
         config.enable_tab_bar = false;
         config.color_scheme = "tokyonight_night"

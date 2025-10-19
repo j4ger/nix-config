@@ -22,7 +22,7 @@
       # super-slicer.latest
       # yesplaymusic
       go-musicfox
-      wemeet
+      # wemeet
       #inputs.j4ger-pkgs.packages.${system}.lceda-pro
       kicad-small
       # lutris-unwrapped

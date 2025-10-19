@@ -1,6 +1,7 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   services.fusuma = {
-    enable = true;
+    enable = false;
     settings = {
       swipe = {
         "3" = {

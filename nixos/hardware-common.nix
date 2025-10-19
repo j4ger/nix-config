@@ -40,11 +40,8 @@
         vaapiVdpau
         libva
         libva-utils
-        glxinfo
-        amdvlk
       ];
       extraPackages32 = [
-        pkgs.driversi686Linux.amdvlk
       ];
     };
   };

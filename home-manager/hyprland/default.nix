@@ -21,7 +21,7 @@ in
   ];
 
   wayland.windowManager.hyprland = {
-    enable = true;
+    # enable = true;
     systemd.enable = true;
     xwayland.enable = true;
     # package = inputs.hyprland.packages.${system}.hyprland;
@@ -297,7 +297,7 @@ in
       exec-once = [
         "hyprshade install"
         "systemctl --user enable --now hyprshade.timer"
-        "nm-applet"
+        # "nm-applet"
         "fcitx5"
         "clipse -listen"
         "kdeconnectd"
@@ -306,7 +306,7 @@ in
         "waypaper --restore"
         "ulauncher --hide-window"
         # "clash-verge"
-        "ashell"
+        # "ashell"
       ];
 
       exec = [
@@ -367,7 +367,7 @@ in
 
     bibata-cursors
 
-    inputs.ashell.defaultPackage.${system}
+    # inputs.ashell.defaultPackage.${system}
   ];
 
   programs.wlogout = {

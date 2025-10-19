@@ -1,12 +1,15 @@
-{inputs, ...}: {
+{ inputs, ... }:
+{
   imports = [
     inputs.catppuccin.homeModules.catppuccin
+    inputs.noctalia.homeModules.default
 
     ./browser
     ./hyprland
     ./ime
     ./misc.nix
     ./neovim
+    ./niri
     ./terminal.nix
     ./gestures.nix
   ];

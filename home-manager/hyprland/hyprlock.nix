@@ -1,6 +1,7 @@
-{...}: {
+{ ... }:
+{
   programs.hyprlock = {
-    enable = true;
+    enable = false;
 
     settings = {
       background = [
@@ -33,31 +34,31 @@
     };
 
     extraConfig = ''
-        label {
-            monitor =
-            text = cmd[update:1000] echo "<b><big> $(date +"%H:%M") </big></b>"
-            color = "#24273a";
+      label {
+          monitor =
+          text = cmd[update:1000] echo "<b><big> $(date +"%H:%M") </big></b>"
+          color = "#24273a";
 
-            font_size = 80
-            font_family = Maple Mono Normal NF CN 10
+          font_size = 80
+          font_family = Maple Mono Normal NF CN 10
 
-            position = 0, -70
-            halign = center
-            valign = top
-        }
+          position = 0, -70
+          halign = center
+          valign = top
+      }
 
-        label {
-            monitor =
-            text = cmd[update:18000000] echo "<b> "$(date +'%A, %-d %B %Y')" </b>"
-            color = "#24273a";
+      label {
+          monitor =
+          text = cmd[update:18000000] echo "<b> "$(date +'%A, %-d %B %Y')" </b>"
+          color = "#24273a";
 
-            font_size = 24
-            font_family = Maple Mono Normal NF CN 10
+          font_size = 24
+          font_family = Maple Mono Normal NF CN 10
 
-            position = 0, -200
-            halign = center
-            valign = top
-        }
-        '';
+          position = 0, -200
+          halign = center
+          valign = top
+      }
+    '';
   };
 }

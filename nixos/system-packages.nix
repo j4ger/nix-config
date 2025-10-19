@@ -84,7 +84,6 @@
       enable = true;
       qemu = {
         swtpm.enable = true;
-        ovmf.enable = true;
         vhostUserPackages = [ pkgs.virtiofsd ];
       };
     };
@@ -117,6 +116,10 @@
     openFirewall = true;
   };
   services.printing.enable = true;
+
+  services.noctalia-shell = {
+    enable = true;
+  };
 
   services = {
     ollama = {

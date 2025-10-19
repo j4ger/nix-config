@@ -5,16 +5,16 @@
   ...
 }:
 {
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
-  # services.displayManager.defaultSession = "plasma";
-  # services.displayManager.autoLogin = {
-  #   enable = true;
-  #   # FIXME: change username
-  #   user = "j4ger";
-  # };
-  services.greetd = {
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.defaultSession = "niri";
+  services.displayManager.autoLogin = {
     enable = true;
+    # FIXME: change username
+    user = "j4ger";
+  };
+  services.greetd = {
+    enable = false;
     settings = {
       default_session = {
         command = "Hyprland";
@@ -23,15 +23,16 @@
     };
   };
 
-  # programs.hyprland = {
-  #   enable = true;
-  #   withUWSM = false;
-  #
-  #   package = inputs.hyprland.packages.${system}.hyprland;
-  #   portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
-  # };
+  programs.hyprland = {
+    # enable = true;
+    withUWSM = false;
+    #
+    package = inputs.hyprland.packages.${system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
+  };
 
   services.desktopManager.plasma6.enable = true;
+  programs.niri.enable = true;
   programs.kdeconnect = {
     enable = true;
   };
@@ -59,9 +60,10 @@
       supergfxctl-plasmoid
       polonium
       kdePackages.krohnkite
+      # inputs.noctalia.packages.${system}.default
     ];
     variables = {
-      NIXOS_OZONE_WL = "1";
+      # NIXOS_OZONE_WL = "1";
       #GTK_IM_MODULE = "fcitx";
       #GTK_IM_MODULE = "wayland";
       #QT_IM_MODULE = "fcitx";

@@ -26,6 +26,8 @@
     # home-manager
     inputs.home-manager.nixosModules.home-manager
 
+    inputs.noctalia.nixosModules.default
+
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./hardware-common.nix
