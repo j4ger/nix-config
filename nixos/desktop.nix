@@ -31,7 +31,7 @@
     portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
   };
 
-  services.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = false;
   programs.niri.enable = true;
   programs.kdeconnect = {
     enable = true;
@@ -60,6 +60,7 @@
       supergfxctl-plasmoid
       polonium
       kdePackages.krohnkite
+      kdePackages.dolphin
       # inputs.noctalia.packages.${system}.default
     ];
     variables = {

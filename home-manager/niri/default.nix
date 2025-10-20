@@ -103,7 +103,7 @@
         "prefer-no-csd" = true;
 
         "spawn-at-startup" = [
-          { argv = [ "noctalia-shell" ]; }
+          # { argv = [ "noctalia-shell" ]; }
         ];
 
         environment = {
@@ -169,6 +169,11 @@
         };
 
         "window-rules" = [
+          {
+            matches = [
+            ];
+
+          }
         ];
 
         layout = {
