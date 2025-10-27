@@ -7,6 +7,11 @@
   home.packages = [
     inputs.noctalia.packages.${system}.default
   ];
+
+  home.sessionVariables = {
+    QS_ICON_THEME = "Vimix";
+  };
+
   programs.noctalia-shell = {
     enable = true;
     settings = {

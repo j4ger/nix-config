@@ -62,6 +62,7 @@
       kdePackages.krohnkite
       kdePackages.dolphin
       # inputs.noctalia.packages.${system}.default
+      vimix-icon-theme
     ];
     variables = {
       # NIXOS_OZONE_WL = "1";
