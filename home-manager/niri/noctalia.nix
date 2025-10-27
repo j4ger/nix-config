@@ -1,16 +1,18 @@
 {
-  config,
-  pkgs,
-  lib,
+  inputs,
+  system,
   ...
 }:
 {
+  home.packages = [
+    inputs.noctalia.packages.${system}.default
+  ];
   programs.noctalia-shell = {
     enable = true;
     settings = {
       appLauncher = {
         backgroundOpacity = 0.75;
-        enableClipboardHistory = false;
+        enableClipboardHistory = true;
         pinnedExecs = [ ];
         position = "center";
         sortByMostUsed = true;
