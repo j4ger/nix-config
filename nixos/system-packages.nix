@@ -5,6 +5,7 @@
     clang
     glib
     wget
+    vim
     p7zip
     unzip
     zip
@@ -116,10 +117,6 @@
     openFirewall = true;
   };
   services.printing.enable = true;
-
-  services.noctalia-shell = {
-    enable = true;
-  };
 
   services = {
     ollama = {

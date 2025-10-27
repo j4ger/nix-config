@@ -2,12 +2,13 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   home = {
     sessionVariables = {
       BROWSER = "zen";
       #MOZ_ENABLE_WAYLAND = "1";
-      EDITOR = "nvim";
+      EDITOR = "zeditor";
       GDK_BACKEND = "wayland,x11";
       QT_QPA_PLATFORM = "wayland;xcb";
       #SDL_VIDEODRIVER = "x11";
@@ -39,6 +40,6 @@
 
   programs.chromium = {
     enable = true;
-    commandLineArgs = ["--enable-wayland-ime"];
+    commandLineArgs = [ "--enable-wayland-ime" ];
   };
 }

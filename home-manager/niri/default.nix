@@ -8,6 +8,8 @@
 {
   imports = [
     inputs.niri.homeModules.niri
+
+    ./noctalia.nix
   ];
 
   programs.niri = {
@@ -105,7 +107,7 @@
         "prefer-no-csd" = true;
 
         "spawn-at-startup" = [
-          # { argv = [ "noctalia-shell" ]; }
+          { argv = [ "noctalia-shell" ]; }
         ];
 
         environment = {
