@@ -12,6 +12,7 @@
     ./niri
     ./terminal.nix
     ./gestures.nix
+    ./niri/noctalia.nix
   ];
 
   home = {

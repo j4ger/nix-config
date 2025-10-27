@@ -354,7 +354,7 @@ in
 
     pamixer
     clipse
-    networkmanagerapplet
+    # networkmanagerapplet
     blueberry
     pavucontrol
 
