@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     twemoji-color-font
   ];
@@ -23,14 +24,26 @@
       fira-math
       twemoji-color-font
       corefonts
-      vistafonts
-      vistafonts-chs
+      vista-fonts
+      vista-fonts-chs
     ];
     fontconfig = {
       defaultFonts = {
-        serif = ["Noto Serif CJK SC" "Noto Serif" "Twitter Color Emoji"];
-        sansSerif = ["Noto Sans CJK SC" "Noto Sans" "Twitter Color Emoji"];
-        monospace = ["Maple Mono Normal NF CN" "Noto Sans Mono CJK SC" "Twitter Color Emoji"];
+        serif = [
+          "Noto Serif CJK SC"
+          "Noto Serif"
+          "Twitter Color Emoji"
+        ];
+        sansSerif = [
+          "Noto Sans CJK SC"
+          "Noto Sans"
+          "Twitter Color Emoji"
+        ];
+        monospace = [
+          "Maple Mono Normal NF CN"
+          "Noto Sans Mono CJK SC"
+          "Twitter Color Emoji"
+        ];
       };
       localConf = ''
         <match target="pattern">

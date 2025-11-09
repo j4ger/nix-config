@@ -5,6 +5,9 @@
   ...
 }:
 {
+  imports = [
+    inputs.zen-browser.homeModules.beta
+  ];
   home = {
     packages = with pkgs; [
       qq
@@ -40,7 +43,6 @@
       drawio
       lazydocker
       vial
-      inputs.zen-browser.packages.${system}.default
       sioyek
       zed-editor
       solaar
@@ -49,9 +51,11 @@
       prismlauncher
       easytier
       kdePackages.kdenlive
+      super-slicer
     ];
   };
   programs = {
+    zen-browser.enable = true;
     mpv = {
       enable = true;
       config = {

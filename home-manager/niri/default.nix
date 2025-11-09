@@ -58,9 +58,11 @@
           "Mod+Shift+W".action = switch-preset-column-width-back;
 
           # Screenshot
-          "Mod+S".action = screenshot;
-          "Mod+Shift+S".action = screenshot-window { write-to-disk = false; };
-          "Mod+Alt+Shift+S".action = screenshot-window;
+          "Mod+S".action.screenshot = [ ];
+          "Mod+Shift+S".action.screenshot-window = {
+            write-to-disk = false;
+          };
+          "Mod+Alt+Shift+S".action.screenshot-window = [ ];
           "Mod+Shift+R".action = ns "screenRecorder" "toggle";
 
           # Apps

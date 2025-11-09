@@ -19,7 +19,7 @@
     virt-viewer
     spice
     spice-gtk
-    win-virtio
+    virtio-win
     win-spice
     looking-glass-client
   ];
