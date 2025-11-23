@@ -201,6 +201,10 @@
             { proportion = 0.5; }
           ];
         };
+
+        debug = {
+          render-drm-device = "/run/amd-igpu";
+        };
       };
   };
 
