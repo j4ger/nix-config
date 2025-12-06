@@ -120,8 +120,7 @@
 
   services = {
     ollama = {
-      enable = true;
-      acceleration = "cuda";
+      enable = false;
       host = "0.0.0.0";
     };
   };

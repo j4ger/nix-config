@@ -53,6 +53,42 @@
     };
   };
 
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    wlr.enable = true;
+    config = {
+      common = {
+        default = [
+          "gtk"
+          "gnome"
+        ];
+      };
+      niri = {
+        default = [
+          "gtk"
+          "gnome"
+        ];
+      };
+    };
+  };
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-wlr
+    pkgs.xdg-desktop-portal-gtk
+  ];
+  systemd.user.services.xdg-desktop-portal = {
+    after = [ "xdg-desktop-autostart.target" ];
+  };
+  systemd.user.services.xdg-desktop-portal-gtk = {
+    after = [ "xdg-desktop-autostart.target" ];
+  };
+  systemd.user.services.xdg-desktop-portal-gnome = {
+    after = [ "xdg-desktop-autostart.target" ];
+  };
+  systemd.user.services.niri-flake-polkit = {
+    after = [ "xdg-desktop-autostart.target" ];
+  };
+
   environment = {
     systemPackages = with pkgs; [
       wl-clipboard

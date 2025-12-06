@@ -28,6 +28,7 @@
     tio
     ouch
     qwen-code
+    usbutils
   ];
   programs = {
     rio = {
