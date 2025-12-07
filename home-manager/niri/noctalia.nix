@@ -215,6 +215,7 @@
       };
 
       dock = {
+        enabled = false;
         backgroundOpacity = 1;
         colorizeIcons = false;
         displayMode = "always_visible";
