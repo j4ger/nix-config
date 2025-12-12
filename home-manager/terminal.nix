@@ -13,7 +13,6 @@
     micro
     dust
     qrcp
-    termscp
     proxychains-ng
     distrobox
     qimgv
