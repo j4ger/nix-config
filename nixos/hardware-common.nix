@@ -142,7 +142,7 @@
         "amdgpu"
       ];
     };
-    kernelPackages = pkgs.linuxPackages_xanmod;
+    kernelPackages = pkgs.linuxPackages_xanmod_stable;
     plymouth = {
       enable = true;
       theme = "spinner";
