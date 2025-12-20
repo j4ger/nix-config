@@ -64,12 +64,6 @@
           "gnome"
         ];
       };
-      niri = {
-        default = [
-          "gtk"
-          "gnome"
-        ];
-      };
     };
   };
   xdg.portal.extraPortals = [
