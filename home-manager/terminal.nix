@@ -23,7 +23,7 @@
     poppler-utils
     ueberzugpp
     uv
-    inputs.nix-alien.packages.${system}.default
+    #inputs.nix-alien.packages.${system}.default
     tio
     ouch
     qwen-code

@@ -71,9 +71,9 @@
 
           # Scroll binds
           "Mod+WheelScrollDown".action = focus-workspace-down;
-          "Mod+WheelScrollDown"."cooldown-ms" = 150;
           "Mod+WheelScrollUp".action = focus-workspace-up;
-          "Mod+WheelScrollUp"."cooldown-ms" = 150;
+          "Mod+Shift+WheelScrollDown".action = focus-column-or-monitor-right;
+          "Mod+Shift+WheelScrollUp".action = focus-column-or-monitor-left;
 
           "Mod+TouchpadScrollDown".action = spawn "ydotool" "key" "29:1" "42:1" "15:1" "15:0" "42:0" "29:0";
           "Mod+TouchpadScrollUp".action = spawn "ydotool" "key" "29:1" "15:1" "15:0" "29:0";

@@ -25,7 +25,7 @@
   ];
 
   programs = {
-    adb.enable = true;
+    #adb.enable = true;
     nix-ld.enable = true;
     fish.enable = true;
     gamemode.enable = true;

@@ -52,6 +52,7 @@
       easytier
       kdePackages.kdenlive
       super-slicer
+      orca-slicer
     ];
   };
   programs = {
