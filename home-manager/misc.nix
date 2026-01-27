@@ -38,20 +38,20 @@
       # zoom-us
       # vmware-horizon-client
       rnote
-      livecaptions
+      #livecaptions
       qalculate-qt
-      drawio
+      #drawio
       lazydocker
       vial
       sioyek
       zed-editor
-      solaar
-      cherry-studio
+      #solaar
+      #cherry-studio
       scrcpy
       prismlauncher
       easytier
       kdePackages.kdenlive
-      super-slicer
+      #super-slicer
       orca-slicer
     ];
   };
