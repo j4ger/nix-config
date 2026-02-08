@@ -18,6 +18,9 @@
       # XDG_SESSION_DESKTOP = "plasma";
       # WLR_NO_HARDWARE_CURSORS = "1";
     };
+    sessionPath = [
+      "$HOME/.cargo/bin"
+    ];
   };
   programs.firefox = {
     enable = false;
