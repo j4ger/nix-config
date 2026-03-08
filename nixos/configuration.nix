@@ -73,6 +73,7 @@
       flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
     in
     {
+      package = pkgs.lixPackageSets.stable.lix;
       settings = {
         # Enable flakes and new 'nix' command
         experimental-features = "nix-command flakes";

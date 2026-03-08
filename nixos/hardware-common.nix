@@ -7,7 +7,7 @@
   ...
 }:
 {
-  powerManagement.powertop.enable = true;
+  powerManagement.powertop.enable = false;
 
   hardware = {
     enableAllFirmware = true;
@@ -75,7 +75,6 @@
     supergfxd.enable = true;
     asusd = {
       enable = false;
-      enableUserService = false;
     };
 
     fwupd.enable = true;
@@ -86,6 +85,10 @@
 
     udev = {
       extraRules = ''
+        # prevent keyboard suspension
+        ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="4c4b", ATTRS{idProduct}=="beef", ATTR{power/control}="on"
+        ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="4c4b", ATTRS{idProduct}=="beef", ATTR{power/autosuspend}="0"
+
         # RP2040
         ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="664", GROUP="plugdev"
 

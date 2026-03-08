@@ -30,7 +30,7 @@
       kicad-small
       # lutris-unwrapped
       handbrake
-      wiliwili
+      # wiliwili
       (bilibili.override {
         commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime";
       })
