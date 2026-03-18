@@ -350,7 +350,6 @@ in
     pamixer
     clipse
     # networkmanagerapplet
-    blueberry
     pavucontrol
 
     # mako
@@ -432,7 +431,6 @@ in
     audio_source_more_cmd = "pavucontrol -t 4"
     wifi_more_cmd = "nm-connection-editor"
     vpn_more_cmd = "nm-connection-editor"
-    bluetooth_more_cmd = "blueberry"
     remove_airplane_btn = false
 
     [[CustomModule]]

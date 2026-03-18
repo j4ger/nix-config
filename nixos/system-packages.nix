@@ -54,7 +54,6 @@
         pkgs.evolution-ews
       ];
     };
-    light.enable = true;
     nh = {
       enable = true;
       clean.enable = true;
