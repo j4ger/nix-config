@@ -26,6 +26,7 @@
     qwen-code
     usbutils
     bun
+    nodejs
   ];
   programs = {
     rio = {
