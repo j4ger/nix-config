@@ -14,21 +14,21 @@
       extraPkgs = pkgs: [ pkgs.xorg.libxshmfence ];
     })
     comma
-    podman-compose
-    virtiofsd
-    virt-viewer
-    spice
-    spice-gtk
-    virtio-win
-    win-spice
-    looking-glass-client
+    # podman-compose
+    # virtiofsd
+    # virt-viewer
+    # spice
+    # spice-gtk
+    # virtio-win
+    # win-spice
+    # looking-glass-client
   ];
 
   programs = {
     #adb.enable = true;
     nix-ld.enable = true;
     fish.enable = true;
-    gamemode.enable = true;
+    # gamemode.enable = true;
     gamescope = {
       enable = true;
       capSysNice = true;
@@ -68,12 +68,12 @@
     openFirewall = true;
   };
 
-  services.wivrn = {
-    enable = true;
-    openFirewall = true;
+  # services.wivrn = {
+  #   enable = false;
+  #   openFirewall = true;
 
-    defaultRuntime = true;
-  };
+  #   defaultRuntime = true;
+  # };
 
   virtualisation = {
     docker = {

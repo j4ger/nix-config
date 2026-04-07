@@ -31,10 +31,10 @@
       # lutris-unwrapped
       handbrake
       # wiliwili
-      (bilibili.override {
-        commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime";
-      })
-      wechat
+      # (bilibili.override {
+      #  commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime";
+      # })
+      # wechat
       # zoom-us
       # vmware-horizon-client
       rnote
@@ -48,7 +48,7 @@
       #solaar
       #cherry-studio
       scrcpy
-      prismlauncher
+      # prismlauncher
       easytier
       kdePackages.kdenlive
       #super-slicer

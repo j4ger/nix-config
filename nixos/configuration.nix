@@ -55,6 +55,7 @@
       })
 
       #inputs.hyprpanel.overlay
+      inputs.niri.overlays.niri
     ];
     # Configure your nixpkgs instance
     config = {

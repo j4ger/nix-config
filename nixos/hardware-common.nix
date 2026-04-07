@@ -85,6 +85,11 @@
 
     udev = {
       extraRules = ''
+	# f50
+	ACTION!="remove", SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", MODE="0660", GROUP="adbusers", ENV{ID_DEBUG_APPLIANCE}="android"
+	ACTION!="remove", SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1353", SYMLINK+="android_adb"
+	ACTION!="remove", SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", ATTR{idProduct}=="1353", SYMLINK+="android_fastboot"
+
         # prevent keyboard suspension
         ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="4c4b", ATTRS{idProduct}=="beef", ATTR{power/control}="on"
         ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="4c4b", ATTRS{idProduct}=="beef", ATTR{power/autosuspend}="0"

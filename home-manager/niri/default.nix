@@ -132,11 +132,11 @@
             "drag-lock" = true;
             dwt = true;
           };
-          mouse = {
-            "scroll-method" = "on-button-down";
-            "scroll-button" = 276;
-            "scroll-button-lock" = true;
-          };
+          # mouse = {
+          #   "scroll-method" = "on-button-down";
+          #   "scroll-button" = 276;
+          #   "scroll-button-lock" = true;
+          # };
         };
 
         outputs = {

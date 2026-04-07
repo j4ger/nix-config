@@ -13,14 +13,11 @@
     micro
     dust
     qrcp
-    proxychains-ng
     distrobox
     qimgv
     unzrip
     nil
     nixd
-    aichat
-    poppler-utils
     ueberzugpp
     uv
     #inputs.nix-alien.packages.${system}.default
@@ -28,6 +25,7 @@
     ouch
     qwen-code
     usbutils
+    bun
   ];
   programs = {
     rio = {
@@ -135,7 +133,10 @@
     };
     fish = {
       enable = true;
-      interactiveShellInit = ''set fish_greeting ""'';
+      interactiveShellInit = ''
+        set fish_greeting ""
+        fish_add_path ~/.bun/bin
+      '';
       shellAliases = {
         l = "ls -ahl";
         la = "eza -a --icons";
@@ -147,7 +148,6 @@
         nhus = "nh os switch . --update -- --show-trace";
         nhs = "nh os switch . -- --show-trace";
         ze = "zeditor .";
-        plz = "aichat -e";
       };
     };
     starship = {
