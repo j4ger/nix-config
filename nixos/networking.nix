@@ -14,6 +14,7 @@
     "185.199.110.133" = [ "raw.githubusercontent.com" ];
     "185.199.108.133" = [ "raw.githubusercontent.com" ];
   };
+  networking.networkmanager.enable = true;
 
   services.dae = {
     enable = false;
