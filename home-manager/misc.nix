@@ -49,10 +49,11 @@
       #cherry-studio
       scrcpy
       # prismlauncher
-      easytier
       kdePackages.kdenlive
       #super-slicer
       orca-slicer
+      frp
+      prismlauncher
     ];
   };
   programs = {
@@ -81,7 +82,7 @@
     enable = true;
     settings = {
       program_options = {
-        file_manager = "${pkgs.ghostty}/bin/ghostty -e ${pkgs.yazi}/bin/yazi";
+        file_manager = "${pkgs.alacritty}/bin/alacritty -e ${pkgs.yazi}/bin/yazi";
       };
     };
   };
