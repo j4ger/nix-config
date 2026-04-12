@@ -34,11 +34,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     arcwtf = {
       url = "github:KiKaraage/ArcWTF";
       flake = false;
@@ -49,19 +44,9 @@
       flake = false;
     };
 
-    rustaceanvim = {
-      url = "github:mrcjkb/rustaceanvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      #      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Hyprspace = {
@@ -112,7 +97,6 @@
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.quickshell.follows = "quickshell";
     };
 
     niri = {

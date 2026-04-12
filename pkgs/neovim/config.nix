@@ -1,7 +1,0 @@
-{...}: {
-  imports = [
-    ./behaviors
-    ./completion
-    ./ui
-  ];
-}

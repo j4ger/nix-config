@@ -5,10 +5,9 @@
     inputs.noctalia.homeModules.default
 
     ./browser
-    ./hyprland
+    ./desktop.nix
     ./ime
     ./misc.nix
-    ./neovim
     ./niri
     ./terminal.nix
     ./gestures.nix

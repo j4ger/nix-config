@@ -8,6 +8,13 @@
   ...
 }:
 {
+  networking.hosts = {
+    "185.199.109.133" = [ "raw.githubusercontent.com" ];
+    "185.199.111.133" = [ "raw.githubusercontent.com" ];
+    "185.199.110.133" = [ "raw.githubusercontent.com" ];
+    "185.199.108.133" = [ "raw.githubusercontent.com" ];
+  };
+
   services.dae = {
     enable = false;
     configFile = config.age.secrets.dae.path;
@@ -68,13 +75,6 @@
   #   capabilities = "cap_net_bind_service,cap_net_admin=+ep";
   #   source = "${lib.getExe pkgs.mihomo}";
   # };
-  # security.wrappers.mihomo-party = {
-  #   owner = "root";
-  #   group = "root";
-  #   capabilities = "cap_net_bind_service,cap_net_admin=+ep";
-  #   source = "${lib.getExe myPackages.${system}.mihomo-party}";
-  # };
-
   programs.clash-verge = {
     enable = false;
     serviceMode = true;

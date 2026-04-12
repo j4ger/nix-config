@@ -2,7 +2,6 @@
   inputs,
   config,
   pkgs,
-  lib,
   ...
 }:
 {
@@ -207,15 +206,6 @@
         };
       };
   };
-
-  # xdg.portal = {
-  #   enable = true;
-  #   xdgOpenUsePortal = true;
-  #   extraPortals = [
-  #     pkgs.xdg-desktop-portal-gtk
-  #     pkgs.xdg-desktop-portal-wlr
-  #   ];
-  # };
 
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
