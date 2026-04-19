@@ -27,6 +27,7 @@
     usbutils
     bun
     nodejs
+    rtk
   ];
   programs = {
     rio = {
