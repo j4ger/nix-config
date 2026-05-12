@@ -30,11 +30,6 @@
     systemPackages = with pkgs; [
       wl-clipboard
       kdePackages.kwallet-pam
-      supergfxctl-plasmoid
-      polonium
-      kdePackages.krohnkite
-      kdePackages.dolphin
-      vimix-icon-theme
     ];
     variables = {
       XMODIFIERS = "@im=fcitx";
