@@ -29,13 +29,8 @@
     nix-ld.enable = true;
     fish.enable = true;
     # gamemode.enable = true;
-    gamescope = {
-      enable = true;
-      capSysNice = true;
-    };
     steam = {
       enable = true;
-      gamescopeSession.enable = true;
       extraCompatPackages = with pkgs; [
         proton-ge-bin
       ];
