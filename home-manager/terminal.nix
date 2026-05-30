@@ -30,28 +30,6 @@
     rtk
   ];
   programs = {
-    rio = {
-      enable = false;
-      settings = {
-        editor = {
-          program = "zeditor";
-        };
-        cursor = {
-          shape = "beam";
-        };
-        fonts = {
-          size = 16;
-          family = "Maple Mono Normal NF CN";
-        };
-        renderer = {
-          performance = "Low";
-        };
-        window = {
-          opacity = 0.6;
-          blur = true;
-        };
-      };
-    };
     yazi = {
       enable = true;
       # package = inputs.yazi.packages.${system}.default;
@@ -201,6 +179,9 @@
     fzf = {
       enable = true;
       enableFishIntegration = true;
+    };
+    picopi = {
+      enable = true;
     };
   };
 }

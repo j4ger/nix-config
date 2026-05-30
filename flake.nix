@@ -34,11 +34,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    arcwtf = {
-      url = "github:KiKaraage/ArcWTF";
-      flake = false;
-    };
-
     rime-wanxiang = {
       url = "github:j4ger/rime_wanxiang_pro";
       flake = false;
@@ -48,11 +43,6 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Hyprspace = {
-    #   url = "github:KZDKM/Hyprspace";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
 
     catppuccin = {
       url = "github:catppuccin/nix";
@@ -64,11 +54,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # hyprpanel = {
-    #   url = "github:Jas-SinghFSU/HyprPanel";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     yazi = {
       url = "github:sxyazi/yazi";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -79,21 +64,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ashell = {
-      url = "github:MalpenZibo/ashell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ulauncher = {
-      url = "github:Ulauncher/Ulauncher";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    quickshell = {
-      url = "github:outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -101,6 +71,11 @@
 
     niri = {
       url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    picopi = {
+      url = "github:j4ger/picopi";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

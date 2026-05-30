@@ -3,6 +3,7 @@
   imports = [
     inputs.catppuccin.homeModules.catppuccin
     inputs.noctalia.homeModules.default
+    inputs.picopi.homeModules.default
 
     ./browser
     ./desktop.nix

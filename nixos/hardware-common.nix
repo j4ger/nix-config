@@ -188,5 +188,6 @@
       # "nvidia.NVreg_RegistryDwords=EnableBrightnessControl=0"
     ];
     # extraModprobeConfig = "options vfio-pci ids=10de:28e0,10de:22be";
+    tmp.cleanOnBoot = true;
   };
 }
