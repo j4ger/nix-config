@@ -43,12 +43,6 @@
     ydotool = {
       enable = true;
     };
-    evolution = {
-      enable = true;
-      plugins = [
-        pkgs.evolution-ews
-      ];
-    };
     nh = {
       enable = true;
       clean.enable = true;
@@ -86,7 +80,7 @@
 
     waydroid.enable = false;
   };
-  services.spice-vdagentd.enable = true;
+  services.spice-vdagentd.enable = false;
   systemd.tmpfiles.rules = [
     "L+ /run/amd-igpu - - - - /dev/dri/by-path/pci-0000:65:00.0-card"
     "f /dev/shm/looking-glass 0660 j4ger qemu-libvirtd -"
