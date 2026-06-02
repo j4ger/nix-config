@@ -28,6 +28,7 @@
     bun
     nodejs
     rtk
+    inputs.picopi.packages.${system}.default
   ];
   programs = {
     yazi = {
@@ -179,9 +180,6 @@
     fzf = {
       enable = true;
       enableFishIntegration = true;
-    };
-    picopi = {
-      enable = true;
     };
   };
 }
