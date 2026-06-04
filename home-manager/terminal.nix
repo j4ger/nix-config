@@ -12,23 +12,19 @@
     ripgrep
     micro
     dust
-    qrcp
     distrobox
     qimgv
-    unzrip
-    nil
-    nixd
     ueberzugpp
     uv
     #inputs.nix-alien.packages.${system}.default
     tio
     ouch
-    qwen-code
     usbutils
     bun
     nodejs
     rtk
     inputs.picopi.packages.${system}.default
+    neovim
   ];
   programs = {
     yazi = {
