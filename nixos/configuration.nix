@@ -23,9 +23,6 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    # home-manager
-    inputs.home-manager.nixosModules.home-manager
-
     inputs.noctalia.nixosModules.default
 
     # Import your generated (nixos-generate-config) hardware configuration
@@ -164,24 +161,6 @@
       ];
       shell = pkgs.fish;
     };
-  };
-
-  # home-manager
-  home-manager = {
-    extraSpecialArgs = {
-      inherit
-        inputs
-        outputs
-        myPackages
-        system
-        ;
-    };
-    users = {
-      # Import your home-manager configuration
-      j4ger = import ../home-manager/home.nix;
-    };
-    useUserPackages = true;
-    useGlobalPkgs = true;
   };
 
   security.polkit.enable = true;

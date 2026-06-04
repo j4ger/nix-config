@@ -1,9 +1,6 @@
 { inputs, ... }:
 {
   imports = [
-    inputs.catppuccin.homeModules.catppuccin
-    inputs.noctalia.homeModules.default
-
     ./browser
     ./desktop.nix
     ./ime

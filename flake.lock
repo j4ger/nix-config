@@ -478,22 +478,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable_2": {
-      "locked": {
-        "lastModified": 1735563628,
-        "narHash": "sha256-OnSAY7XDSx7CtDoqNh8jwVwh4xNL/2HaJxGjryLWzX8=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "b134951a4c9f3c995fd7be05f3243f8ecd65d798",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixos-24.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1780365719,
@@ -662,16 +646,17 @@
     "rime-wanxiang": {
       "flake": false,
       "locked": {
-        "lastModified": 1780212333,
-        "narHash": "sha256-ibed75sTwA03SiqWOHHnp7H9jGI/zlUmfQKY+3r2/yM=",
-        "owner": "j4ger",
-        "repo": "rime_wanxiang_pro",
-        "rev": "42432bad5cee83e7ecf76fd55c34526ac42651e3",
+        "lastModified": 1780559923,
+        "narHash": "sha256-xyCH9l3CvkWKCxJIRZKkgeiamhtH4qV5jEydd5JMMns=",
+        "owner": "amzxyz",
+        "repo": "rime-wanxiang",
+        "rev": "465d2c5e0f950607913ec390306568ee27429d91",
         "type": "github"
       },
       "original": {
-        "owner": "j4ger",
-        "repo": "rime_wanxiang_pro",
+        "owner": "amzxyz",
+        "ref": "wanxiang-zrm-fuzhu",
+        "repo": "rime-wanxiang",
         "type": "github"
       }
     },
@@ -686,7 +671,6 @@
         "niri": "niri",
         "nix-alien": "nix-alien",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-stable": "nixpkgs-stable_2",
         "noctalia": "noctalia",
         "nur": "nur",
         "picopi": "picopi",

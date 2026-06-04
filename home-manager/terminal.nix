@@ -25,6 +25,7 @@
     rtk
     inputs.picopi.packages.${system}.default
     neovim
+    tree-sitter
   ];
   programs = {
     yazi = {
@@ -123,6 +124,8 @@
         lg = "lazygit";
         nhus = "nh os switch . --update -- --show-trace";
         nhs = "nh os switch . -- --show-trace";
+        hms = "home-manager switch --flake .";
+        hmus = "home-manager switch --flake . --update-input nixpkgs";
         ze = "zeditor .";
       };
     };
@@ -142,18 +145,22 @@
     };
     git = {
       enable = true;
-      userName = "j4ger";
-      userEmail = "xiayuxuan@live.com";
-      signing = {
-        key = "A645FE4CA59374C8";
-        signByDefault = true;
-      };
-      extraConfig = {
+      settings = {
+        user = {
+          name = "j4ger";
+          email = "xiayuxuan@live.com";
+        };
+        commit.gpgSign = true;
+        user.signingKey = "A645FE4CA59374C8";
         url = {
           "ssh://git@github.com:j4ger" = {
             insteadOf = "https://github.com/j4ger/";
           };
         };
+      };
+      signing = {
+        key = "A645FE4CA59374C8";
+        signByDefault = true;
       };
     };
     ssh = {

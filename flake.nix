@@ -2,7 +2,7 @@
   description = "nixOS config for my laptop";
 
   inputs = {
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
@@ -35,7 +35,7 @@
     };
 
     rime-wanxiang = {
-      url = "github:j4ger/rime_wanxiang_pro";
+      url = "github:amzxyz/rime-wanxiang?ref=wanxiang-zrm-fuzhu";
       flake = false;
     };
 
@@ -93,6 +93,27 @@
         pkgs = nixpkgs.legacyPackages.${system};
         inherit inputs system;
       };
+
+      # Shared pkgs configuration matching the NixOS system
+      pkgsFor = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        config.permittedInsecurePackages = [
+          "openssl-1.1.1w"
+        ];
+        overlays = [
+          (final: prev: {
+            nur = import inputs.nur {
+              nurpkgs = prev;
+              pkgs = prev;
+              repoOverrides = {
+                j4ger = import inputs.j4ger-pkgs { pkgs = prev; };
+              };
+            };
+          })
+          inputs.niri.overlays.niri
+        ];
+      };
     in
     {
       packages = myPackages;
@@ -120,6 +141,20 @@
             daeuniverse.nixosModules.daed
 
             lanzaboote.nixosModules.lanzaboote
+          ];
+        };
+      };
+
+      homeConfigurations = {
+        j4ger = inputs.home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsFor;
+          extraSpecialArgs = {
+            inherit inputs outputs myPackages system;
+          };
+          modules = with inputs; [
+            ./home-manager/home.nix
+            catppuccin.homeModules.catppuccin
+            noctalia.homeModules.default
           ];
         };
       };
