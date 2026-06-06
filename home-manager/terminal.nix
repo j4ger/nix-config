@@ -16,7 +16,6 @@
     qimgv
     ueberzugpp
     uv
-    #inputs.nix-alien.packages.${system}.default
     tio
     ouch
     usbutils
@@ -30,7 +29,6 @@
   programs = {
     yazi = {
       enable = true;
-      # package = inputs.yazi.packages.${system}.default;
       enableFishIntegration = true;
     };
     alacritty = {

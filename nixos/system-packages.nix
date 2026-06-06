@@ -14,21 +14,11 @@
       extraPkgs = pkgs: [ pkgs.xorg.libxshmfence ];
     })
     comma
-    # podman-compose
-    # virtiofsd
-    # virt-viewer
-    # spice
-    # spice-gtk
-    # virtio-win
-    # win-spice
-    # looking-glass-client
   ];
 
   programs = {
-    #adb.enable = true;
     nix-ld.enable = true;
     fish.enable = true;
-    # gamemode.enable = true;
     steam = {
       enable = true;
       extraCompatPackages = with pkgs; [
@@ -51,18 +41,7 @@
     };
   };
 
-  services.sunshine = {
-    enable = false;
-    capSysAdmin = true;
-    openFirewall = true;
-  };
 
-  # services.wivrn = {
-  #   enable = false;
-  #   openFirewall = true;
-
-  #   defaultRuntime = true;
-  # };
 
   virtualisation = {
     docker = {
@@ -80,22 +59,11 @@
 
     waydroid.enable = false;
   };
-  services.spice-vdagentd.enable = false;
   systemd.tmpfiles.rules = [
     "L+ /run/amd-igpu - - - - /dev/dri/by-path/pci-0000:65:00.0-card"
     "f /dev/shm/looking-glass 0660 j4ger qemu-libvirtd -"
     "L+ /var/lib/qemu/firmware - - - - ${pkgs.qemu}/share/qemu/firmware"
   ];
-  # systemd.user.services.scream-ivshmem = {
-  #   enable = false;
-  #   description = "Scream IVSHMEM";
-  #   serviceConfig = {
-  #     ExecStart = "${pkgs.scream}/bin/scream-ivshmem-pulse /dev/shm/scream";
-  #     Restart = "always";
-  #   };
-  #   wantedBy = [ "multi-user.target" ];
-  #   requires = [ "pulseaudio.service" ];
-  # };
 
   services.flatpak.enable = true;
 
@@ -106,10 +74,4 @@
   };
   services.printing.enable = true;
 
-  services = {
-    ollama = {
-      enable = false;
-      host = "0.0.0.0";
-    };
-  };
 }

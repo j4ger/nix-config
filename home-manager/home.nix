@@ -7,7 +7,6 @@
     ./misc.nix
     ./niri
     ./terminal.nix
-    ./gestures.nix
   ];
 
   home = {

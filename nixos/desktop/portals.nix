@@ -5,7 +5,7 @@
     xdgOpenUsePortal = true;
     config = {
       common = {
-        default = [ "gtk" ];
+        default = [ "*" ];
       };
       niri = {
         "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];

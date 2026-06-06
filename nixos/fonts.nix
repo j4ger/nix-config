@@ -1,8 +1,5 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    twemoji-color-font
-  ];
   fonts = {
     packages = with pkgs; [
       roboto

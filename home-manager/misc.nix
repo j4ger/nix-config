@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  system,
   ...
 }:
 {
@@ -14,43 +13,21 @@
       inkscape
       audacity
       haruna
-      # glaxnimate
       gimp3
-      # darktable
       libreoffice
       blender
-      # wpsoffice-cn
       siyuan
-      # onlyoffice-bin_latest
-      # super-slicer.latest
-      # yesplaymusic
       go-musicfox
-      # wemeet
-      #inputs.j4ger-pkgs.packages.${system}.lceda-pro
       kicad-small
-      # lutris-unwrapped
       handbrake
-      # wiliwili
-      # (bilibili.override {
-      #  commandLineArgs = "--ozone-platform-hint=wayland --enable-wayland-ime";
-      # })
-      # wechat
-      # zoom-us
-      # vmware-horizon-client
       rnote
-      #livecaptions
       qalculate-qt
-      #drawio
       lazydocker
       vial
       sioyek
       zed-editor
-      #solaar
-      #cherry-studio
       scrcpy
-      # prismlauncher
       kdePackages.kdenlive
-      #super-slicer
       orca-slicer
       frp
       prismlauncher
