@@ -7,16 +7,7 @@
   home = {
     sessionVariables = {
       BROWSER = "zen";
-      #MOZ_ENABLE_WAYLAND = "1";
       EDITOR = "zeditor";
-      GDK_BACKEND = "wayland,x11";
-      QT_QPA_PLATFORM = "wayland;xcb";
-      #SDL_VIDEODRIVER = "x11";
-      CLUTTER_BACKEND = "wayland";
-      # XDG_CURRENT_DESKTOP = "plasma";
-      XDG_SESSION_TYPE = "wayland";
-      # XDG_SESSION_DESKTOP = "plasma";
-      # WLR_NO_HARDWARE_CURSORS = "1";
     };
     sessionPath = [
       "$HOME/.cargo/bin"

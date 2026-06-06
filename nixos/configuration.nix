@@ -6,7 +6,6 @@
   lib,
   config,
   pkgs,
-  myPackages,
   system,
   ...
 }:
@@ -38,22 +37,7 @@
   ];
 
   nixpkgs = {
-    # You can add overlays here
-    overlays = [
-      # nur
-      (final: prev: {
-        nur = import inputs.nur {
-          nurpkgs = prev;
-          pkgs = prev;
-          repoOverrides = {
-            j4ger = import inputs.j4ger-pkgs { pkgs = prev; };
-          };
-        };
-      })
-
-      #inputs.hyprpanel.overlay
-      inputs.niri.overlays.niri
-    ];
+    # Overlays are defined in flake.nix pkgsFor; NixOS niri module applies its own overlay.
     # Configure your nixpkgs instance
     config = {
       # FIXME: somehow this is ignored by home-manager
@@ -139,10 +123,6 @@
   users.users = {
     # FIXME: Replace with your username
     j4ger = {
-      # TODO: You can set an initial password for your user.
-      # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
-      # Be sure to change it (using passwd) after rebooting!
-      initialPassword = "iamthestorm";
       isNormalUser = true;
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [

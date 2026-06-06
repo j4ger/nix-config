@@ -111,11 +111,10 @@
           { argv = [ "noctalia-shell" ]; }
         ];
 
-        environment = {
-          NIXOS_OZONE_WL = "1";
-          QT_QPA_PLATFORM = "wayland";
-        };
+        # Session env vars (NIXOS_OZONE_WL, QT_QPA_PLATFORM, etc.) are set at
+        # NixOS level in nixos/desktop/niri.nix environment.sessionVariables.
 
+        # Cursor for niri compositor. Keep in sync with home.pointerCursor in desktop.nix.
         cursor = {
           theme = "Bibata-Modern-Ice";
           size = 24;

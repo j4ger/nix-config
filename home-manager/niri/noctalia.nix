@@ -1,13 +1,10 @@
 {
   inputs,
   system,
+  config,
   ...
 }:
 {
-  home.packages = [
-    inputs.noctalia.packages.${system}.default
-  ];
-
   home.sessionVariables = {
     QS_ICON_THEME = "Vimix";
   };
@@ -229,7 +226,7 @@
       general = {
         animationDisabled = false;
         animationSpeed = 1;
-        avatarImage = "/home/j4ger/.face.icon";
+        avatarImage = "${config.home.homeDirectory}/.face.icon";
         compactLockScreen = false;
         dimDesktop = false;
         forceBlackScreenCorners = true;
@@ -333,21 +330,21 @@
 
       wallpaper = {
         defaultWallpaper = "";
-        directory = "/home/j4ger/Pictures/Wallpapers";
+        directory = "${config.home.homeDirectory}/Pictures/Wallpapers";
         enableMultiMonitorDirectories = false;
         enabled = true;
         fillColor = "#000000";
         fillMode = "crop";
         monitors = [
           {
-            directory = "/home/j4ger/Pictures/Wallpapers";
+            directory = "${config.home.homeDirectory}/Pictures/Wallpapers";
             name = "eDP-1";
-            wallpaper = "/home/j4ger/Pictures/Wallpapers/island-3.png";
+            wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/island-3.png";
           }
           {
-            directory = "/home/j4ger/Pictures/Wallpapers";
+            directory = "${config.home.homeDirectory}/Pictures/Wallpapers";
             name = "DP-2";
-            wallpaper = "/home/j4ger/Pictures/Wallpapers/island-3.png";
+            wallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/island-3.png";
           }
         ];
         randomEnabled = true;

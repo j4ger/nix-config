@@ -1,11 +1,16 @@
+{ config, ... }:
+let
+  home = config.users.users.j4ger.home;
+  user = config.users.users.j4ger.name;
+in
 {
   age = {
     identityPaths = ["/etc/ssh/ssh_host_ed25519_key"];
     secrets = {
       gpg = {
         file = ../secrets/gpg.age;
-        path = "/home/j4ger/.gpg/privateKey";
-        owner = "j4ger";
+        path = "${home}/.gpg/privateKey";
+        owner = user;
         mode = "0600";
       };
       dae = {

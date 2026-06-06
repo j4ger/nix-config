@@ -25,15 +25,6 @@
       #   inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
-    };
-
-    j4ger-pkgs = {
-      url = "github:j4ger/nix-packages";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     rime-wanxiang = {
       url = "github:amzxyz/rime-wanxiang?ref=wanxiang-zrm-fuzhu";
       flake = false;
@@ -46,21 +37,6 @@
 
     catppuccin = {
       url = "github:catppuccin/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    swww = {
-      url = "github:LGFae/swww";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    yazi = {
-      url = "github:sxyazi/yazi";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-alien = {
-      url = "github:thiagokokada/nix-alien";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -89,10 +65,6 @@
     let
       inherit (self) outputs;
       system = "x86_64-linux";
-      myPackages = import ./pkgs {
-        pkgs = nixpkgs.legacyPackages.${system};
-        inherit inputs system;
-      };
 
       # Shared pkgs configuration matching the NixOS system
       pkgsFor = import nixpkgs {
@@ -102,21 +74,11 @@
           "openssl-1.1.1w"
         ];
         overlays = [
-          (final: prev: {
-            nur = import inputs.nur {
-              nurpkgs = prev;
-              pkgs = prev;
-              repoOverrides = {
-                j4ger = import inputs.j4ger-pkgs { pkgs = prev; };
-              };
-            };
-          })
           inputs.niri.overlays.niri
         ];
       };
     in
     {
-      packages = myPackages;
 
       formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
 
@@ -126,7 +88,6 @@
             inherit
               inputs
               outputs
-              myPackages
               system
               ;
           };
@@ -149,7 +110,7 @@
         j4ger = inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = pkgsFor;
           extraSpecialArgs = {
-            inherit inputs outputs myPackages system;
+            inherit inputs outputs system;
           };
           modules = with inputs; [
             ./home-manager/home.nix
