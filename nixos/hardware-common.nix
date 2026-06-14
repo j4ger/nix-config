@@ -128,10 +128,9 @@
   };
 
   boot = {
-    bootspec.enable = true;
     loader = {
       systemd-boot = {
-        enable = lib.mkForce false; # for lanzaboote
+        enable = true;
         #consoleMode = "auto";
       };
       efi = {
@@ -141,7 +140,7 @@
       timeout = 3;
     };
     lanzaboote = {
-      enable = true;
+      enable = false;
       pkiBundle = "/etc/secureboot";
     };
     consoleLogLevel = 0;

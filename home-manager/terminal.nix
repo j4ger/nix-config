@@ -132,7 +132,6 @@
       enableFishIntegration = true;
     };
     eza.enable = true;
-    helix.enable = true;
     atuin = {
       enable = true;
       enableFishIntegration = true;
@@ -148,18 +147,18 @@
           name = "j4ger";
           email = "xiayuxuan@live.com";
         };
-        commit.gpgSign = true;
-        user.signingKey = "A645FE4CA59374C8";
+        # commit.gpgSign = true;
+        # user.signingKey = "A645FE4CA59374C8";
         url = {
           "ssh://git@github.com:j4ger" = {
             insteadOf = "https://github.com/j4ger/";
           };
         };
       };
-      signing = {
-        key = "A645FE4CA59374C8";
-        signByDefault = true;
-      };
+      # signing = {
+      #   key = "A645FE4CA59374C8";
+      #   signByDefault = true;
+      # };
     };
     ssh = {
       enable = true;

@@ -15,11 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     daeuniverse = {
       url = "github:daeuniverse/flake.nix";
       #   inputs.nixpkgs.follows = "nixpkgs";
@@ -41,7 +36,7 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -96,8 +91,6 @@
 
             catppuccin.nixosModules.catppuccin
 
-            agenix.nixosModules.default
-
             daeuniverse.nixosModules.dae
             daeuniverse.nixosModules.daed
 
@@ -115,7 +108,7 @@
           modules = with inputs; [
             ./home-manager/home.nix
             catppuccin.homeModules.catppuccin
-            noctalia.homeModules.default
+	    noctalia.homeModules.default
           ];
         };
       };

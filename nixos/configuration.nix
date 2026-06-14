@@ -21,8 +21,6 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    inputs.noctalia.nixosModules.default
-
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./hardware-common.nix
@@ -32,7 +30,6 @@
     ./desktop
     ./fonts.nix
     ./networking.nix
-    ./secrets.nix
   ];
 
   nixpkgs = {
@@ -94,7 +91,6 @@
         options = "--delete-older-than 2d";
       };
       extraOptions = ''
-        !include ${config.age.secrets.nix-extra-options.path}
       '';
     };
 

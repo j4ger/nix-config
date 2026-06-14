@@ -7,7 +7,7 @@
     QS_ICON_THEME = "Vimix";
   };
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
     settings = {
       appLauncher = {
