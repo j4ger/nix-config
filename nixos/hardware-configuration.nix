@@ -90,4 +90,6 @@
   environment.variables = {
 #    "KWIN_DRM_DEVICES" = "/dev/dri/card1:/dev/dri/card0";
   };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
 }

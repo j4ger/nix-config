@@ -17,7 +17,7 @@
       let
         ns = panel: actionName: {
           spawn = [
-            "noctalia-shell"
+            "noctalia"
             "ipc"
             "call"
             panel
@@ -108,7 +108,7 @@
         "prefer-no-csd" = true;
 
         "spawn-at-startup" = [
-          { argv = [ "noctalia-shell" ]; }
+          { argv = [ "noctalia" ]; }
         ];
 
         # Session env vars (NIXOS_OZONE_WL, QT_QPA_PLATFORM, etc.) are set at
@@ -212,4 +212,21 @@
     xwayland-satellite
     matugen
   ];
+
+  xdg.portal = {
+    enable = true;
+    config = {
+      common = {
+        default = [ "gtk" "gnome" ];
+      };
+      niri = {
+        default = [ "gtk" "gnome" ];
+      };
+    };
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
+    xdgOpenUsePortal = true;
+  };
 }

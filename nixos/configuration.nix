@@ -27,7 +27,6 @@
 
     ./system-packages.nix
 
-    ./desktop
     ./fonts.nix
     ./networking.nix
   ];

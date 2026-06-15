@@ -65,7 +65,7 @@
     "L+ /var/lib/qemu/firmware - - - - ${pkgs.qemu}/share/qemu/firmware"
   ];
 
-  services.flatpak.enable = true;
+  services.flatpak.enable = false;
 
   services.avahi = {
     enable = true;
