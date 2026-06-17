@@ -5,7 +5,7 @@
 {
   home = {
     sessionVariables = {
-      BROWSER = "zen";
+      BROWSER = "zen-beta";
       EDITOR = "zeditor";
     };
     sessionPath = [
@@ -24,10 +24,23 @@
         "uc.tweak.longer-sidebar" = true;
       };
     };
-    profiles.default = {
-      userChrome = ''
-        @import "${inputs.arcwtf}/userChrome.css";
-      '';
+  };
+
+  xdg.mime.enable = true;
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "zen-beta.desktop";
+      "text/xml" = "zen-beta.desktop";
+      "x-scheme-handler/http" = "zen-beta.desktop";
+      "x-scheme-handler/https" = "zen-beta.desktop";
+      "x-scheme-handler/chrome" = "zen-beta.desktop";
+      "application/x-extension-htm" = "zen-beta.desktop";
+      "application/x-extension-html" = "zen-beta.desktop";
+      "application/x-extension-shtml" = "zen-beta.desktop";
+      "application/xhtml+xml" = "zen-beta.desktop";
+      "application/x-extension-xhtml" = "zen-beta.desktop";
+      "application/x-extension-xht" = "zen-beta.desktop";
     };
   };
 

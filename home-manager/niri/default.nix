@@ -14,20 +14,12 @@
   programs.niri = {
     enable = true;
     settings =
-      let
-        ns = panel: actionName: {
-          spawn = [
-            "noctalia"
-            "ipc"
-            "call"
-            panel
-            actionName
-          ];
-        };
-      in
       with config.lib.niri.actions;
       {
-        binds = {
+        binds = let
+          noctalia = cmd: [ "noctalia" "msg" ] ++ cmd;
+        in
+        {
           # Workspace-centric flow
           "Mod+J".action = focus-window-or-workspace-down;
           "Mod+K".action = focus-window-or-workspace-up;
@@ -62,7 +54,6 @@
             write-to-disk = false;
           };
           "Mod+Alt+Shift+S".action.screenshot-window = [ ];
-          "Mod+Shift+R".action = ns "screenRecorder" "toggle";
 
           # Apps
           "Mod+Shift+Return".action = spawn "alacritty";
@@ -77,26 +68,26 @@
           "Mod+TouchpadScrollDown".action = spawn "ydotool" "key" "29:1" "42:1" "15:1" "15:0" "42:0" "29:0";
           "Mod+TouchpadScrollUp".action = spawn "ydotool" "key" "29:1" "15:1" "15:0" "29:0";
 
-          # Noctalia IPC
-          "Mod+D".action = ns "launcher" "toggle";
-          "Mod+C".action = ns "controlCenter" "toggle";
-          "Mod+P".action = ns "powerPanel" "toggle";
-          "Mod+Shift+E".action = ns "sessionMenu" "toggle";
-          "Mod+Alt+E".action = ns "lockScreen" "toggle";
-          "Mod+Ctrl+E".action = ns "idleInhibitor" "toggle";
-          "Mod+V".action = ns "launcher" "clipboard";
-          "Mod+Shift+D".action = ns "launcher" "calculator";
-          "Mod+N".action = ns "notifications" "toggleHistory";
-          "Mod+Shift+N".action = ns "notifications" "toggleDND";
-          "Mod+Ctrl+N".action = ns "notifications" "dismissOldest";
-          "Mod+Alt+N".action = ns "notifications" "clear";
+          # Noctalia v5 IPC
+          "Mod+D".action = spawn (noctalia [ "panel-toggle" "launcher" ]);
+          "Mod+C".action = spawn (noctalia [ "panel-toggle" "control-center" ]);
+          "Mod+P".action = spawn (noctalia [ "panel-toggle" "session" ]);
+          "Mod+Shift+E".action = spawn (noctalia [ "panel-toggle" "session" ]);
+          "Mod+Alt+E".action = spawn (noctalia [ "session" "lock" ]);
+          "Mod+Ctrl+E".action = spawn (noctalia [ "caffeine-toggle" ]);
+          "Mod+V".action = spawn (noctalia [ "panel-toggle" "clipboard" ]);
+          "Mod+Shift+D".action = spawn (noctalia [ "panel-toggle" "launcher" ]);
+          "Mod+N".action = spawn (noctalia [ "panel-toggle" "control-center" "notifications" ]);
+          "Mod+Shift+N".action = spawn (noctalia [ "notification-dnd-toggle" ]);
+          "Mod+Ctrl+N".action = spawn (noctalia [ "notification-clear-active" ]);
+          "Mod+Alt+N".action = spawn (noctalia [ "notification-clear-history" ]);
 
           # Media / brightness
-          "XF86AudioRaiseVolume".action = ns "volume" "increase";
-          "XF86AudioLowerVolume".action = ns "volume" "decrease";
-          "XF86AudioMute".action = ns "volume" "muteOutput";
-          "XF86MonBrightnessUp".action = ns "brightness" "increase";
-          "XF86MonBrightnessDown".action = ns "brightness" "decrease";
+          "XF86AudioRaiseVolume".action = spawn (noctalia [ "volume-up" ]);
+          "XF86AudioLowerVolume".action = spawn (noctalia [ "volume-down" ]);
+          "XF86AudioMute".action = spawn (noctalia [ "volume-mute" ]);
+          "XF86MonBrightnessUp".action = spawn (noctalia [ "brightness-up" ]);
+          "XF86MonBrightnessDown".action = spawn (noctalia [ "brightness-down" ]);
         };
 
         "screenshot-path" = "~/Pictures/Screenshots/Screenshot-%Y%m%d-%H%M%S.png";
