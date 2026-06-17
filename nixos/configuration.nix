@@ -32,7 +32,6 @@
   ];
 
   nixpkgs = {
-    # Overlays are defined in flake.nix pkgsFor; NixOS niri module applies its own overlay.
     # Configure your nixpkgs instance
     config = {
       # FIXME: somehow this is ignored by home-manager
@@ -140,6 +139,15 @@
   security.polkit.enable = true;
   security.sudo.enable = true;
   security.rtkit.enable = true;
+
+  # Auto-login via greetd (launches niri directly, no greeter)
+  services.greetd = {
+    enable = true;
+    settings.default_session = {
+      user = "j4ger";
+      command = "${inputs.niri.packages.${system}.niri-stable}/bin/niri-session";
+    };
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.11";

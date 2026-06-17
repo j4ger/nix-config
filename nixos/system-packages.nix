@@ -10,6 +10,7 @@
     unzip
     zip
     xdg-utils
+    ddcutil
     (appimage-run.override {
       extraPkgs = pkgs: [ pkgs.xorg.libxshmfence ];
     })
