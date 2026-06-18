@@ -12,7 +12,7 @@
     xdg-utils
     ddcutil
     (appimage-run.override {
-      extraPkgs = pkgs: [ pkgs.xorg.libxshmfence ];
+      extraPkgs = pkgs: [ pkgs.libxshmfence ];
     })
     comma
   ];

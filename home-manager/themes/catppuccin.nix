@@ -11,8 +11,4 @@
     name = "Bibata-Modern-Ice";
     size = 24;
   };
-
-  home.packages = with pkgs; [
-    neovide
-  ];
 }

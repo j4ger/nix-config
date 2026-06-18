@@ -79,13 +79,16 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  hardware.nvidia.prime = {
-    offload = {
-      enable = true;
-      enableOffloadCmd = true;
+  hardware.nvidia = {
+    open = true;
+    prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+      amdgpuBusId = "PCI:101:0:0";
+      nvidiaBusId = "PCI:100:0:0";
     };
-    amdgpuBusId = "PCI:101:0:0";
-    nvidiaBusId = "PCI:100:0:0";
   };
   environment.variables = {
 #    "KWIN_DRM_DEVICES" = "/dev/dri/card1:/dev/dri/card0";

@@ -2,7 +2,6 @@
   description = "nixOS config for my laptop";
 
   inputs = {
-    # nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
@@ -17,7 +16,6 @@
 
     daeuniverse = {
       url = "github:daeuniverse/flake.nix";
-      #   inputs.nixpkgs.follows = "nixpkgs";
     };
 
     rime-wanxiang = {
@@ -56,16 +54,13 @@
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      ...
-    }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
-      inherit (self) outputs;
       system = "x86_64-linux";
-
+      
+      # Import lib functions
+      lib = import ./lib { inherit inputs system; lib = nixpkgs.lib; };
+      
       # Shared pkgs configuration matching the NixOS system
       pkgsFor = import nixpkgs {
         inherit system;
@@ -73,50 +68,23 @@
         config.permittedInsecurePackages = [
           "openssl-1.1.1w"
         ];
-        overlays = [
-          inputs.niri.overlays.niri
-        ];
+        overlays = import ./lib/overlays.nix { inherit inputs system; };
       };
     in
     {
-
       formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
 
       nixosConfigurations = {
-        v04-tx = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit
-              inputs
-              outputs
-              system
-              ;
-          };
-          modules = with inputs; [
-            ./nixos/configuration.nix
-
-            catppuccin.nixosModules.catppuccin
-
-            daeuniverse.nixosModules.dae
-            daeuniverse.nixosModules.daed
-
-            lanzaboote.nixosModules.lanzaboote
-
-            noctalia-greeter.nixosModules.default
-          ];
+        v04-tx = import ./outputs/os.nix {
+          inherit inputs system;
+          lib = nixpkgs.lib;
         };
       };
 
       homeConfigurations = {
-        j4ger = inputs.home-manager.lib.homeManagerConfiguration {
-          pkgs = pkgsFor;
-          extraSpecialArgs = {
-            inherit inputs outputs system;
-          };
-          modules = with inputs; [
-            ./home-manager/home.nix
-            catppuccin.homeModules.catppuccin
-	    noctalia.homeModules.default
-          ];
+        j4ger = import ./outputs/hm.nix {
+          inherit inputs system pkgsFor;
+          lib = nixpkgs.lib;
         };
       };
     };

@@ -1,5 +1,3 @@
-# This is your system's configuration file.
-# Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
   inputs,
   lib,
@@ -9,6 +7,15 @@
   ...
 }:
 {
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "openssl-1.1.1w"
+      ];
+    };
+  };
+
   # You can import other NixOS modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
@@ -21,28 +28,16 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    # Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
-    ./hardware-common.nix
+    # Hardware config is now imported in the host-specific configuration
 
     ./system-packages.nix
 
     ./fonts.nix
     ./networking.nix
+
+    # System-level niri configuration (greetd, pipewire, env vars)
+    ../system/desktop/niri.nix
   ];
-
-  nixpkgs = {
-    # Configure your nixpkgs instance
-    config = {
-      # FIXME: somehow this is ignored by home-manager
-      allowUnfree = true;
-
-      # FIXME: wechat-uos still depends on this
-      permittedInsecurePackages = [
-        "openssl-1.1.1w"
-      ];
-    };
-  };
 
   nix =
     let
@@ -92,11 +87,6 @@
       '';
     };
 
-  # FIXME: Add the rest of your current configuration
-
-  # TODO: Set your hostname
-  networking.hostName = "v04-tx";
-
   time.timeZone = "Asia/Shanghai";
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -112,12 +102,9 @@
     ];
   };
 
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
-    # FIXME: Replace with your username
     j4ger = {
       isNormalUser = true;
-      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [
         "wheel"
         "video"
@@ -140,13 +127,9 @@
   security.sudo.enable = true;
   security.rtkit.enable = true;
 
-  # Auto-login via greetd (launches niri directly, no greeter)
-  services.greetd = {
+  catppuccin = {
     enable = true;
-    settings.default_session = {
-      user = "j4ger";
-      command = "${inputs.niri.packages.${system}.niri-stable}/bin/niri-session";
-    };
+    autoEnable = true;
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

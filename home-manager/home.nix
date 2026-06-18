@@ -1,12 +1,12 @@
 { inputs, ... }:
 {
   imports = [
-    ./browser
-    ./desktop.nix
-    ./ime
-    ./misc.nix
-    ./niri
-    ./terminal.nix
+    ./modules
+    ./shared
+    ./programs
+    ./services
+    ./wm
+    ./themes
   ];
 
   home = {
@@ -15,10 +15,8 @@
   };
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
 
   systemd.user.startServices = "sd-switch";
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.11";
 }
