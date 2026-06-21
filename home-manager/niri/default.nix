@@ -100,6 +100,7 @@
 
         "spawn-at-startup" = [
           { argv = [ "noctalia" ]; }
+          { argv = [ "fcitx5" ]; }
         ];
 
         # Session env vars (NIXOS_OZONE_WL, QT_QPA_PLATFORM, etc.) are set at

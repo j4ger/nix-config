@@ -100,6 +100,19 @@
       "zh_CN.UTF-8/UTF-8"
       "zh_TW.UTF-8/UTF-8"
     ];
+    inputMethod = {
+      enable = true;
+      type = "fcitx5";
+      fcitx5 = {
+        waylandFrontend = true;
+        addons = with pkgs; [
+          fcitx5-rime
+          fcitx5-gtk
+          libsForQt5.fcitx5-qt
+          kdePackages.fcitx5-qt
+        ];
+      };
+    };
   };
 
   users.users = {
