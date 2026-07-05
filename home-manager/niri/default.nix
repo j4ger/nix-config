@@ -138,6 +138,15 @@
             scale = 1.5;
             "variable-refresh-rate" = true;
           };
+	  "eDP-2" = {
+            position = {
+              x = 0;
+              y = 0;
+            };
+            scale = 1.5;
+            "variable-refresh-rate" = true;
+          };
+ 
           "DP-1" = {
             position = {
               x = 1707;

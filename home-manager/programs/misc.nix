@@ -19,7 +19,7 @@
     rnote
     qalculate-qt
     lazydocker
-    vial
+    via
     sioyek
     zed-editor
     scrcpy

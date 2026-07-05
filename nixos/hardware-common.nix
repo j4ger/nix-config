@@ -92,6 +92,9 @@
         ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="4c4b", ATTRS{idProduct}=="beef", ATTR{power/control}="on"
         ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="4c4b", ATTRS{idProduct}=="beef", ATTR{power/autosuspend}="0"
 
+        ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="a8f8", ATTRS{idProduct}=="1832", ATTR{power/control}="on"
+        ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="a8f8", ATTRS{idProduct}=="1832", ATTR{power/autosuspend}="0"
+
         # RP2040
         ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0003", MODE="664", GROUP="plugdev"
 
@@ -122,8 +125,8 @@
         # Grant members of the "plugdev" group access to receiver (useful for SSH users)
         #MODE="0660", GROUP="plugdev"
         LABEL="solaar_end"
-
       '';
+      packages = with pkgs; [ via ];
     };
   };
 
@@ -158,7 +161,7 @@
     kernelPackages = pkgs.linuxPackages_xanmod_stable;
     plymouth = {
       enable = true;
-      theme = "spinner";
+      theme = lib.mkDefault "spinner";
     };
     kernelParams = [
       "quiet"
