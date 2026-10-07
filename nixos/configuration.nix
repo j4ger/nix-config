@@ -47,11 +47,14 @@
       package = pkgs.lixPackageSets.stable.lix;
       settings = {
         # Enable flakes and new 'nix' command
-        experimental-features = "nix-command flakes";
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
         # Opinionated: disable global registry
         flake-registry = "";
         # Workaround for https://github.com/NixOS/nix/issues/9574
-        nix-path = config.nix.nixPath;
+        nix-path = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
         substituters = [
           "https://mirrors.ustc.edu.cn/nix-channels/store"
           "https://cache.nixos.org/"
@@ -76,7 +79,6 @@
 
       # Opinionated: make flake registry and nix path match flake inputs
       registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
-      nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
 
       gc = {
         automatic = false; # Disable due to nh

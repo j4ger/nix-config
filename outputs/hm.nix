@@ -8,6 +8,5 @@ inputs.home-manager.lib.homeManagerConfiguration {
   modules = [
     ../home-manager/home.nix
     inputs.catppuccin.homeModules.catppuccin
-    inputs.noctalia.homeModules.default
   ];
 }

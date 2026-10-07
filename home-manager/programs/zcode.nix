@@ -1,6 +1,6 @@
 { pkgs, inputs, system, ... }:
 {
   home.packages = [
-    inputs.picopi.packages.${system}.default
+    inputs.llm-agents.packages.${system}.zcode
   ];
 }

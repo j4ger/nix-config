@@ -19,6 +19,7 @@
     bun
     nodejs
     rtk
+    gh
     
     # Archive/compression
     ouch
@@ -64,7 +65,7 @@
       enableFishIntegration = true;
     };
     fzf = {
-      enable = true;
+      enable = false;
       enableFishIntegration = true;
     };
     direnv = {

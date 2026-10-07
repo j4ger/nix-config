@@ -25,6 +25,16 @@
     enable = true;
   };
 
+  programs.clash-verge = {
+    enable = true;
+    package = pkgs.clash-verge-rev;
+    serviceMode = true;
+    # TUN needs the setcap wrapper for DNS to work; the module then also
+    # relaxes networking.firewall.checkReversePath to "loose".
+    tunMode = true;
+    group = "wheel";
+  };
+
   services.mihomo = {
     enable = false;
     tunMode = true;
