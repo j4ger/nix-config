@@ -26,7 +26,7 @@
         proton-ge-bin
       ];
     };
-    virt-manager.enable = true;
+    virt-manager.enable = false;
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
@@ -50,7 +50,7 @@
       storageDriver = "btrfs";
     };
     libvirtd = {
-      enable = true;
+      enable = false;
       qemu = {
         swtpm.enable = true;
         vhostUserPackages = [ pkgs.virtiofsd ];
