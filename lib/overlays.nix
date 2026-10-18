@@ -1,9 +1,13 @@
-{ inputs, system, ... }:
-
-let
+{
+  inputs,
+  system,
+  ...
+}: let
   # Niri overlay for window manager
   niriOverlay = inputs.niri.overlays.niri;
-in
-[
+  # DeepSeek Harness overlay
+  dshOverlay = inputs.dsh.overlays.default;
+in [
   niriOverlay
+  dshOverlay
 ]

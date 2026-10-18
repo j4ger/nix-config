@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # Common CLI tools shared across all window managers
   home.packages = with pkgs; [
     # File utilities
@@ -8,29 +7,29 @@
     ripgrep
     dust
     tree-sitter
-    
+
     # System utilities
     libnotify
     usbutils
     micro
-    
+
     # Development tools
     uv
     bun
     nodejs
     rtk
     gh
-    
+
     # Archive/compression
     ouch
-    
+
     # Hardware
     tio
-    
+
     # Image viewer
     qimgv
     ueberzugpp
-    
+
     # Container tools
     distrobox
   ];
@@ -107,12 +106,14 @@
     # SSH
     ssh = {
       enable = true;
-      extraConfig = ''
-        Host github.com
-        Hostname ssh.github.com
-        Port 443
-        User git
-      '';
+      enableDefaultConfig = false;
+      settings = {
+        "github.com" = {
+          Hostname = "ssh.github.com";
+          Port = 443;
+          User = "git";
+        };
+      };
     };
 
     # Git TUI

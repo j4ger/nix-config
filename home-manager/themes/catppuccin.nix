@@ -1,10 +1,13 @@
-{ pkgs, ... }:
-{
-  catppuccin.enable = true;
-  catppuccin.flavor = "macchiato";
+{pkgs, ...}: {
+  catppuccin = {
+    enable = true;
+    autoEnable = true;
+    flavor = "macchiato";
+  };
 
-  # Cursor for GTK/X11 apps. Keep in sync with niri cursor.theme in niri/default.nix.
+  # Cursor for GTK/X11 apps. Keep in sync with niri cursor.theme in wm/niri/default.nix.
   home.pointerCursor = {
+    enable = true;
     gtk.enable = true;
     x11.enable = true;
     package = pkgs.bibata-cursors;
