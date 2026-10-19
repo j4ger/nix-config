@@ -13,16 +13,12 @@
     libreoffice
     blender
     siyuan
-    go-musicfox
     kicad-small
     handbrake
-    rnote
     qalculate-qt
     lazydocker
-    via
     sioyek
     zed-editor
-    scrcpy
     kdePackages.kdenlive
     (orca-slicer.override {
       withNvidiaGLWorkaround = true;
@@ -32,9 +28,6 @@
     })
     
     # Networking/tools
-    frp
-    
-    # Gaming
-    prismlauncher
+    cloudflared
   ];
 }
