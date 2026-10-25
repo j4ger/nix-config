@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  system,
   ...
 }: {
   imports = [
@@ -23,4 +24,11 @@
     enable = true;
     port = 3080;
   };
+
+  home.packages = with inputs.llm-agents.packages.${system}; [
+    antigravity-cli
+    cli-proxy-api
+    codebuddy-code
+    zcode
+  ];
 }
