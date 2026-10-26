@@ -46,4 +46,8 @@
     "${pkgs.coreutils}/bin/ln -sf ${pkgs.v2ray-domain-list-community}/share/v2ray/geosite.dat /var/lib/private/mihomo/GeoSite.dat"
   ];
 
+  services.tailscale = {
+    enable = true;
+  };
+
 }
