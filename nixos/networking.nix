@@ -22,7 +22,7 @@
   };
 
   services.daed = {
-    enable = true;
+    enable = false;
   };
 
   programs.clash-verge = {

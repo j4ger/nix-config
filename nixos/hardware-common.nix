@@ -148,8 +148,6 @@
     };
     consoleLogLevel = 0;
     initrd = {
-      verbose = false;
-      systemd.enable = true;
       kernelModules = [
         "vfio_pci"
         "vfio"
